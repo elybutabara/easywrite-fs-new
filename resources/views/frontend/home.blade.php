@@ -1,0 +1,521 @@
+@extends('frontend.layout')
+
+@section('title')
+    <title>Forfatterskolen – Din litterære familie. Skrivekurs for deg</title>
+@stop
+
+@section('styles')
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    </noscript>
+    <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+@stop
+
+@section('content')
+    <div class="front-page-new">
+        <div class="header" data-bg="https://www.forfatterskolen.no/images-new/home/main-image.png">
+            <div class="container h-100 position-relative">
+
+                <div class="main-form">
+                    <div class="envelope-container">
+                        <img data-src="https://www.forfatterskolen.no/images-new/home/envelope.png" alt="envelope icon">
+                    </div>
+
+                    <div class="form-container">
+
+                        <form method="POST" action="{{ route('front.home.submit') }}">
+                            {{ csrf_field() }}
+                            <h1 class="mb-0 text-center font-montserrat-regular">
+                                {{ trans('site.front.main-form.heading') }}
+                            </h1>
+
+                            <p class="text-center font-montserrat-regular mb-4">
+                                {{ trans('site.front.main-form.heading-description') }}
+                            </p>
+
+                            <h2 class="text-center font-montserrat-light-italic">
+                                {{ trans('site.front.main-form.sub-heading') }}
+                            </h2>
+
+                            <div class="btn-container text-center" style="margin-top: 50px">
+                                <button type="button" class="btn font-montserrat-light" data-toggle="modal"
+                                        data-target="#writingPlanModal">
+                                    {{ trans('site.front.main-form.submit-text') }}
+                                </button>
+                            </div>
+                        </form>
+                    </div> <!-- end form-container -->
+                </div> <!-- end main-form -->
+            </div> <!-- end container -->
+        </div> <!-- end header -->
+
+        <div class="container" id="news-container">
+            @if ($news = \App\Http\FrontendHelpers::getNews())
+                <div class="news-section">
+                    {!! $news->lb_content !!}
+                </div>
+            @endif
+        </div>
+
+        <div class="container upcoming-container">
+            <video loop muted id="vid">
+                <source src="{{ asset('video/Reisen_final.mp4') }}" type="video/mp4">
+            </video>
+            <div class="row upcoming-row">
+                @foreach($upcomingSections as $k => $upcomingSection)
+                    @php
+                        $hasNextWebinar = $k === 1 && $next_webinar ? true : false;
+                    @endphp
+                    <div class="col-md-4">
+                        <div class="column">
+                            <div class="content-container">
+                                <div class="title">
+                                    {{ $hasNextWebinar ? trans('site.front.next-webinar') : $upcomingSection->name }}
+                                </div>
+
+                                <div class="h2 mt-0 mb-4 font-montserrat-semibold">
+                                    {{ $hasNextWebinar ? $next_webinar->title : $upcomingSection->title }}
+                                </div>
+
+                                @if ($upcomingSection->date || $hasNextWebinar)
+                                    <div class="date-time-cont">
+                                        <i class="img-icon16 icon-calendar"></i>
+                                        <span>{{ \App\Http\FrontendHelpers::formatDate($hasNextWebinar ? $next_webinar->start_date : $upcomingSection->date) }}</span>
+                                        <i class="img-icon16 icon-clock ml-3"></i>
+                                        <span>
+                                        {{ \App\Http\FrontendHelpers::getTimeFromDT($hasNextWebinar ? $next_webinar->start_date : $upcomingSection->date) }}
+                                    </span>
+                                    </div>
+                                @endif
+
+                                <a href="{{ url($hasNextWebinar ? '/course/17?show_kursplan=1' : $upcomingSection->link) }}" class="btn buy-btn mt-4"
+                                   title="View course plan tab on course">
+                                    {{ $hasNextWebinar ? trans('site.front.see-complete-list') : $upcomingSection->link_label }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="carousel-onebyone">
+                <div class="h1 text-center font-montserrat-semibold title">
+                    {{ trans('site.front.student-testimonial.heading') }}
+                </div>
+
+                <div id="video-testimonial-carousel" class="carousel slide mt-4" data-ride="carousel"
+                     data-interval="10000">
+                    <div class="video-testimonial-row row carousel-inner row w-100 mx-auto" role="listbox">
+                        @foreach($testimonials as $k => $testimonial)
+                            <div class="carousel-item col-md-3 {{ $k == 0 ? 'active' : '' }}">
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#vooModal" class="vooBtn"
+                                   data-link="{{ $testimonial->testimony }}">
+                                    <div class="img-container"
+                                         data-bg="https://www.forfatterskolen.no/{{ $testimonial->author_image }}">
+                                        <img data-src="https://www.forfatterskolen.no/{{ '/images-new/play-white.png' }}" class="play-image">
+                                    </div> <!-- end image container -->
+                                </a>
+
+                                <div class="details-container">
+                                    <span class="font-montserrat-semibold theme-text">{{ $testimonial->name }}</span>
+                                    <br>
+                                    <span class="font-montserrat-regular">{{ $testimonial->description }}</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div> <!-- end carousel-inner -->
+
+                    <a class="carousel-control-prev" href="#video-testimonial-carousel" role="button" data-slide="prev">
+                        <i class="fa fa-chevron-left fa-lg text-muted"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next text-faded" href="#video-testimonial-carousel" role="button"
+                       data-slide="next">
+                        <i class="fa fa-chevron-right fa-lg text-muted"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- end container-->
+
+        <div class="our-course-wrapper">
+            <div class="container">
+                <div class="h1 mt-0 font-montserrat-semibold">{{ trans('site.front.our-course.title') }}</div>
+                <p class="font-montserrat-regular">
+                    {{ trans('site.front.our-course.details') }}
+                </p>
+            </div> <!-- end container -->
+        </div> <!-- end our-course-wrapper -->
+
+        <div class="popular-course-wrapper">
+            <div class="container">
+                <div class="all-course theme-tabs">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <a data-toggle="tab" href="#home" class="active" title="Toggle popular course">
+                                    <span>{{ trans('site.front.popular-course') }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!-- end tabs-container -->
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <div class="container">
+                                <?php $featured = 0 ?>
+                                @foreach( $popular_courses as $popular_course )
+                                    @if( $featured == 0)
+                                        <a href="{{ route('front.course.show', $popular_course->id) }}"
+                                           class="featured-link" title="View course details">
+                                            <div class="row featured-item" style="background-image: url({{$popular_course->course_image}})">
+                                                <div class="details">
+                                                    <div class="indicator">
+                                                        {{ trans('site.front.course-text') }}
+                                                    </div>
+                                                    <h2 class="font-montserrat-semibold mb-4">{{ $popular_course->title}}</h2>
+                                                    <p class="font-montserrat-regular">
+                                                        {!! \Illuminate\Support\Str::limit(strip_tags($popular_course->description), 300) !!}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <?php $featured++?>
+                                    @endif
+                                @endforeach
+
+                                <?php $counter = 0 ?>
+                                <div class="row courses-container">
+                                    @foreach( $popular_courses as $popular_course )
+                                        @if ($counter == 0)
+                                            <?php $counter++?>
+                                        @else
+                                            <div class="col-md-6 mt-5 course-item" itemscope
+                                                 itemtype="http://schema.org/CreativeWork">
+                                                <div class="card rounded-0 border-0">
+                                                    <div class="card-header p-0 rounded-0"
+                                                         data-bg="https://www.forfatterskolen.no/{{$popular_course->course_image}}">
+                                                        <span>{{ trans('site.front.course-text') }}</span>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h3 class="font-montserrat-semibold" itemprop="headline">
+                                                            {{ \Illuminate\Support\Str::limit(strip_tags($popular_course->title), 40)}}
+                                                        </h3>
+                                                        <p class="font-montserrat-light mt-4"
+                                                           itemprop="about">{!! \Illuminate\Support\Str::limit(strip_tags($popular_course->description), 130) !!}</p>
+                                                        <a href="{{ route('front.course.show', $popular_course->id) }}"
+                                                           class="site-btn-global rounded-0 mt-3 d-inline-block"
+                                                           title="View course details" itemprop="url">
+                                                            {{ trans('site.front.view') }}
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div> <!-- end courses-container -->
+                            </div> <!-- end container -->
+                        </div> <!-- end #home -->
+                    </div> <!-- end tab-content -->
+                </div> <!-- end all-course -->
+            </div> <!-- end container -->
+        </div> <!-- end popular-course-wrapper -->
+
+        <div id="poem-wrapper" class="d-none">
+            <div class="container">
+                <div class="heading">
+                    <div class="h1 mt-0 d-inline-block font-montserrat-semibold">{{ trans('site.front.week-poem') }}</div>
+                    <a href="{{ route('front.poems') }}" class="btn d-inline-block" title="View poems">
+                        {{ trans('site.front.view-poem') }}
+                    </a>
+                </div> <!-- end heading -->
+
+                <?php
+                $latestPoem = $poems->first();
+                ?>
+
+                <div class="row poem-details">
+                    <div class="col-md-6 col-sm-12 poem-author-container">
+                        <img data-src="https://www.forfatterskolen.no/{{ $latestPoem->author_image }}" class="author-image" alt="author image">
+                        <div class="author-info">
+                            <span class="indicator">{{ trans('site.front.poem-of-the-week') }}</span>
+                            <h3 class="font-weight-normal font-montserrat-regular">{{ $latestPoem->title }}</h3>
+                            <h4 class="font-montserrat-light">{{ $latestPoem->author }}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 poem-container">
+                        <div class="poem-text-container">
+                            {!! $latestPoem->poem !!}
+                        </div>
+                    </div>
+                </div> <!-- end row -->
+            </div> <!-- end container -->
+        </div> <!-- end poem-wrapper -->
+
+        <div class="professional-feedback-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 text-center">
+                        <img src="https://www.forfatterskolen.no/{{ '/images-new/illustrationcomputer.png' }}" 
+                        alt="illustration-computer">
+                    </div>
+                    <div class="col-md-7">
+                        <h2>
+                            Vil du ha profesjonell tilbakemelding på en smakebit av din personlige tekst, helt gratis?
+                        </h2>
+
+                        <a href="{{ route('front.free-manuscript.index') }}" class="btn site-btn-global mt-5">
+                            Ja, dette vil jeg ha!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if(!isset($_COOKIE['_gdpr']))
+        <div class="col-sm-12 no-left-padding no-right-padding gdpr">
+            <div class="container display-flex">
+                <div class="gdpr-body">
+                    <div class="h1 mt-0 gdpr-title">Dine data, dine valg</div>
+                    <div>
+                        <p>
+                            Forfatterskolen er den som behandler dine data.
+                        </p>
+                        <p>
+                            Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gdpr-actions">
+                    <button class="btn btn-agree" onclick="agreeGdpr()">
+                        JEG FORSTÅR
+                    </button>
+                    <a href="{{ route('front.terms') }}" title="View terms">Vis meg mer</a>
+                </div>
+            </div>
+        </div>
+    @endif
+
+    <div id="vooModal" class="modal fade no-header-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <iframe allow="autoplay" allowtransparency="true" style="max-width:100%" allowfullscreen="true"
+                            src="" scrolling="no" width="100%" height="430" frameborder="0"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+@stop
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            if ($(window).width() > 640) {
+                document.getElementById('vid').play();
+            }
+        });
+
+        $(window).resize(function() {
+            if ($(window).width() <= 640) {
+                document.getElementById('vid').pause();
+            } else {
+                document.getElementById('vid').play();
+            }
+        });
+
+        let url_link = '{{ route('front.agree-gdpr') }}';
+        let $carousel = jQuery('.carousel-onebyone .carousel');
+        if($carousel.length){
+            jQuery('.carousel-onebyone').on('slide.bs.carousel', carousel_onebyone);
+            carousel_set($carousel);
+            let resizeId;
+            jQuery(window).resize(function() {
+                clearTimeout(resizeId);
+                resizeId = setTimeout(()=>carousel_set($carousel), 500);
+            });
+        }
+
+        function carousel_set($carousel){
+            if(!$carousel || !$carousel.length) return;
+
+            $carousel.each((i, el)=>{
+                let $el = jQuery(el);
+                let itemsPerSlide = carousel_itemsPerSlide($el);
+                let totalItems = $el.find('.carousel-item').length;
+
+                if(itemsPerSlide < totalItems){
+                    $el.find('.carousel-control').removeClass('hidden');
+                }else{
+                    $el.find('.carousel-control').addClass('hidden');
+                }
+            });
+        }
+
+        function carousel_onebyone(e){
+            let carouselID = '#'+jQuery(this).find('.carousel').attr('id');
+            let $carousel = jQuery(carouselID);
+            let $inner = $carousel.find('.carousel-inner');
+            let $items = $carousel.find('.carousel-item');
+
+            let idx = jQuery(e.relatedTarget).index();
+            let itemsPerSlide = carousel_itemsPerSlide($carousel);
+            let totalItems = $items.length;
+
+            if (idx >= totalItems-(itemsPerSlide-1)) {
+                let it = itemsPerSlide - (totalItems - idx);
+                for (let i=0; i<it; i++) {
+                    if (e.direction === 'left') {
+                        $items.eq(i).appendTo($inner);
+                    }else {
+                        $items.eq(0).appendTo($inner);
+                    }
+                }
+            }
+        }
+
+        function carousel_itemsPerSlide($carousel){
+            let itemW = $carousel.find('.carousel-item').width();
+            let innerW = $carousel.find('.carousel-inner').width();
+
+            return Math.floor(innerW/itemW);
+        }
+
+        function agreeGdpr() {
+            $.post(url_link).then(function(){
+                $(".gdpr").remove();
+            });
+        }
+
+        $(".poem-text-container").mCustomScrollbar({
+            theme: "light-thick",
+            scrollInertia: 500,
+
+        });
+
+        if ($(window).width() > 640) {
+            carouselMultiple();
+        } else {
+            $(".glyphicon").removeClass('hide');
+        }
+
+        $(window).on('resize', function(){
+            if ($(window).width() > 640) {
+                if ($(".item__third").length <= 3) {
+                    carouselMultiple();
+                }
+                $(".glyphicon").addClass('hide');
+            } else {
+                $(".glyphicon").removeClass('hide');
+                removeMultiple();
+            }
+        });
+
+        // for multiple item carousel action
+        let items = $(".multi-item-carousel").find('.carousel-inner .item'),
+            currentHighlight = 0;
+        $(".multi-item-carousel .left").click(function(){
+            currentHighlight = (currentHighlight - 1) % items.length;
+            items.removeClass('active').eq(currentHighlight).addClass('active');
+        });
+
+        $(".multi-item-carousel .right").click(function(){
+            currentHighlight = (currentHighlight + 1) % items.length;
+            items.removeClass('active').eq(currentHighlight).addClass('active');
+        });
+
+        $(".vooBtn").click(function(){
+            const iframe = $("#vooModal").find('iframe');
+            iframe.attr('src', $(this).data('link'));
+        });
+
+        $('#vooModal').on('hidden.bs.modal', function (e) {
+            const iframe = $("#vooModal").find('iframe');
+            iframe.attr('src', '');
+        })
+
+        function carouselMultiple() {
+            $('.multi-item-carousel .item').each(function(){
+                var next = $(this).next();
+                if (!next.length) next = $(this).siblings(':first');
+                next.children(':first-child').clone().appendTo($(this));
+            }).each(function(){
+                var prev = $(this).prev();
+                if (!prev.length) prev = $(this).siblings(':last');
+                prev.children(':nth-last-child(2)').clone().prependTo($(this));
+            });
+        }
+
+        function removeMultiple(){
+            let item_first = $('.multi-item-carousel .item:first-child');
+            if (item_first.find('.item__third').length > 1) {
+                item_first.find('.item__third').not(':eq(1)').remove();
+            }
+
+            let item_sec = $('.multi-item-carousel .item:nth-child(2)');
+            if (item_sec.find('.item__third').length > 1) {
+                item_sec.find('.item__third').not(':eq(1)').remove();
+            }
+
+            let item_third = $('.multi-item-carousel .item:nth-child(3)');
+            if (item_third.find('.item__third').length > 1) {
+                item_third.find('.item__third').not(':eq(1)').remove();
+            }
+
+        }
+
+        function submitWritingPlan(self) {
+            let modal = $("#writingPlanModal");
+            let name = modal.find('[name=name]').val();
+            let email = modal.find('[name=email]').val();
+            let terms = modal.find('[name=terms]:checked').length ? 1 : '';
+            let captcha = modal.find('[name=captcha]').val();
+
+            let data = {
+                name: name,
+                email: email,
+                terms: terms,
+                'g-recaptcha-response': captcha
+            };
+
+            let error_container = modal.find('.alert-danger');
+            error_container.find("li").remove();
+            self.disabled = true;
+
+            $.post("/", data).then(function(response) {
+
+                error_container.addClass('d-none');
+                window.location.href = response.redirect_link;
+
+            }).catch( error => {
+                self.disabled = false;
+                $.each(error.responseJSON, function(k, v) {
+                    let item = "<li>" + v[0] + "</li>";
+
+                    if (error_container.hasClass('d-none')) {
+                        error_container.removeClass('d-none');
+                    }
+
+                    error_container.find("ul").append(item);
+                })
+
+            } );
+
+        }
+
+        // callback function if the captcha is checked
+        function captchaCB(captcha) {
+            $("#writingPlanModal").find('[name=captcha]').val(captcha);
+        }
+    </script>
+@stop
