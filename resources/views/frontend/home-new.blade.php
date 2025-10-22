@@ -11,31 +11,43 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     </noscript>
     <link rel="stylesheet" href="{{asset('vendor/laraberg/css/laraberg.css')}}">
+    <link rel="stylesheet" href="{{ asset('/components/slick-master/slick/slick.css')  }}">
+	<link rel="stylesheet" href="{{ asset('/components/slick-master/slick/slick-theme.css')  }}">
+    <style>
+        .header-new img {
+            border-radius: 15px;
+        }
+    </style>
 @stop
 
 @section('content')
-<div class="front-page-new">
+<div class="front-page-new" id="app-container">
     <div class="header-new">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1>
+                    <h1 class="mt-0">
                         {!! trans('site.front.home.title') !!}
                     </h1>
                     <p>
                         {!! trans('site.front.home.description') !!}
                     </p>
 
-                    <a href="{{ route('front.course.index') }}" class="btn btn-red" style="margin-right: 20px">
-                        {{ trans('site.front.home.all-course') }}
+                    <a href="{{ route('front.course.show', 31) }}" class="btn btn-red" style="margin-right: 20px">
+                        {{ trans('site.front.home.all-course') }} 
                     </a>
-                    <button class="btn btn-outline-red" data-toggle="modal"
+                    {{-- <button class="btn btn-outline-red" data-toggle="modal"
                     data-target="#writingPlanModal">
+                        Gratis skrivetips
+                    </button> --}}
+                    {{-- <active-campaign-opt-in page-name="home"></active-campaign-opt-in> --}}
+                    {{-- <button class="btn btn-outline-red activeCampaignOptInBtn" data-toggle="modal"
+                        data-target="#activeCampaignOptInModal">
                         {{ trans('site.front.home.free-writing-tips') }}
-                    </button>
+                    </button> --}}
                 </div>
                 <div class="col-md-6">
-                    <img class="w-100" data-src="https://www.forfatterskolen.no/images-new/home/kristine.png" alt="kristine">
+                    <img class="w-100" data-src="{{ asset('/images/imgpsh_fullsize_anim.jpg')}}">
                 </div>
             </div>
         </div> <!-- end container -->
@@ -43,7 +55,7 @@
 
     <div class="container">
         <div class="col-md-12">
-            <div class="row first-row">
+            {{-- <div class="row first-row">
                 <div class="col-md-4">
                     <h2>
                         {!! trans('site.front.home.quality-course-count') !!}
@@ -68,7 +80,7 @@
                         {!! trans('site.front.home.mentors') !!}
                     </p>
                 </div>
-            </div> <!-- end first-row -->
+            </div> --}} <!-- end first-row -->
             
             <div class="row second-row">
                 <h2 class="w-100 text-center">
@@ -82,7 +94,7 @@
                     <div class="col-md-4">
                         <div class="content-container">
                             <div class="title">
-                                <a href="{{ url($hasNextWebinar ? '/course/17?show_kursplan=1' : $upcomingSection->link) }}" 
+                                <a href="{{ url($hasNextWebinar ? '/course/7?show_kursplan=1' : $upcomingSection->link) }}" 
                                     style="color: inherit">
                                     {{ $hasNextWebinar ? trans('site.front.next-webinar') : $upcomingSection->name }}
                                 </a>
@@ -107,45 +119,32 @@
         </div><!-- end col-md-12 -->
     </div> <!-- end container -->
 
-    <div class="popular-courses-row">
-        <div class="container">
-            <h2 class="float-left">
-                {!! trans('site.front.home.most-popular-course') !!}
-            </h2>
-            <a href="{{ route('front.course.index') }}" class="btn float-right btn-outline-maroon">
-                {{ trans('site.front.home.all-course') }}
-            </a>
-
-            <div class="clearfix"></div>
-
-            <div class="row">
-                @foreach( $popular_courses as $popular_course )
-                    <div class="col-md-4 course-container">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="image-container">
-                                    <img src="https://www.forfatterskolen.no/{{ $popular_course->course_image }}">
-                                    <span>{{ trans('site.front.course-text') }}</span>
-                                </div>
-
-                                <h3 class="font-montserrat-semibold" itemprop="headline">
-                                    {{ \Illuminate\Support\Str::limit(strip_tags($popular_course->title), 40)}}
-                                </h3>
-
-                                <p class="font-montserrat-light mt-4"
-                                    itemprop="about">{!! \Illuminate\Support\Str::limit(strip_tags($popular_course->description), 110) !!}</p>
-                                <a href="{{ route('front.course.show', $popular_course->id) }}"
-                                    class="site-btn-global rounded-0 mt-3 d-inline-block"
-                                    title="View course details" itemprop="url">
-                                    {{ trans('site.front.view') }}
-                                </a>
-                            </div>
+    <div style="background-color: #f2f2f2">
+        <div class="publishing-section">
+            <div class="publishing-title">
+                <span>
+                    {!! trans('site.front.student-testimonial.heading') !!}
+                </span>
+            </div>
+            <div class="slider" id="publishingCarousel">
+                @foreach ($publisherBooks as $book)
+                    <div class="slide">
+                        <img class="author" src="{{ $book->author_image }}"/>
+                        <div>
+                            <img style="width: 29px; margin-bottom: 14px;" src="" />
+                            <span style="font-style: italic; 
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                            font-size: 0.8rem; word-wrap: break-word;"
+                            class="addReadMore">
+                                {!! $book->description !!}
+                            </span><br>
+                            <span style="float: right; font-weight: 700;">-{{ $book->title }}</span>
                         </div>
                     </div>
                 @endforeach
             </div>
-        </div> <!-- end container -->
-    </div> <!-- end popular-courses-new -->
+        </div> <!-- end publishing-section -->
+    </div>
 
     <div class="online-courses-row">
         <div class="container">
@@ -183,7 +182,7 @@
                         {!! trans('site.front.home.meet-your-mentors-details') !!}
                     </p>
 
-                    <a href="{{ route('front.course.show', 17) }}" class="btn btn-red">
+                    <a href="{{ route('front.course.show', 7) }}" class="btn btn-red">
                         {!! trans('site.front.home.see-more-mentors') !!}
                     </a>
                 </div>
@@ -191,7 +190,7 @@
         </div> <!-- end container -->
     </div> <!-- end online-courses-row-->
 
-    <div class="testimonials-row">
+    {{-- <div class="testimonials-row">
         <div class="container">
             <h2>
                 {{ trans('site.front.student-testimonial.heading') }}
@@ -232,7 +231,46 @@
                 </div>
             </div>
         </div>
-    </div> <!-- end testimonials-row -->
+    </div> --}} <!-- end testimonials-row -->
+    <div class="popular-courses-row" style="background-color: #ffffff">
+        <div class="container">
+            <h2 class="float-left">
+                {!! trans('site.front.home.most-popular-course') !!}
+            </h2>
+            <a href="{{ route('front.course.index') }}" class="btn float-right btn-outline-maroon">
+                {{ trans('site.front.home.all-course') }}
+            </a>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+                @foreach( $popular_courses as $popular_course )
+                    <div class="col-md-4 course-container">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <img src="https://www.easywrite.se/{{ $popular_course->course_image }}">
+                                    <span>{{ trans('site.front.course-text') }}</span>
+                                </div>
+
+                                <h3 class="font-montserrat-semibold" itemprop="headline">
+                                    {{ \Illuminate\Support\Str::limit(strip_tags($popular_course->title), 40)}}
+                                </h3>
+
+                                <p class="font-montserrat-light mt-4"
+                                    itemprop="about">{!! \Illuminate\Support\Str::limit(strip_tags($popular_course->description), 110) !!}</p>
+                                <a href="{{ route('front.course.show', $popular_course->id) }}"
+                                    class="site-btn-global rounded-0 mt-3 d-inline-block"
+                                    title="View course details" itemprop="url">
+                                    {{ trans('site.front.view') }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div> <!-- end container -->
+    </div> <!-- end popular-courses-new -->
 
     <div class="professional-feedback-wrapper">
         <div class="container">
@@ -294,13 +332,16 @@
 
     </div>
 </div>
+
+@include('frontend.modals.active-campaign-opt-in')
 @stop
 @section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset('/components/slick-master/slick/slick.min.js')  }}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script> --}}
     <script>
         $(document).ready(function(){
             if ($(window).width() > 640) {
-                document.getElementById('vid').play();
+                //document.getElementById('vid').play();
             }
         });
 
@@ -322,6 +363,109 @@
                 clearTimeout(resizeId);
                 resizeId = setTimeout(()=>carousel_set($carousel), 500);
             });
+        }
+
+
+        $('#publishingCarousel').slick({
+            dots: true,
+            arrows: false,
+
+            speed: 2000,
+
+            slidesToShow: 2,
+            slidesToScroll: 1,
+
+            autoplay: true,
+            autoplaySpeed: 2000,
+
+            // Pauses autoplay on focus
+            pauseOnFocus: true,
+
+            // Pauses autoplay when a dot is hovered
+            pauseOnDotsHover: false,
+
+            // Breakpoint triggered settings
+            responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 871,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            ],
+
+            zIndex: 1000,
+        });
+
+        $(".activeCampaignOptInBtn").click(function() {
+            let modal = $("#activeCampaignOptInModal");
+            modal.find('.submitOptinBtn').removeAttr("disabled");
+            modal.find('.submitOptinBtn').find('.fa').addClass('d-none');
+
+            $.ajax({
+                type:'GET',
+                url:'/active-campaign-opt-in/form',
+                data: {},
+                success: function(data){
+                    $("#activeCampaignOptInModal").find(".form-container").html(data);
+                }
+            })
+        });
+
+        function submitOptinForm() {
+            let modal = $("#activeCampaignOptInModal");
+            let name = modal.find("[name=name]").val();
+            let email = modal.find("[name=email]").val();
+            let terms = modal.find('[name=terms]');
+
+            modal.find('.submitOptinBtn').attr("disabled", true);
+            modal.find('.submitOptinBtn').find('.fa').removeClass('d-none');
+
+            $('.validation-err').remove();
+            $.ajax({
+                type:'POST',
+                url:'/active-campaign-opt-in',
+                data: {
+                    name: name,
+                    email: email,
+                    accept_terms: terms.prop('checked')
+                },
+                success: function(data){
+                    $("#activeCampaignOptInModal").find(".form-container").html(data.view);
+                },
+                error: function (xhr, status, error) {
+                    modal.find('.submitOptinBtn').removeAttr("disabled");
+                    modal.find('.submitOptinBtn').find('.fa').addClass('d-none');
+                    if (xhr.responseJSON && xhr.responseJSON.errors) {
+                        // Access the validation errors
+                        var validationErrors = xhr.responseJSON.errors;
+
+                        // Log or display the validation errors
+                        $.each(validationErrors,function(k, v){
+                            //errList[k] = v[0];
+                            let element = $("[name="+k+"]");
+
+                            if (element.closest('.input-group').length) {
+                                element = element.closest('.input-group');
+                            }
+
+                            element.after("<small class='text-danger validation-err'>" +
+                                "<i class='fa fa-exclamation-circle'></i> " +
+                                "<span>" + v[0]+"</span></small>");
+                        });
+                    }
+                }
+            })
         }
 
         function carousel_set($carousel){
@@ -375,11 +519,11 @@
             });
         }
 
-        $(".poem-text-container").mCustomScrollbar({
+        /* $(".poem-text-container").mCustomScrollbar({
             theme: "light-thick",
             scrollInertia: 500,
 
-        });
+        }); */
 
         if ($(window).width() > 640) {
             carouselMultiple();
@@ -496,4 +640,5 @@
             $("#writingPlanModal").find('[name=captcha]').val(captcha);
         }
     </script>
+    {{-- <script src="{{ mix('/js/app.js') }}"></script> --}}
 @stop

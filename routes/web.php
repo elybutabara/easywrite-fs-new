@@ -9,19 +9,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaypalController;
 use Illuminate\Support\Facades\Route;
 
+$app_site = config('app.app_site');
 // Domains
-if (config('app.app_site') == 'no') {
-    $front = 'www.forfatterskolen.no';
-    $admin = 'admin.forfatterskolen.no';
-    $editor = 'editor.forfatterskolen.no';
-} elseif (config('app.app_site') == 'localhost') {
-    $front = 'forfatterskolen.local';
-    $admin = 'admin.forfatterskolen.local';
-    $editor = 'editor.forfatterskolen.local';
-} elseif (config('app.app_site') == 'dev.no') {
-    $front = 'dev.forfatterskolen.no';
-    $admin = 'admin.dev.forfatterskolen.no';
-    $editor = 'editor.dev.forfatterskolen.no';
+if($app_site == 'se'){
+    $front = 'www.easywrite.se';
+    $admin = 'admin.easywrite.se';
+    $editor = 'editor.easywrite.se';
+} else {
+    $front = 'easywrite-fs.local';
+    $admin = 'admin.easywrite-fs.local';
+    $editor = 'editor.easywrite-fs.local';
 }
 
 // get/set the locale

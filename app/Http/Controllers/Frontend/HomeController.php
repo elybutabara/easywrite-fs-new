@@ -108,9 +108,12 @@ class HomeController extends Controller
 
         $upcomingSections = UpcomingSection::all();
 
+        $publisherBooks = PublisherBook::select(['*', \DB::raw('IF(display_order > 0, display_order, 1000000) display_order')])
+            ->orderBy('display_order', 'asc')->get();
+
         return view('frontend.home-new', compact('popular_courses', 'free_courses', 'free_webinars',
             'next_webinar', 'next_free_webinar', 'next_workshop', 'latest_blog', 'poems', 'testimonials', 'workshop',
-            'upcomingSections'));
+            'upcomingSections', 'publisherBooks'));
     }
 
     public function sampleAbout()
