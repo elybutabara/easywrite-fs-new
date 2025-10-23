@@ -94,7 +94,7 @@ class PrivateGroupDiscussionRepliesController extends Controller
 
     private function sendDiscussionRepliesEmail($email_data)
     {
-        AdminHelpers::send_email('Discussion', 'post@forfatterskolen.no', $email_data['receiver_email'],
+        AdminHelpers::send_email('Discussion', 'post@easywrite.se', $email_data['receiver_email'],
             view('emails.discussion_replies', compact('email_data')));
     }
 

@@ -596,7 +596,7 @@ Warning: This cannot be undone.',
 
 <p>Vi hos Forfatterskolen har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe flere. Er du den neste? </p>
 
-<p>Send oss en mail, da vel: <a href="mailto:post@forfatterskolen.no" class="text-theme">post@forfatterskolen.no</a>. Vi ser frem til å høre fra deg! </p>
+<p>Send oss en mail, da vel: <a href="mailto:post@easywrite.se" class="text-theme">post@easywrite.se</a>. Vi ser frem til å høre fra deg! </p>
 
 <p>Skriveglad hilsen fra Team Forfatterskolen</p>',
             'first-description' => 'Inspirerende rektor',
@@ -609,7 +609,7 @@ Warning: This cannot be undone.',
             'save-data-title' => 'Dine data, dine valg',
             'save-data-description' => 'Forfatterskolen er den som behandler dine data. Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
             'send' => 'Send',
-            'mail' => 'post@forfatterskolen.no',
+            'mail' => 'post@easywrite.se',
             'address' => 'Lihagen 21, 3029 Drammen',
         ],
         'shop-manuscript' => [
@@ -805,7 +805,7 @@ NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
         'faq' => [
             'title' => 'Svar på dine spørsmål om kurset',
             'person' => 'Alt godt, _break_ Rektor Kristine',
-            'person-details' => 'PS! Lurer du på noe mer, eller noe helt annet? _break_ Ikke nøl med å sende meg en mail: _start_link_ post@forfatterskolen.no _end_link_',
+            'person-details' => 'PS! Lurer du på noe mer, eller noe helt annet? _break_ Ikke nøl med å sende meg en mail: _start_link_ post@easywrite.se _end_link_',
         ],
         'support' => [
             'instructions' => 'Instructions',

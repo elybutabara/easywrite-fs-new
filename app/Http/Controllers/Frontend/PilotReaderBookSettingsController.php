@@ -152,7 +152,7 @@ class PilotReaderBookSettingsController extends Controller
             $to = $email_data['receiver_email'];
 
             AdminHelpers::send_mail($to, $subject,
-                view('emails.invitation', compact('email_data')), 'no-reply@forfatterskolen.no');
+                view('emails.invitation', compact('email_data')), 'post@easywrite.se');
 
         }
         \DB::commit();

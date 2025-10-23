@@ -61,7 +61,7 @@ class User extends Authenticatable
     protected function admins($query)
     {
         return $query->whereIn('role', [1, 3, 4])
-            ->where('id', '!=', 1376); // 1376 is the id of sven.inge@forfatterskolen.no
+            ->where('id', '!=', 1376); // 1376 is the id of post@easywrite.se
     }
 
     public function getAddressAttribute()

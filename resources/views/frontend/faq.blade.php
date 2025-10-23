@@ -102,7 +102,7 @@
                         </h2>
                         <p>
                             {!! str_replace(['_break_', '_start_link_', '_end_link_'],
-                            ['<br/>', '<a href="mailto:post@forfatterskolen.no" class="theme-text">', '</a>'],
+                            ['<br/>', '<a href="mailto:post@easywrite.se" class="theme-text">', '</a>'],
                             trans('site.front.faq.person-details')) !!}
                         </p>
                     </div>

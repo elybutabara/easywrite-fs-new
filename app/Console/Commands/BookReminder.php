@@ -63,7 +63,7 @@ class BookReminder extends Command
                     ];
 
                     AdminHelpers::send_mail($to, $subject,
-                        view('emails.book_reminder', compact('email_data')), 'no-reply@forfatterskolen.no');
+                        view('emails.book_reminder', compact('email_data')), 'post@easywrite.se');
                 }
             }
         }

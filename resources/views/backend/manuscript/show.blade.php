@@ -146,7 +146,7 @@
               ?>
             <textarea name="message" class="form-control editor" required rows="8">{{ $emailTemplate ? $replace_content : '' }}</textarea>
           </div>
-            <input type="hidden" name="from_email" value="{{ $emailTemplate ? $emailTemplate->from_email : 'post@forfatterskolen.no' }}">
+            <input type="hidden" name="from_email" value="{{ $emailTemplate ? $emailTemplate->from_email : 'post@easywrite.se' }}">
           <div class="text-right margin-top">
             <button type="submit" class="btn btn-primary">Send</button>
           </div>

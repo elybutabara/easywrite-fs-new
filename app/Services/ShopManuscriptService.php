@@ -620,7 +620,7 @@ class ShopManuscriptService
 
         $message = $user->full_name.' submitted a manuscript for shop manuscript '.$shopManuscript->title;
         $headEditor = User::where('head_editor', 1)->first();
-        $to = $headEditor->email; // 'Camilla@forfatterskolen.no'; head editor email
+        $to = $headEditor->email; // 'post@easywrite.se'; head editor email
         $emailData = [
             'email_subject' => 'New manuscript submitted for shop manuscript',
             'email_message' => $message,

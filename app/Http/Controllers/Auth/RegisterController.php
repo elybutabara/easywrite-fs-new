@@ -51,7 +51,7 @@ class RegisterController extends Controller
 
         // mail($user->email, 'Velkommen til Forfatterskolen', view('emails.registration', compact('actionText', 'actionUrl', 'user')), $headers);
         /*AdminHelpers::send_email('Velkommen til Forfatterskolen',
-            'post@forfatterskolen.no', $user->email, view('emails.registration', compact('actionText', 'actionUrl', 'user')));*/
+            'post@easywrite.se', $user->email, view('emails.registration', compact('actionText', 'actionUrl', 'user')));*/
 
         $to = $user->email; //
         $emailData = [
@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'email_subject' => 'Velkommen til Forfatterskolen - Bekreft e-post',
             'email_message' => view('emails.verify_email', compact('verificationUrl', 'user'))->render(),
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => NULL
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

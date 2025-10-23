@@ -226,8 +226,8 @@
 									<td>{!! nl2br($log->message) !!}</td>
 									<td>{{ $log->date_sent }}</td>
 									<td>
-										{{ $log->from_name ?: 'Forfatterskolen' }} <br>
-										{{ $log->from_email ?: 'post@forfatterskolen.no' }}
+                                                                                {{ $log->from_name ?: 'Forfatterskolen' }} <br>
+                                                                                {{ $log->from_email ?: 'post@easywrite.se' }}
 									</td>
 									<td>
 										<a href="{{ asset($log->attachment) }}" download>

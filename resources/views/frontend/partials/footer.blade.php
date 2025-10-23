@@ -23,7 +23,7 @@
 					<h6>KONTAKT OSS</h6>
 					<ul>
 						<li><i class="fa fa-map-marker"></i> Postboks 9233, 3028 Drammen</li>
-						<li><i class="fa fa-at"></i> post@forfatterskolen.no</li>
+                                                <li><i class="fa fa-at"></i> post@easywrite.se</li>
 						<li><i class="fa fa-phone"></i> +47 411 23 555</li>
 					</ul>
 				</div>

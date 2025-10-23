@@ -104,7 +104,7 @@
                                     </p>
                                     <p>
                                         <i class="fa fa-envelope"></i>
-                                        <a href="mailto:post@forfatterskolen.no" class="theme-text">post@forfatterskolen.no</a>
+                                        <a href="mailto:post@easywrite.se" class="theme-text">post@easywrite.se</a>
                                     </p>
                                     {{--<p>
                                         <i class="sprite telephone"></i>

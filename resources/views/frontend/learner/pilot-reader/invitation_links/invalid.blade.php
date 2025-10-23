@@ -9,7 +9,7 @@
                        <h1 class="card-title font-weight-light with-border-b pb-2 mt-0">Invalid Invitation Link</h1>
                         <p class="font-weight-light margin-top">
                             Sorry. This is an invalid invitation link. If you believe this is an error, please email us
-                            and leave your feedback on <a href="#">help@forfatterskolen.no</a>
+                            and leave your feedback on <a href="#">post@easywrite.se</a>
                         </p>
                     </div>
                 </div>

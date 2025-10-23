@@ -66,7 +66,7 @@ class ResetPasswordController extends Controller
 
             // mail($request->reset_email, 'Forespørsel om å tilbakestille passordet ditt', view('emails.passwordreset', compact('actionText', 'actionUrl', 'level')), $headers);
             /*AdminHelpers::send_email('Forespørsel om å tilbakestille passordet ditt',
-                'postmail@forfatterskolen.no', $request->reset_email, view('emails.passwordreset', compact('actionText', 'actionUrl', 'level')));*/
+                'post@easywrite.se', $request->reset_email, view('emails.passwordreset', compact('actionText', 'actionUrl', 'level')));*/
             $to = $request->reset_email; //
             $emailData = [
                 'email_subject' => 'Forespørsel om å tilbakestille passordet ditt',
