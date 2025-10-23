@@ -122,7 +122,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('front.course.show', 17)}}" class="nav-link"
+                            <a href="{{route('front.course.show', 7)}}" class="nav-link"
                             title="Mentormøter">
                                 Mentormøter
                             </a>

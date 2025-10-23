@@ -23,7 +23,7 @@ class CheckAutoRenewCourses
         if (auth()->check()) {
             foreach (Auth::user()->coursesTaken as $courseTaken) {
                 $package = Package::find($courseTaken->package_id);
-                if ($package && $package->course_id == 17 && $courseTaken->started_at) {
+                if ($package && $package->course_id == 7 && $courseTaken->started_at) {
 
                     $checkDate = date('Y-m-d', strtotime($courseTaken->started_at));
                     if ($courseTaken->end_date) {

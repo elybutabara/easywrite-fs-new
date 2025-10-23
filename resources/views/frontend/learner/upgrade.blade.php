@@ -269,7 +269,7 @@
                             $expiredDate = '';
                             foreach ($coursesTaken as $courseTaken) {
                                 $package = \App\Package::find($courseTaken->package_id);
-                                if ($package && $package->course_id == 17) {
+                                if ($package && $package->course_id == 7) {
                                     $expiredDate = $courseTaken->end_date;
                                 }
                             }

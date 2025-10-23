@@ -102,7 +102,7 @@ class PageController extends Controller
             ->where('status', 1)->orderBy('created_at', 'desc')->get();
 
         $singleCourses = Course::where('type', 'Single')
-            ->where('id', '!=', 17)
+            ->where('id', '!=', 7)
             ->where('is_free', 0)
             ->get()->pluck('id');
         // $singleCourses = [36, 37, 57, 48, 56, 50, 44, 49, 64];

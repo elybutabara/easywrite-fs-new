@@ -167,7 +167,7 @@ class User extends Authenticatable
 
     public function coursesTakenNotOld2(): HasMany
     {
-        $webinarPakkePackages = Course::find(17)->packages()->pluck('id')->toArray();
+        $webinarPakkePackages = Course::find(7)->packages()->pluck('id')->toArray();
 
         return $this->hasMany(\App\CoursesTaken::class)
             ->where(function ($query) {

@@ -255,7 +255,7 @@
 						@endif
 						<li class="nav-item">
 							<a data-toggle="tab" href="#kursplan" class="nav-link" role="tab">
-								<span>{{ $course->id == 17 ? trans('site.front.our-course.show.scheduled-webinars') :
+								<span>{{ $course->id == 7 ? trans('site.front.our-course.show.scheduled-webinars') :
 								'Kursplan' }}</span> <!-- check if webinar-pakke -->
 							</a>
 						</li>
@@ -365,7 +365,7 @@
 						@endif
 
 						<div id="kursplan" class="tab-pane fade" role="tabpanel">
-							@if ($course->id == 17)
+							@if ($course->id == 7)
                                 <?php
                                 $webinars = $course->webinars()->active()->notReplay()->get();
                                 ?>

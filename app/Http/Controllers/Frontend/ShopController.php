@@ -451,7 +451,7 @@ class ShopController extends Controller
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -824,7 +824,7 @@ class ShopController extends Controller
                 }
             }
 
-            if ($package->course->id == 17) { // check if webinar-pakke
+            if ($package->course->id == 7) { // check if webinar-pakke
                 $add_to_automation++;
             }
 
@@ -1089,7 +1089,7 @@ class ShopController extends Controller
         }
 
         // check if webinar-pakke
-        if ($course_id == 17) {
+        if ($course_id == 7) {
             $course = Course::findOrFail($course_id);
             $course_packages = $course->packages->pluck('id')->toArray();
             $courseTaken = CoursesTaken::where('user_id', Auth::user()->id)->whereIn('package_id', $course_packages)->first();
@@ -1406,7 +1406,7 @@ class ShopController extends Controller
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -1561,7 +1561,7 @@ class ShopController extends Controller
         }
 
         // check if webinar-pakke
-        if ($course_id == 17) {
+        if ($course_id == 7) {
             $course = Course::findOrFail($course_id);
             $course_packages = $course->packages->pluck('id')->toArray();
             $courseTaken = CoursesTaken::where('user_id', Auth::user()->id)->whereIn('package_id', $course_packages)->first();
@@ -1825,7 +1825,7 @@ class ShopController extends Controller
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -2020,7 +2020,7 @@ class ShopController extends Controller
                     $courseTaken->started_at = Carbon::now();
 
                     // check if webinar-pakke or not to specify the correct end date
-                    $courseTaken->end_date = ($course_id == 17) ? Carbon::now()->addMonth(1) : Carbon::now()->addYear(1);
+                    $courseTaken->end_date = ($course_id == 7) ? Carbon::now()->addMonth(1) : Carbon::now()->addYear(1);
                 }
 
                 $courseTaken->save();

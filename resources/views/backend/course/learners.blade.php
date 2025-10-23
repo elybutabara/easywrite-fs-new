@@ -113,7 +113,7 @@
 			@endif
 
 			{{-- for webinar pakke only --}}
-			@if (/*$hasActiveUsers*/ $course->id == 17)
+			@if (/*$hasActiveUsers*/ $course->id == 7)
 				<a href="{{ route('learner.course.learner-active-list-excel', $course->id) }}" class="btn btn-info margin-bottom">{{ trans('site.export-active-learners') }}</a>
 				<button class="btn btn-primary margin-bottom" data-toggle="modal" data-target="#expirationEmailReminder">
 					Expiration Email Reminder

@@ -69,7 +69,7 @@ class LessonController extends Controller
 
         $reqFields = $otherCourseReqFields;
 
-        if ($course_id == 17) {
+        if ($course_id == 7) {
             $reqFields = $webinarPakkeReqFields;
         }
 
@@ -131,7 +131,7 @@ class LessonController extends Controller
 
         $reqFields = $otherCourseReqFields;
 
-        if ($course_id == 17 && $id > 169) {
+        if ($course_id == 7 && $id > 169) {
             $reqFields = $webinarPakkeReqFields;
         }
 

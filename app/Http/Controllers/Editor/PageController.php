@@ -41,7 +41,7 @@ class PageController extends Controller
         $corrections = Auth::user()->assignedCorrections;
         $copyEditings = Auth::user()->assignedCopyEditing;
         $singleCourses = Course::where('type', 'Single')
-            ->where('id', '!=', 17)
+            ->where('id', '!=', 7)
             ->where('is_free', 0)
             ->get()->pluck('id');
         $assignedAssignmentManuscripts = AssignmentManuscript::where('editor_id', Auth::user()->id) // assigned manuscript no group

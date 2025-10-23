@@ -536,7 +536,7 @@ class LearnerController extends Controller
             ->join('webinars', 'courses.id', '=', 'webinars.course_id')
             ->select('webinars.*', 'courses_taken.id as courses_taken_id', 'courses.title as course_title')
             ->where('user_id', Auth::user()->id)
-            ->where('courses.id', 17) // just added this line to show all webinar pakke webinars
+            ->where('courses.id', 7) // just added this line to show all webinar pakke webinars
             ->where(function ($query) {
                 $query->whereIn('webinars.id', [24, 25, 31]);
                 $query->orWhere('set_as_replay', 1);
@@ -586,7 +586,7 @@ class LearnerController extends Controller
         $replayWebinars = DB::table('lesson_contents')->select('lesson_contents.*')
             ->leftJoin('lessons', 'lesson_contents.lesson_id', '=', 'lessons.id')
             ->leftJoin('courses', 'lessons.course_id', '=', 'courses.id')
-            ->where('courses.id', '=', 17)
+            ->where('courses.id', '=', 7)
             ->whereIn('courses.id', $courses);
 
         if ($request->exists('search_replay')) {
@@ -611,8 +611,8 @@ class LearnerController extends Controller
                 DB::raw('TIMESTAMPDIFF(HOUR, NOW(), webinars.start_date) as diffWithHours')
             )
             ->where('user_id', Auth::user()->id)
-            ->where('courses.id', 17) // just added this line to show all webinar pakke webinars
-            ->whereNotIn('webinars.id', [24, 25, 31])
+            ->where('courses.id', 7) // just added this line to show all webinar pakke webinars
+            //->whereNotIn('webinars.id', [24, 25, 31])
             ->where('set_as_replay', 0)
             ->whereNull('courses_taken.deleted_at');
 
@@ -790,24 +790,25 @@ class LearnerController extends Controller
                 DB::raw('TIMESTAMPDIFF(HOUR, NOW(), webinars.start_date) as diffWithHours')
             )
             ->where('user_id', Auth::user()->id)
-            ->where('courses.id', '!=', 17) // just added this line to show all webinar pakke webinars
+            ->where('courses.id', '!=', 7) // just added this line to show all webinar pakke webinars
             ->whereNull('courses_taken.deleted_at');
 
         if ($request->exists('search_upcoming')) {
-            $webinars = $webinars->whereNotIn('webinars.id', [24, 25, 31])
+            //->whereNotIn('webinars.id', [24, 25, 31])
+            $webinars = $webinars
                 ->where('webinars.start_date', '>=', Carbon::today())
                 ->where('webinars.title', 'LIKE', '%'.$request->search_upcoming.'%')
                 ->where('set_as_replay', 0);
         } else {
             $webinars = $webinars->where(function ($query) {
                 $query->where(function ($subQuery) {
-                    $subQuery->whereIn('webinars.id', [24, 25, 31]);
-                    $subQuery->orWhere('set_as_replay', 1);
+                    //$subQuery->whereIn('webinars.id', [24, 25, 31]);
+                    $subQuery->where('set_as_replay', 1);
                 });
 
                 $query->orWhere(function ($subQuery) {
-                    $subQuery->whereNotIn('webinars.id', [24, 25, 31])
-                        ->where('set_as_replay', 0);
+                    /* ->whereNotIn('webinars.id', [24, 25, 31]) */
+                    $subQuery->where('set_as_replay', 0);
                 });
             });
         }
@@ -2198,7 +2199,7 @@ class LearnerController extends Controller
 
         $coursesTaken = CoursesTaken::where('user_id', $user->id)
             ->whereDoesntHave('package.course', function ($query) {
-                $query->where('id', 17); // Exclude course with ID 17
+                $query->where('id', 7); // Exclude course with ID 17
             })
             ->latest('created_at')
             ->get();
@@ -3660,12 +3661,12 @@ class LearnerController extends Controller
         $monthDate = \Carbon\Carbon::now()->format('Y-m-d');
         // get courses taken by end date
         $coursesTaken = Auth::user()->coursesTaken()->whereHas('package', function ($query) {
-            $query->where('course_id', 17);
+            $query->where('course_id', 7);
         })->whereNotNull('end_date')->where('end_date', '<=', $monthDate)->get();
 
         // get courses taken by started at field
         $coursesTakenByStartDate = Auth::user()->coursesTaken()->whereHas('package', function ($query) {
-            $query->where('course_id', 17);
+            $query->where('course_id', 7);
         })
             ->whereNotNull('started_at')
             ->whereNull('end_date')
@@ -3791,7 +3792,7 @@ class LearnerController extends Controller
         $coursesTaken = Auth::user()->coursesTaken;
         foreach ($coursesTaken as $courseTaken) {
             $package = Package::find($courseTaken->package_id);
-            if ($package && $package->course_id == 17) { // check if webinar pakke
+            if ($package && $package->course_id == 7) { // check if webinar pakke
                 $course_id = $courseTaken->id;
                 $webinarPakkeCourse = CoursesTaken::find($course_id);
 
@@ -4211,7 +4212,7 @@ class LearnerController extends Controller
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -5818,7 +5819,7 @@ class LearnerController extends Controller
     public function autoRegisterCourseWebinar(Request $request)
     {
         $user = Auth::user();
-        $course_id = 17; // webinar-pakke course
+        $course_id = 7; // webinar-pakke course
 
         $autoRenewToCourse = UserAutoRegisterToCourseWebinar::firstOrCreate([
             'user_id' => $user->id,

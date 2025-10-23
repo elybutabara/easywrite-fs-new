@@ -92,7 +92,7 @@ class HomeController extends Controller
         $free_courses = FreeCourse::orderBy('created_at', 'desc')->get();
         $free_webinars = FreeWebinar::all();
 
-        $webinar_pakke = Course::find(17);
+        $webinar_pakke = Course::find(7);
         $next_webinar = $webinar_pakke->webinars()->where('start_date', '>=', Carbon::today())
             ->where('set_as_replay', 0)->first();
         $next_free_webinar = FreeWebinar::where('start_date', '>=', Carbon::today())->orderBy('start_date', 'ASC')->first();
@@ -1339,7 +1339,7 @@ class HomeController extends Controller
      */
     public function optInThanks($slug = null)
     {
-        $webinar_pakke = Course::find(17);
+        $webinar_pakke = Course::find(7);
         $next_webinars = $webinar_pakke->webinars()->where('start_date', '>=', Carbon::today())
             ->where('set_as_replay', 0)->get();
 
@@ -1632,7 +1632,7 @@ class HomeController extends Controller
 
         foreach (Auth::user()->coursesTaken as $courseTaken) {
             $package = Package::find($courseTaken->package_id);
-            if ($package && $package->course_id == 17) {
+            if ($package && $package->course_id == 7) {
 
                 $checkDate = date('Y-m-d', strtotime($courseTaken->started_at));
                 if ($courseTaken->end_date) {

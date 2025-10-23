@@ -491,7 +491,7 @@ class CourseService
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -569,7 +569,7 @@ class CourseService
             }
         }
 
-        if ($package->course->id == 17) { // check if webinar-pakke
+        if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 

@@ -120,7 +120,7 @@
 </div>
 
 <!-- check if not webinar-pakke -->
-@if ($course->id !== 17)
+@if ($course->id !== 7)
     <div class="content-tools-container">
         <div class="container">
             {{--<div data-editable data-name="main_content">

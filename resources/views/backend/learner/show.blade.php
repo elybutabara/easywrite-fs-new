@@ -298,7 +298,7 @@
 								: ($courseTaken->started_at ? \Carbon\Carbon::parse($courseTaken->started_at)->addYear(1)->format('M d, Y') : '') }}
 												{{--@endif--}}
 
-												@if ($courseTaken->package->course->id != 17)
+												@if ($courseTaken->package->course->id != 7)
 													<br>
 													Is Pay Later: {{ $courseTaken->is_pay_later ? 'Yes' : 'No' }}
 												@endif
@@ -315,7 +315,7 @@
 													</button>
 												@endif
 
-												@if ($courseTaken->package->course->id == 17)
+												@if ($courseTaken->package->course->id == 7)
 													<br>
 													<label>Send Expiry Reminder:</label>
 													<input type="checkbox" data-toggle="toggle" data-on="Yes"
@@ -383,7 +383,7 @@
 												data-course-title="{{$courseTaken->package->course->title}}">{{ trans('site.delete-from-course') }}</button>
 											</div>
 
-											@if ($courseTaken->package->course->id == 17)
+											@if ($courseTaken->package->course->id == 7)
 												<div class="margin-top">
 													<button class="btn btn-xs btn-info renewCourseBtn" data-toggle="modal"
 													data-target="#renewCourseModal"
@@ -1042,7 +1042,7 @@
 													}
 												} */
 											} else {
-												if ($assignment->course_id === 17) {
+												if ($assignment->course_id === 7) {
 													if (\Carbon\Carbon::parse($assignment->submission_date)->greaterThan(\Carbon\Carbon::now()->subMonths(3))) {
 														$assignments[] = $assignment;
 													}

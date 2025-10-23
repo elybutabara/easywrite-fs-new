@@ -816,7 +816,7 @@ class LearnerController extends Controller
             $user_name = $courseTaken->user->first_name;
 
             // check if webinar-pakke and add to automation
-            if ($courseTaken->package->course->id == 17) {
+            if ($courseTaken->package->course->id == 7) {
                 AdminHelpers::addToAutomation($user_email, $automation_id, $user_name);
             }
 
@@ -1180,7 +1180,7 @@ class LearnerController extends Controller
         $courseTaken = CoursesTaken::findOrFail($id);
 
         // check if the course to update is Webinar pakke then update all the courses end date
-        if ($courseTaken->package->course_id == 17) {
+        if ($courseTaken->package->course_id == 7) {
             $userCourses = CoursesTaken::where('user_id', $courseTaken->user_id);
             $userCourses->update(['end_date' => $request->end_date]);
 
@@ -2457,7 +2457,7 @@ class LearnerController extends Controller
     public function autoRegisterCourseWebinar($user_id, Request $request)
     {
         $user = User::find($user_id);
-        $course_id = 17; // webinar-pakke course
+        $course_id = 7; // webinar-pakke course
 
         $autoRenewToCourse = UserAutoRegisterToCourseWebinar::firstOrCreate([
             'user_id' => $user->id,

@@ -90,7 +90,7 @@
                                     </div>
                                 @endif
 
-                                <a href="{{ url($hasNextWebinar ? '/course/17?show_kursplan=1' : $upcomingSection->link) }}" class="btn buy-btn mt-4"
+                                <a href="{{ url($hasNextWebinar ? '/course/7?show_kursplan=1' : $upcomingSection->link) }}" class="btn buy-btn mt-4"
                                    title="View course plan tab on course">
                                     {{ $hasNextWebinar ? trans('site.front.see-complete-list') : $upcomingSection->link_label }}
                                 </a>

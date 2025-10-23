@@ -335,6 +335,6 @@ class Course extends Model
 
     public function getIsWebinarPakkeAttribute()
     {
-        return $this->attributes['id'] === 17 ? true : false;
+        return $this->attributes['id'] === 7 ? true : false;
     }
 }

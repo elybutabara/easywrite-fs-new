@@ -52,7 +52,7 @@ class CourseExpirationReminder extends Command
 
         // get courses taken by end date
         $coursesTaken = CoursesTaken::whereHas('package', function ($query) {
-            $query->where('course_id', 17);
+            $query->where('course_id', 7);
         })->whereHas('user', function ($query) {
             $query->where('auto_renew_courses', 0);
         })
@@ -64,7 +64,7 @@ class CourseExpirationReminder extends Command
 
         // get courses taken by started at field
         $coursesTakenByStartDate = CoursesTaken::whereHas('package', function ($query) {
-            $query->where('course_id', 17);
+            $query->where('course_id', 7);
         })->whereHas('user', function ($query) {
             $query->where('auto_renew_courses', 0);
         })
