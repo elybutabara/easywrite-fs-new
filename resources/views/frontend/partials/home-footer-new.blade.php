@@ -208,7 +208,7 @@
                 </p>
 
                 <h2>
-                    post@forfatterskolen.no
+                    post@easywrite.se
                 </h2>
             </div>
             <div class="col-md-3">

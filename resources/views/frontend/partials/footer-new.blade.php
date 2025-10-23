@@ -98,7 +98,7 @@
                     <img data-src="https://www.forfatterskolen.no/images-new/email-envelope.png" alt="envelope icon">
                     <div class="mt-4 h2">E-post</div>
                     <p class="mt-4">
-                        post@forfatterskolen.no
+                        post@easywrite.se
                     </p>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">

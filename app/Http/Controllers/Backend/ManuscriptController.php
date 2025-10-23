@@ -166,7 +166,7 @@ class ManuscriptController extends Controller
         return redirect()->back();
 
         // Send welcome email
-        /*$headers = "From: Forfatterskolen<post@forfatterskolen.no>\r\n";
+        /*$headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

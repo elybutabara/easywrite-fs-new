@@ -55,7 +55,7 @@ class PackageWorkshopController extends Controller
             $emailData['attach_file'] = null;
 
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
-            // AdminHelpers::send_email($workshop->email_title, 'elin@forfatterskolen.no', $to, nl2br($workshop->email_body));
+            // AdminHelpers::send_email($workshop->email_title, 'post@easywrite.se', $to, nl2br($workshop->email_body));
         }
 
         $workshopTaken->save();

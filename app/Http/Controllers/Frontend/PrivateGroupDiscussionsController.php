@@ -119,7 +119,7 @@ class PrivateGroupDiscussionsController extends Controller
 
     private function sendDiscussionEmail($email_data)
     {
-        AdminHelpers::send_email('Discussion', 'post@forfatterskolen.no', $email_data['receiver_email'],
+        AdminHelpers::send_email('Discussion', 'post@easywrite.se', $email_data['receiver_email'],
             view('emails.discussion', compact('email_data')));
     }
 

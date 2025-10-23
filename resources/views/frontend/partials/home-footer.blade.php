@@ -27,7 +27,7 @@
 
                 <p>
                     <i class="icons envelope"></i><span class="font-montserrat-semibold text-uppercase">E-post:</span>
-                    <span class="font-montserrat-light">post@forfatterskolen.no</span>
+                    <span class="font-montserrat-light">post@easywrite.se</span>
                 </p>
 
                 {{--<p>

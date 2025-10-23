@@ -32,7 +32,7 @@
     </tr>
     <tr>
         <td style="padding-top: .3rem">
-            Hvis du mottok denne meldingen ved en feil, kan du se bort fra denne e-posten. Hvis du har spørsmål, vennligst gi oss beskjed via:  <strong>post@forfatterskolen.no</strong>.
+            Hvis du mottok denne meldingen ved en feil, kan du se bort fra denne e-posten. Hvis du har spørsmål, vennligst gi oss beskjed via:  <strong>post@easywrite.se</strong>.
         </td>
     </tr>
 </table>

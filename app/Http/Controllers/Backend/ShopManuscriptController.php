@@ -369,14 +369,14 @@ class ShopManuscriptController extends Controller
 
             /*\Mail::to($to)->queue(new SubjectBodyEmail($emailData));
 
-            $this->saleService->createEmailHistory($subject, 'postmail@forfatterskolen.no', $email_body,
+            $this->saleService->createEmailHistory($subject, 'post@easywrite.se', $email_body,
                 'shop-manuscripts-taken-expected-finish', $shopManuscriptTakenID);*/
 
             dispatch(new AddMailToQueueJob($to, $subject, $email_body, 'post@easywrite.se', null, null,
                 'shop-manuscripts-taken-expected-finish', $shopManuscriptTakenID));
 
             // mail($to, 'Forventet dato for tilbakemelding', $email_body, $headers);
-            // AdminHelpers::send_email('Forventet dato for tilbakemelding', 'post@forfatterskolen.no', $to, $email_body);
+            // AdminHelpers::send_email('Forventet dato for tilbakemelding', 'post@easywrite.se', $to, $email_body);
         }
 
         return redirect()->back();
@@ -621,7 +621,7 @@ class ShopManuscriptController extends Controller
 
     public function testEmail()
     {
-        /*AdminHelpers::send_email('Subject','post@forfatterskolen.no','elybutabara@yahoo.com','this is a test only');
+        /*AdminHelpers::send_email('Subject','post@easywrite.se','elybutabara@yahoo.com','this is a test only');
         echo "<br/>sent";*/
 
         $message = 'Inquiry Message'.PHP_EOL;

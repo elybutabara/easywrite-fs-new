@@ -233,7 +233,7 @@ class PrivateGroupMembersController extends Controller
             $subject = 'Invitation';
 
             AdminHelpers::send_mail($to, $subject,
-                view('emails.group_invitation', compact('email_data')), 'no-reply@forfatterskolen.no');
+                view('emails.group_invitation', compact('email_data')), 'post@easywrite.se');
 
         }
         DB::commit();

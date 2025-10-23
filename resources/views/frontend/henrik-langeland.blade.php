@@ -351,7 +351,7 @@
 
                             <p class="mt-4 mb-0">
                                 <span class="font-montserrat-medium">Alle spørsmål kan rettes til:</span>
-                                <a href="mailto:post@forfatterskolen.no">post@forfatterskolen.no</a>
+                                <a href="mailto:post@easywrite.se">post@easywrite.se</a>
                             </p>
                         </div>
                     </div>
@@ -372,7 +372,7 @@
 
                         <p class="mt-4 mb-0">
                             Send bindende påmelding via lenken under (dersom du får problemer med bestillingen, ta
-                            kontakt med <a href="mailto: support@forfatterskolen.no"> support@forfatterskolen.no</a>)
+                            kontakt med <a href="mailto: post@easywrite.se"> post@easywrite.se</a>)
                         </p>
                     </div>
                 </div>
