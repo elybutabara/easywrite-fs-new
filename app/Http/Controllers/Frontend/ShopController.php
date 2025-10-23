@@ -1904,7 +1904,7 @@ class ShopController extends Controller
 
     }
 
-    public function thankyou(Request $request, CourseService $courseService): View
+    public function thankyou( Request $request, CourseService $courseService )
     {
 
         // check if from svea payment
@@ -1913,18 +1913,19 @@ class ShopController extends Controller
             $order_id = $request->input('svea_ord') ?? $request->input('pl_ord');
             $order = Order::find($order_id);
 
-            Log::info('has svea_ord or pl_ord order_id = '.$order_id);
             if ($request->has('svea_ord')) {
-                Log::info('inside has SVEA order '.$order_id);
+                Log::info('inside has SVEA order ' . $order_id);
                 SveaUpdateOrderDetailsJob::dispatch($order->id)->delay(Carbon::now()->addMinute(1));
             }
-
+            
             // add course to user
-            if (! $order->is_processed) {
+            if (!$order->is_processed) {
 
                 if ($order->type === 6) {
                     $courseTaken = $courseService->upgradeCourseTaken($order);
                     $courseService->notifyUserForUpgrade($order, $courseTaken);
+                } elseif ($order->type === 11) {
+                    $courseService->renewSubscription($order);
                 } else {
                     $courseTaken = $courseService->addCourseToLearner($order->user_id, $order->package_id);
                     $courseTaken->is_pay_later = $order->is_pay_later;
@@ -1943,9 +1944,9 @@ class ShopController extends Controller
             CheckoutLog::updateOrCreate([
                 'user_id' => \auth()->id(),
                 'parent' => 'course',
-                'parent_id' => $order->package->course_id,
+                'parent_id' => $order->package->course_id
             ], [
-                'is_ordered' => true,
+                'is_ordered' => true
             ]);
         }
 
@@ -1953,8 +1954,8 @@ class ShopController extends Controller
         // this is set when vipps payment is cancelled
         if ($request->has('iu')) {
             $fikenUrl = decrypt($request->get('iu'));
-            $fiken = new FikenInvoice;
-            $fikenInvoice = $fiken->get_invoice_data($fikenUrl);
+            $fiken = new FikenInvoice();
+            $fikenInvoice   = $fiken->get_invoice_data($fikenUrl);
             $fiken->send_invoice($fikenInvoice);
         }
 
@@ -1963,7 +1964,6 @@ class ShopController extends Controller
         if ($request->has('pl_ord')) {
             return view('frontend.shop.pay_later_thankyou');
         }
-
         return view('frontend.shop.thankyou');
     }
 

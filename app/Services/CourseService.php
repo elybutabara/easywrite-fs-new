@@ -15,6 +15,7 @@ use App\Http\FrontendHelpers;
 use App\Jobs\AddMailToQueueJob;
 use App\Jobs\AddToListJob;
 use App\Jobs\CourseOrderJob;
+use App\Mail\SubjectBodyEmail;
 use App\Order;
 use App\Package;
 use App\PaymentPlan;
@@ -584,6 +585,67 @@ class CourseService
         return $courseTaken;
     }
 
+    public function renewSubscription($order)
+    {
+        $orderUpgrade = $order->upgrade;
+        $courseTaken = CoursesTaken::find($orderUpgrade->parent_id);
+        
+        foreach ($courseTaken->user->coursesTaken as $coursesTaken) {
+            $notExpiredCourses = $courseTaken->user->coursesTakenNotExpired()->pluck('id')->toArray();
+            
+            // check if there's other course that's not expired yet and update it
+            // !in_array($coursesTaken->id, $notExpiredCourses) && $coursesTaken->id !== $courseTaken->id
+            if ($coursesTaken->id !== $courseTaken->id) {
+                
+                // check if course taken have set end date and add one year to it
+                if ($coursesTaken->end_date) {
+                    $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($coursesTaken->end_date)) . " + 1 year"));
+                    $dateToday = Carbon::today();
+
+                    // check if the end date after adding a year is still less than today
+                    // add another year on date today
+                    if (Carbon::parse($addYear)->lt($dateToday)) {
+                        $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($dateToday)) . " + 1 year"));
+                    }
+
+                    $coursesTaken->end_date = $addYear;
+                }
+
+                $coursesTaken->save();
+            }
+        }
+
+        // check if course taken have set end date and add one year to it
+        if ($courseTaken->end_date) {
+            $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($courseTaken->end_date)) . " + 1 year"));
+            $courseTaken->end_date = $addYear;
+        }
+
+        $courseTaken->renewed_at = Carbon::now();
+        $courseTaken->started_at = Carbon::now();
+        $courseTaken->save();
+
+        // add to automation
+        $user_email     = $courseTaken->user->email;
+        $automation_id  = 73;
+        $user_name      = $courseTaken->user->first_name;
+
+        AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
+
+        // Email to support
+        $from = 'post@easywrite.se';
+        $to = 'post@easywrite.se';
+
+        $emailData = [
+            'email_subject' => 'All Courses Renewed',
+            'email_message' => $user_name . ' has renewed all the courses',
+            'from_name' => '',
+            'from_email' => $from,
+            'attach_file' => NULL
+        ];
+        \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
+    }
+
     /**
      * Send Email to admin
      */
@@ -592,8 +654,8 @@ class CourseService
         $user = $this->user->find($user_id);
         $package = Package::find($package_id);
 
-        $to = 'support@forfatterskolen.no';
-        $from = 'post@forfatterskolen.no';
+        $to = 'post@easywrite.se';
+        $from = 'post@easywrite.se';
         $subject = 'New Course Order';
         $message = $user->first_name.
             ' has ordered the course '.$package->course->title;
@@ -642,17 +704,17 @@ class CourseService
 
         if ($hasRegretForm) {
             $attachments[] = public_path($this->generateDocx($user->id, $package->id));
-            $attachments[] = public_path('/email-attachments/skjema-for-opplysninger-om-angrerett.docx');
+            //$attachments[] = public_path('/email-attachments/skjema-for-opplysninger-om-angrerett.docx');
         }
 
         if ($isEmailOut) {
             dispatch(new AddMailToQueueJob($user_email, $package->course->title, $email_content,
-                'postmail@forfatterskolen.no', 'Forfatterskolen', $attachments,
-                'courses-taken-order', $courseTaken->id));
+            'post@easywrite.se', 'Easywrite', $attachments,
+                    'courses-taken-order', $courseTaken->id));
         } else {
             dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-                'postmail@forfatterskolen.no', 'Forfatterskolen', $attachments, 'courses-taken-order',
-                $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
+            'post@easywrite.se', 'Easywrite', $attachments, 'courses-taken-order',
+            $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
         }
     }
 
