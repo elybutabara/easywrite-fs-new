@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>{{$course->title}} &rsaquo; Forfatterskolen</title>
+<title>{{$course->title}} &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -16,7 +16,7 @@
             : $course->packagesIsShow[0]->full_payment_price);
 @endphp
 <div class="course-application-wrapper">
-    <div class="header" data-bg="https://www.forfatterskolen.no/images-new/course/application-header.png">
+    <div class="header" data-bg="https://www.easywrite.se/images-new/course/application-header.png">
     </div>
     <div class="body">
         <div class="container">

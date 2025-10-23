@@ -1,10 +1,10 @@
 <div class="top-navbar">
-  Velkommen til Forfatterskolen
+  Velkommen til Easywrite
   <div class="pull-right">
-    <a href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank"><i class="fa fa-pinterest"></i></a>
+    <a href="https://no.pinterest.com/easywrite_norge/" target="_blank"><i class="fa fa-pinterest"></i></a>
     <a href="https://www.facebook.com/bliforfatter/" target="_blank"><i class="fa fa-facebook"></i></a>
     <a href="https://twitter.com/Forfatterrektor" target="_blank"><i class="fa fa-twitter"></i></a>
-    <a href="https://www.instagram.com/forfatterskolen_norge/" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="https://www.instagram.com/easywrite_norge/" target="_blank"><i class="fa fa-instagram"></i></a>
     @if( Auth::guest() )
     <a href="{{route('auth.login.show')}}" class="top-navbar-btn">Min Side</a>
     @endif
@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-default">
   <div class="navbar-brand-container">
-    <a class="navbar-brand" href="{{url('')}}"><img src="{{asset('images/logo.png')}}" alt="Forfatterskolen-logo"></a>
+    <a class="navbar-brand" href="{{url('')}}"><img src="{{asset('images/logo.png')}}" alt="Easywrite-logo"></a>
   </div>
   <div class="container-fluid">
       <div class="navbar-header">

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Forfatterskolen &rsaquo; Free Manuscripts</title>
+<title>Easywrite &rsaquo; Free Manuscripts</title>
 @stop
 
 @section('styles')
@@ -14,7 +14,7 @@
 
 @section('content')
 <div class="free-manuscript-page free-manuscript-page-new">
-    <div class="header" data-bg="https://www.forfatterskolen.no/images-new/checkout-top.png">
+    <div class="header" data-bg="https://www.easywrite.se/images-new/checkout-top.png">
     </div> <!-- end header-->
 
     <div class="body">

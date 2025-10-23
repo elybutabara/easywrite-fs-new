@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>{{$courseTaken->package->course->title}} &rsaquo; Forfatterskolen</title>
+<title>{{$courseTaken->package->course->title}} &rsaquo; Easywrite</title>
 @stop
 
 
@@ -82,7 +82,7 @@
 									<div class="panel-body">
 										<div class="row">
 											<div class="col-sm-12 col-lg-3">
-												<div class="course-list-thumb" data-bg="https://www.forfatterskolen.no/{{$courseTaken->package->course->course_image}}"></div>
+												<div class="course-list-thumb" data-bg="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}"></div>
 											</div>
 											<div class="col-sm-12 col-lg-9 course-list-details">
 												<p class="pull-right">

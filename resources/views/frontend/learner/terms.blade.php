@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Terms &rsaquo; Forfatterskolen</title>
+    <title>Terms &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')
@@ -43,14 +43,14 @@
                 <h2 class="text-center terms-title">Vårt løfte</h2>
 
                 <p>
-                    Forfatterskolen Co., Ltd., (UK) (behandlingsansvarlig for EU), og
-                    våre filialer ("Forfatterskolen", "vi", "oss", "vår") vet hvor viktig personvern er for våre kunder og
+                    Easywrite Co., Ltd., (UK) (behandlingsansvarlig for EU), og
+                    våre filialer ("Easywrite", "vi", "oss", "vår") vet hvor viktig personvern er for våre kunder og
                     brukere, og vi etterstreber å gi klare opplysninger om hvordan vi samler inn, bruker, meddeler,
                     overfører og lagrer dine personopplysninger.
                 </p>
 
                 <p>
-                    Denne personvernerklæringen gjelder alle Forfatterskolen-enheter, -nettsider, kundeserviceplattformer eller
+                    Denne personvernerklæringen gjelder alle Easywrite-enheter, -nettsider, kundeserviceplattformer eller
                     andre nettapplikasjoner som henviser eller kobler til erklæringen (samlet kalt våre "tjenester").
                     Denne personvernerklæringen gjelder uavhengig av om du bruker en datamaskin, en mobiltelefon, et
                     nettbrett, et TV-apparat eller et husholdningsapparat eller en annen smart-enhet for å få tilgang
@@ -105,7 +105,7 @@
 
                 <ul class="font-17">
                     <li>
-                        tilknyttede selskaper – selskaper som er knyttet til Forfatterskolen Co., Ltd. gjennom
+                        tilknyttede selskaper – selskaper som er knyttet til Easywrite Co., Ltd. gjennom
                         felles eierskap eller kontroll.
                     </li>
                     <li>
@@ -113,11 +113,11 @@
                         tjenester du kan tenkes å like, forutsatt at du har gitt ditt særskilte samtykke til dette.
                     </li>
                     <li>
-                        tjenesteleverandører – selskaper som leverer tjenester til eller på vegne av Forfatterskolen.
+                        tjenesteleverandører – selskaper som leverer tjenester til eller på vegne av Easywrite.
                     </li>
                     <li>
                         rettshåndhevende myndigheter – når vi er rettslig forpliktet til det, eller for å beskytte
-                        Forfatterskolen og deres brukere.
+                        Easywrite og deres brukere.
                     </li>
                 </ul>
 
@@ -143,7 +143,7 @@
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    FORFATTERSKOLEN GLOBALE PERSONVERNERKLÆRING
+                                    EASYWRITE GLOBALE PERSONVERNERKLÆRING
                                 </a>
                             </h4>
 
@@ -152,12 +152,12 @@
                             <div class="panel-body">
                                 Ikrafttredelsesdato: 25. mai 2018
 
-                                Forfatterskolen Co., Ltd., (UK) (behandlingsansvarlig for EU), og våre filialer
-                                ("Forfatterskolen", "vi", "oss", "vår") vet hvor viktig personvern er for våre kunder,
+                                Easywrite Co., Ltd., (UK) (behandlingsansvarlig for EU), og våre filialer
+                                ("Easywrite", "vi", "oss", "vår") vet hvor viktig personvern er for våre kunder,
                                 og vi etterstreber å gi klare opplysninger om hvordan vi samler inn, bruker, meddeler,
                                 overfører og lagrer dine personopplysninger. Personvernerklæringen forklarer
                                 retningslinjene våre knyttet til opplysninger. Denne personvernerklæringen gjelder alle
-                                Forfatterskolen-enheter, -nettsider, kundeserviceplattformer eller andre
+                                Easywrite-enheter, -nettsider, kundeserviceplattformer eller andre
                                 nettapplikasjoner som henviser eller kobler til erklæringen (samlet kalt våre "tjenester").
                                 Denne personvernerklæringen gjelder uavhengig av om du bruker en datamaskin, en
                                 mobiltelefon, et nettbrett, et TV-apparat eller et husholdningsapparat eller en annen

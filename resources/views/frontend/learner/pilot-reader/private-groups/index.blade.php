@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Private Groups &rsaquo; Forfatterskolen</title>
+    <title>Private Groups &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

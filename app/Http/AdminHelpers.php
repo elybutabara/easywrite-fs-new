@@ -218,7 +218,7 @@ class AdminHelpers
      *
      * @param  string  $from_name  Not required field with default value
      */
-    /* public static function send_email($subject, $from, $to, $content, string $from_name = 'Forfatterskolen', $attachment = null): bool
+    /* public static function send_email($subject, $from, $to, $content, string $from_name = 'Easywrite', $attachment = null): bool
     {
         $from = $from ?: 'post@easywrite.se';
         $host = env('MAIL_HOST_SITE');
@@ -257,7 +257,7 @@ class AdminHelpers
         return false;
     } */
 
-    /* public static function send_mail($subject, $from, $to, $content, $from_name = 'Forfatterskolen')
+    /* public static function send_mail($subject, $from, $to, $content, $from_name = 'Easywrite')
     {
         $headers = 'From: '.$from_name.'<'.$from.">\r\n";
         $headers .= "MIME-Version: 1.0\r\n";

@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>Create New GoToWebinar &rsaquo; Forfatterskolen Admin</title>
+    <title>Create New GoToWebinar &rsaquo; Easywrite Admin</title>
 @stop
 
 

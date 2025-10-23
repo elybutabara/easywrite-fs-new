@@ -8,7 +8,7 @@
     @if ($pageMeta)
         <title>{{ $pageMeta->meta_title }}</title>
     @else
-        <title>Shop Manuscripts &rsaquo; Forfatterskolen</title>
+        <title>Shop Manuscripts &rsaquo; Easywrite</title>
     @endif
 @stop
 
@@ -31,7 +31,7 @@
             </div>
         </div>        
 
-        {{--  data-bg="https://www.forfatterskolen.no/images-new/coffee-book.png" --}}
+        {{--  data-bg="https://www.easywrite.se/images-new/coffee-book.png" --}}
         <div class="row second-section mx-0">
             <div class="container details">
                 <div class="row justify-content-center align-items-center">
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        {{-- data-bg="https://www.forfatterskolen.no/images-new/notebook-pen.png" --}}
+        {{-- data-bg="https://www.easywrite.se/images-new/notebook-pen.png" --}}
         {{-- <div class="third-section">
             <div class="container">
                 <div class="row align-items-center">
@@ -279,11 +279,11 @@
             </div>
         </div> <!-- end fourth section -->
 
-        <div class="last-section" data-bg="https://www.forfatterskolen.no/images-new/shop-manuscript/coaching-bg.png">
+        <div class="last-section" data-bg="https://www.easywrite.se/images-new/shop-manuscript/coaching-bg.png">
             <div class="container">
                 <div class="text-center">
                     <div class="coaching-details">
-                        <img data-src="https://www.forfatterskolen.no/images-new/other-services/open-book.png" alt="open book">
+                        <img data-src="https://www.easywrite.se/images-new/other-services/open-book.png" alt="open book">
                         <h2>
                             {{ trans('site.front.coaching-timer.title') }}
                         </h2> 
@@ -299,7 +299,7 @@
                     <a href="{{ route('front.coaching-timer') }}">
                         <div class="row box-white">
                             <div class="col-sm-3">
-                                <img data-src="https://www.forfatterskolen.no/images-new/other-services/open-book.png" alt="open book">
+                                <img data-src="https://www.easywrite.se/images-new/other-services/open-book.png" alt="open book">
                             </div>
 
                             <div class="col-sm-9">
@@ -316,7 +316,7 @@
                     <a href="{{ route('front.correction') }}">
                         <div class="row box-white">
                             <div class="col-sm-3">
-                                <img data-src="https://www.forfatterskolen.no/images-new/other-services/book.png">
+                                <img data-src="https://www.easywrite.se/images-new/other-services/book.png">
                             </div>
 
                             <div class="col-sm-9">
@@ -333,7 +333,7 @@
                     <a href="{{ route('front.copy-editing') }}">
                         <div class="row box-white">
                             <div class="col-sm-3">
-                                <img data-src="https://www.forfatterskolen.no/images-new/other-services/list.png">
+                                <img data-src="https://www.easywrite.se/images-new/other-services/list.png">
                             </div>
 
                             <div class="col-sm-9">

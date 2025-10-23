@@ -276,7 +276,7 @@ class FreeManuscriptController extends Controller
         include base_path().'/resources/views/emails/free-manuscript-feedback.blade.php';
         $message = ob_get_clean();
 
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         // $headers .= 'Reply-To: '. $from . "\r\n";

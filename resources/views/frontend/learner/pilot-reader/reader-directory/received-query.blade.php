@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Received Queries &rsaquo; Forfatterskolen</title>
+    <title>Received Queries &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

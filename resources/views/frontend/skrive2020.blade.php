@@ -14,7 +14,7 @@
                         Kreativ i karantene
                     </h2>
                     <h1>
-                        Forfatterskolens nye skrivekonkurranse: <br>
+                        Easywrites nye skrivekonkurranse: <br>
                         Isolasjon
                     </h1>
                 </div>
@@ -55,7 +55,7 @@
 
                         <p>
                             Her kan du lese mer om
-                            <a href="https://www.forfatterskolen.no/shop-manuscript" target="_blank">
+                            <a href="https://www.easywrite.se/shop-manuscript" target="_blank">
                                 manusutviklingene
                             </a> (premien)
                         </p>
@@ -87,7 +87,7 @@
                         </h1>
 
                         <p class="font-montserrat-light font-16 mt-5">
-                            FRIST for innlevering: 1.april 2020 Vinnerteksten vil bli publisert på Forfatterskolens
+                            FRIST for innlevering: 1.april 2020 Vinnerteksten vil bli publisert på Easywrites
                             nettside (dersom forfatteren samtykker).
                         </p>
                     </div>

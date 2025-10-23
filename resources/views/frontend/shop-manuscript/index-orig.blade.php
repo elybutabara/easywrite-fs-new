@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Shop Manuscripts &rsaquo; Forfatterskolen</title>
+<title>Shop Manuscripts &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -29,7 +29,7 @@
 								<h3>Har du utkastet til manuset ditt klart og ønsker profesjonell tilbakemelding?</h3>
 								<br />
 								<p>
-								Forfatterskolen tilbyr individuell veiledning på manus, uansett sjanger. Vi er selv forfattere og vet hvor sårbart det er å overlate et manus til andre. Hos oss kan du være sikker på at vi vil det beste for deg og ditt prosjekt. Dessuten behandles alle manus konfidensielt.<br /><br />
+								Easywrite tilbyr individuell veiledning på manus, uansett sjanger. Vi er selv forfattere og vet hvor sårbart det er å overlate et manus til andre. Hos oss kan du være sikker på at vi vil det beste for deg og ditt prosjekt. Dessuten behandles alle manus konfidensielt.<br /><br />
 								Når vi har mottatt ditt manus gir vi deg en skriftlig tilbakemelding om tekstens sterke og svake sider, samt konkrete råd og innspill på hvordan du kan jobbe videre. Manuset vil bli lest av en av våre profesjonelle konsulenter.
 								</p>
 							</div>
@@ -141,21 +141,21 @@
 								  <div class="carousel-inner">
 									<div class="item active">
 										<div class="feedback-thumb margin-bottom" style="background-image: url({{ asset('images/shop-manuscript-testimonials/irene.jpg') }})"></div>
-										<p>Jeg fikk de første 50 sidene av manuset mitt vurdert som del av skrivekurset jeg tok ved Forfatterskolen. Tilbakemeldingene ga meg gode, konstruktive råd som hjalp meg å se på teksten min med nye øyne slik at redigeringen føltes givende og kreativ. Jeg fikk dessuten en ny giv i skriveprosessen og tro på at prosjektet kunne og burde fullføres. </p>
+										<p>Jeg fikk de første 50 sidene av manuset mitt vurdert som del av skrivekurset jeg tok ved Easywrite. Tilbakemeldingene ga meg gode, konstruktive råd som hjalp meg å se på teksten min med nye øyne slik at redigeringen føltes givende og kreativ. Jeg fikk dessuten en ny giv i skriveprosessen og tro på at prosjektet kunne og burde fullføres. </p>
 										<br />
 										<br />
 										- <em>Irene Zupin</em>
 									</div>
 									<div class="item">
 										<div class="feedback-thumb margin-bottom" style="background-image: url({{ asset('images/shop-manuscript-testimonials/audhild.jpg') }})"></div>
-										<p>Da jeg spent åpnet mailen fra forfatterskolen etter å ha sendt mitt manus til vurdering, ble jeg positivt overrasket over lengden og grundigheten i tilbakemeldingene. Først en oppsummering av handling og dramaturgi, som ga meg en god bekreftelse på at jeg hadde fått frem budskapet mitt. Kommentarer på språk og dialoger ga meg litt å jobbe videre med. Oppsummering og konklusjon ga meg motivasjon til ferdigstilling og utgivelse. Jeg vil garantert benytte meg av forfatterskolen igjen, på mitt neste manus.</p>
+										<p>Da jeg spent åpnet mailen fra easywrite etter å ha sendt mitt manus til vurdering, ble jeg positivt overrasket over lengden og grundigheten i tilbakemeldingene. Først en oppsummering av handling og dramaturgi, som ga meg en god bekreftelse på at jeg hadde fått frem budskapet mitt. Kommentarer på språk og dialoger ga meg litt å jobbe videre med. Oppsummering og konklusjon ga meg motivasjon til ferdigstilling og utgivelse. Jeg vil garantert benytte meg av easywrite igjen, på mitt neste manus.</p>
 										<br />
 										<br />
 										- <em>Audhild Lønne</em>
 									</div>
 									<div class="item">
 										<div class="feedback-thumb margin-bottom" style="background-image: url({{ asset('images/shop-manuscript-testimonials/svanhild.jpg') }})"></div>
-										<p>Jeg har benyttet meg av manusutvikling ved Forfatterskolen til to ulike manus. Det er både lærerikt og utfordrende. Man må jobbe videre med teksten etterpå, og er absolutt ikke sikret utgivelse hos et forlag. Likevel får man en fair mulighet til å utvikle seg selv som fremtidig forfatter. Dessuten, å bli vurdert seriøst er en fantastisk følelse. Anbefales!</p>
+										<p>Jeg har benyttet meg av manusutvikling ved Easywrite til to ulike manus. Det er både lærerikt og utfordrende. Man må jobbe videre med teksten etterpå, og er absolutt ikke sikret utgivelse hos et forlag. Likevel får man en fair mulighet til å utvikle seg selv som fremtidig forfatter. Dessuten, å bli vurdert seriøst er en fantastisk følelse. Anbefales!</p>
 										<br />
 										<br />
 										- <em>Svanhild Fosback Larsen</em>
@@ -164,7 +164,7 @@
 										<div class="feedback-thumb margin-bottom" style="background-image: url({{ asset('images/shop-manuscript-testimonials/fiske.jpg') }})"></div>
 										<p>Jeg fikk manusvurdering på min første barnebok nå i juni. Fra før hadde jeg hatt to pilotlesere. 
 										<br /><br />
-										Manusvurdering hos Forfatterskolen ble for meg verdt hver eneste en krone. <br />
+										Manusvurdering hos Easywrite ble for meg verdt hver eneste en krone. <br />
 										Jeg fikk hjelp til å se manuset utenfra, oppdage logiske brister, veiledning angående tema og struktur, konkrete eksempler og forslag til bedre språk, og tilbakemelding på det som funket bra. Et viktig steg mot målet om å bli antatt!</p>
 										<br />
 										<br />

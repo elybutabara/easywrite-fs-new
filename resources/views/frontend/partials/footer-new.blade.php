@@ -1,6 +1,6 @@
 @if( Route::currentRouteName() != 'front.free-manuscript.index')
     @if (Auth::guest())
-        <div class="start-today text-center" data-bg="https://www.forfatterskolen.no/images-new/cta.png">
+        <div class="start-today text-center" data-bg="https://www.easywrite.se/images-new/cta.png">
             <h5 class="font-regular">
                 {{ trans('site.front.start-today.details') }}
             </h5>
@@ -63,13 +63,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
+                    <a class="nav-link" href="https://no.pinterest.com/easywrite_norge/" target="_blank">
                         <i class="sprite-social pinterest-white"></i>
                         {{--<img src="{{asset('images-new/social-icons/pinterest-white.png')}}" class="social-image" alt="Pinterest">--}}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/forfatterskolen_norge/" target="_blank">
+                    <a class="nav-link" href="https://www.instagram.com/easywrite_norge/" target="_blank">
                         <i class="sprite-social instagram-white"></i>
                         {{--<img src="{{asset('images-new/social-icons/instagram-white.png')}}" class="social-image" alt="Instagram">--}}
                     </a>
@@ -88,21 +88,21 @@
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-xl-3 col-lg-4 col-md-4">
-                    <img data-src="https://www.forfatterskolen.no/images-new/marker.png" alt="Adresseikon">
+                    <img data-src="https://www.easywrite.se/images-new/marker.png" alt="Adresseikon">
                     <h2 class="mt-4">Adresse</h2>
                     <p class="mt-4">
                         Postboks 9233, 3028 Drammen
                     </p>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">
-                    <img data-src="https://www.forfatterskolen.no/images-new/email-envelope.png" alt="envelope icon">
+                    <img data-src="https://www.easywrite.se/images-new/email-envelope.png" alt="envelope icon">
                     <div class="mt-4 h2">E-post</div>
                     <p class="mt-4">
                         post@easywrite.se
                     </p>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">
-                    <img data-src="https://www.forfatterskolen.no/images-new/telephone.png" alt="Telefonikon">
+                    <img data-src="https://www.easywrite.se/images-new/telephone.png" alt="Telefonikon">
                     <div class="mt-4 h2">Kontakt Telefon</div>
                     <p class="mt-4">
                         +47 411 23 555
@@ -114,7 +114,7 @@
 
     <div class="col-sm-12 footer-bottom text-center">
         <p>
-            Copyright &copy; 2016 Forfatterskolen, All Rights Reserved |
+            Copyright &copy; 2016 Easywrite, All Rights Reserved |
             <a href="{{ route('front.terms', 'all') }}" class="color-white">Vilkår</a>
         </p>
     </div>

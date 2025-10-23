@@ -6,7 +6,7 @@
 @stop
 
 @section('title')
-<title>Packages &rsaquo; {{$course->title}} &rsaquo; Forfatterskolen Admin</title>
+<title>Packages &rsaquo; {{$course->title}} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

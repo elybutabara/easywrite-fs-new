@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>Publishing &rsaquo; Forfatterskolen Admin</title>
+    <title>Publishing &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')
@@ -102,7 +102,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <span>Retur:</span> <br>
-                            <span>Forfatterskolen AS</span> <br>
+                            <span>Easywrite AS</span> <br>
                             <span>Postboks 9233 Kjøsterud</span> <br>
                             <span>3064 DRAMMEN</span> <br>
                             <span>NORWAY</span>

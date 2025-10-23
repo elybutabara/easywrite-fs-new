@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>Edit {{ $optIn['title'] }} &rsaquo; Forfatterskolen Admin</title>
+    <title>Edit {{ $optIn['title'] }} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

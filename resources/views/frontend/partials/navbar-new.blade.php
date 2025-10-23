@@ -4,14 +4,14 @@
     </button>
 
     <a class="navbar-brand mx-auto" href="{{url('')}}" title="View front page">
-        <img src="https://www.forfatterskolen.no/{{'images-new/logo_new_black.png'}}" alt="logo with tagline" style="height: 67px; margin-top: 20px">
+        <img src="https://www.easywrite.se/{{'images-new/logo_new_black.png'}}" alt="logo with tagline" style="height: 67px; margin-top: 20px">
         {{--asset('images-new/logo-tagline.png')--}}
     </a>
 
     <div class="navbar-collapse collapse pr-0">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#"  title="View front page" style="color: #000">Velkommen til Forfatterskolen</a> {{--style="color: #000"--}}
+                <a class="nav-link" href="#"  title="View front page" style="color: #000">Velkommen til Easywrite</a> {{--style="color: #000"--}}
             </li>
         </ul>
 
@@ -24,14 +24,14 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank"
+                <a class="nav-link" href="https://no.pinterest.com/easywrite_norge/" target="_blank"
                    title="View pinterest page">
                     <i class="sprite-social pinterest"></i>
                     {{--<img src="{{asset('images-new/social-icons/pinterest.png')}}" class="social-image" alt="Pinterest">--}}
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="https://www.instagram.com/forfatterskolen_norge/" target="_blank"
+                <a class="nav-link" href="https://www.instagram.com/easywrite_norge/" target="_blank"
                     title="View instagram page">
                     <i class="sprite-social instagram"></i>
                     {{--<img src="{{asset('images-new/social-icons/instagram.png')}}" class="social-image" alt="Instagram">--}}
@@ -100,7 +100,7 @@
                    title="Årskurs" target="_blank">Årskurs</a>
             </li>
             <li class="nav-item">
-                <a href="https://blog.forfatterskolen.no" class="nav-link">
+                <a href="https://blog.easywrite.se" class="nav-link">
                     Blogg</a>
             </li>
             {{--<li class="nav-item @if(Route::currentRouteName() == 'front.faq') active @endif">

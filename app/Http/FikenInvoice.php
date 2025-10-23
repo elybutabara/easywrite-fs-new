@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 set_time_limit(300);
 
 // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-// Forfatterskolen: forfatterskolen-as
+// Easywrite: forfatterskolen-as
 
 class FikenInvoice
 {
@@ -47,13 +47,13 @@ class FikenInvoice
     {
         $fiken_company = 'https://api.fiken.no/api/v2/companies/forfatterskolen-as';
         // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-        // Forfatterskolen: forfatterskolen-as
+        // Easywrite: forfatterskolen-as
         // DemoAS: fiken-demo-glede-og-bil-as2
 
         $this->fiken_contacts = $fiken_company.'/contacts';
         $this->fiken_document_sending_service = $fiken_company.'/document-sending-service';
         $this->fiken_create_invoice_service = $fiken_company.'/invoices';
-        // Demo: 313581398  Forfatterskolen: 55204077 DemoAS: 279632077
+        // Demo: 313581398  Easywrite: 55204077 DemoAS: 279632077
         $this->fiken_bank_account = $fiken_company.'/bank-accounts/55204077';
         $this->fiken_product = $fiken_company.'/products/';
         $this->fiken_sales = $fiken_company.'/sales/';
@@ -64,7 +64,7 @@ class FikenInvoice
         // Accept: application/hal+json, application/vnd.error+json
         // $this->headers[] = 'Content-Type: application/hal+json';
 
-        // Forfatterskolen: DemoAS: 1920:10001
+        // Easywrite: DemoAS: 1920:10001
         $this->fiken_bank_account_code = '1920:10001';
 
         $this->username = config('services.fiken.username');

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Checkout &rsaquo; Forfatterskolen</title>
+    <title>Checkout &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -11,7 +11,7 @@
         ?>
     @endif
     <div class="global-checkout-page" id="app-container">
-        <div class="header" data-bg="https://www.forfatterskolen.no/images-new/checkout-top.png">
+        <div class="header" data-bg="https://www.easywrite.se/images-new/checkout-top.png">
 		</div>
         <div class="container">
             <coaching-time-checkout :price="{{ json_encode($data['price']) }}"

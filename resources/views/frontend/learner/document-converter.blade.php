@@ -9,7 +9,7 @@
 @endphp
 
 @section('title')
-    <title>{{ $pageTitle }} &rsaquo; Forfatterskolen</title>
+    <title>{{ $pageTitle }} &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

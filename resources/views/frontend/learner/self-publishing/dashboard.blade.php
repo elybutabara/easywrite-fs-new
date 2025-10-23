@@ -1,7 +1,7 @@
 @extends('frontend.learner.self-publishing.layout')
 
 @section('title')
-<title>Dashboard &rsaquo; Forfatterskolen</title>
+<title>Dashboard &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

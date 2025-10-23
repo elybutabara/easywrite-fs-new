@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Blog</title>
+    <title>Easywrite Blog</title>
 @stop
 
 @section('content')
 
-    <div class="blog-page" data-bg="https://www.forfatterskolen.no/images-new/blog-bg.png">
+    <div class="blog-page" data-bg="https://www.easywrite.se/images-new/blog-bg.png">
         <div class="container main-container">
             <div class="row">
                 <div class="col-sm-12">
@@ -15,7 +15,7 @@
                     </h1>
                 </div>
                 <div class="col-sm-12 top-page-container">
-                    <div class="main-blog" data-bg="https://www.forfatterskolen.no/{{ $mainBlog->image }}">
+                    <div class="main-blog" data-bg="https://www.easywrite.se/{{ $mainBlog->image }}">
                         <div class="details text-center">
                             <div class="title h1 mt-0">
                                 {{ $mainBlog->title }}
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-sm-4 sidebar">
                     <div class="row course-container">
-                        <img data-src="https://www.forfatterskolen.no/images-new/girl-with-computer.png" alt="">
+                        <img data-src="https://www.easywrite.se/images-new/girl-with-computer.png" alt="">
                         <div class="card">
                             <span>
                                 {{ trans('site.front.blog.view-our-course') }}

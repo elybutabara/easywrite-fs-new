@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Publishing</title>
+    <title>Easywrite Publishing</title>
 @stop
 
 @section('styles')
@@ -19,7 +19,7 @@
 
 @section('content')
 
-    <div class="publishing-page" data-bg="https://www.forfatterskolen.no/images-new/publishing-bg.jpg">
+    <div class="publishing-page" data-bg="https://www.easywrite.se/images-new/publishing-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">

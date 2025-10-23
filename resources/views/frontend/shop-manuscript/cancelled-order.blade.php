@@ -1,11 +1,11 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Cancelled Order &rsaquo; Forfatterskolen</title>
+    <title>Cancelled Order &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
-    <div class="thank-you-page" data-bg="https://www.forfatterskolen.no/images-new/thankyou-bg.png">
+    <div class="thank-you-page" data-bg="https://www.easywrite.se/images-new/thankyou-bg.png">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 left-container">

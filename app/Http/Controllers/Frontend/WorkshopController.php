@@ -215,7 +215,7 @@ class WorkshopController extends Controller
             ]);
             /*echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">

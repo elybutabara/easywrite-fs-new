@@ -41,11 +41,11 @@
 <center>
     <div class="certificate-content">
         <div>
-            <img src="https://www.easywrite.se/images-new/logo-tagline.png" alt="Forfatterskolen" title="Logo" style="height: 6rem;">
+            <img src="https://www.easywrite.se/images-new/logo-tagline.png" alt="Easywrite" title="Logo" style="height: 6rem;">
         </div>
         <span style="font-size:50px; font-weight:bold">10 weeks novelcourse</span>
         <br><br>
-        <span style="font-size:25px"><i>on Forfatterskolen</i></span>
+        <span style="font-size:25px"><i>on Easywrite</i></span>
         <br><br>
         <span style="font-size:25px" class="light-text"><i>has been completed by</i></span>
         <br><br>

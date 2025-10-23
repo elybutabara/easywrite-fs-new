@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Profile &rsaquo; Forfatterskolen</title>
+<title>Profile &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')
@@ -322,7 +322,7 @@
 													<div class="col-lg-4 col-md-6">
 														<div class="card card-global">
 															<div class="card-body text-center">
-																<img data-src="https://www.forfatterskolen.no/images-new/diploma.png" alt="">
+																<img data-src="https://www.easywrite.se/images-new/diploma.png" alt="">
 																<h3 class="font-weight-normal">
 																	{{ $diploma->course->title }}
 																</h3>
@@ -338,7 +338,7 @@
 														<div class="col-lg-4 col-md-6">
 															<div class="card card-global">
 																<div class="card-body text-center">
-																	<img data-src="https://www.forfatterskolen.no/images-new/diploma.png" alt="">
+																	<img data-src="https://www.easywrite.se/images-new/diploma.png" alt="">
 																	<h3 class="font-weight-normal">
 																		{{ $certificate->course_title }}
 																	</h3>

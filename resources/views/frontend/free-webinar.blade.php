@@ -39,7 +39,7 @@
     ?>
 
     <div class="free-webinar-page free-webinar-page-new">
-        <div class="header" data-bg="https://www.forfatterskolen.no/images-new/free-webinar-header-new.png">
+        <div class="header" data-bg="https://www.easywrite.se/images-new/free-webinar-header-new.png">
         </div>
 
         <div class="container text-center">
@@ -96,7 +96,7 @@
                         @foreach($freeWebinar->webinar_presenters as $presenter)
                             <div class="presenter-container">
                                 <div class="presenter-circle">
-                                    <img data-src="https://www.forfatterskolen.no/{{ $presenter->image ? $presenter->image : 'images/user.png' }}"
+                                    <img data-src="https://www.easywrite.se/{{ $presenter->image ? $presenter->image : 'images/user.png' }}"
                                     class="rounded-circle">
                                 </div>
                                 <p class="presenter-name">

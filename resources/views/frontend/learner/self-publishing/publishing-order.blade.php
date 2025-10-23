@@ -1,7 +1,7 @@
 @extends('frontend.learner.self-publishing.layout')
 
 @section('title')
-    <title>Publishing Order &rsaquo; Forfatterskolen</title>
+    <title>Publishing Order &rsaquo; Easywrite</title>
 @stop
 
 

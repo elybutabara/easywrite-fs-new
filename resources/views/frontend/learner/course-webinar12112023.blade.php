@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-    <title>Mine Webinar &rsaquo; Forfatterskolen</title>
+    <title>Mine Webinar &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -107,7 +107,7 @@
                                 <div class="card card-global border-0">
                                     <div class="card-header webinar-thumb">
                                         <a href="{{ $webinar->link }}">
-                                            <div data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                            <div data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                                 <i class="play-button"></i>
                                             </div>
                                         </a>

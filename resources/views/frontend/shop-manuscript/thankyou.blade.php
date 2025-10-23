@@ -1,11 +1,11 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Thank You &rsaquo; Forfatterskolen</title>
+<title>Thank You &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
-{{-- data-bg="https://www.forfatterskolen.no/images-new/thankyou-bg.png" --}}
+{{-- data-bg="https://www.easywrite.se/images-new/thankyou-bg.png" --}}
 	<div class="thank-you-page" >
 		<div class="container">
 			<img src="{{ asset('images-new/thankyou-banner.png') }}" class="w-100 banner" alt="thank-you-banner">

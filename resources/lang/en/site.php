@@ -576,7 +576,7 @@ Warning: This cannot be undone.',
             'main' => [
                 'description' => 'Å skrive et manus kan være en utfordring. Det mangler sjelden på ideer og lyst, men hvordan komme i gang? Og hvordan lykkes med å skrive et godt manus – uten å gi opp på veien? Fortvil ikke, vi har skreddersydde kurs til å hjelpe deg. I tillegg får du profesjonell veiledning og en uunnværlig heiagjeng. Et godt bevis på at metoden vår funker: Vi har hjulpet mange elever med å bli utgitt – og flere er på vei (se "utgitte elever"). Er du den neste?',
             ],
-            'second-description' => 'Forfatterskolens nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
+            'second-description' => 'Easywrites nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
         ],
         'nav' => [
             'course' => 'Våre Kurs',
@@ -593,12 +593,12 @@ Warning: This cannot be undone.',
 
 <p>Kristine har også jobbet som journalist i 15 år, og som redaktør i fem av dem. Hun er ikke alene om å administrere skolen, som har flere hundre elever (mange av dem er antatte på de store forlagene – se siden "utgitte elever"). Med seg på laget har hun dyktige ansatte, og erfarne redaktører til å vurdere og utvikle elevenes tekster. </p>
 
-<p>Vi hos Forfatterskolen har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe frem flere. Er du den neste? </p>
+<p>Vi hos Easywrite har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe frem flere. Er du den neste? </p>
 
 <p>Send oss en mail, da vel: <a href="mailto:post@easywrite.se" class="text-theme">post@easywrite.se</a>. Vi ser frem til å høre fra deg! </p>
 
-<p>Skriveglad hilsen fra Team Forfatterskolen</p>',
-            'first-description' => 'Forfatterskolen er en nettbasert skriveskole, med kurs innenfor flere sjangre.',
+<p>Skriveglad hilsen fra Team Easywrite</p>',
+            'first-description' => 'Easywrite er en nettbasert skriveskole, med kurs innenfor flere sjangre.',
             'main-container-photo-text' => 'Foto: Vibeke Montero',
             'our-staff' => 'Vår eminente stab',
             'contact-us-today' => 'Kontakt oss i dag',
@@ -606,7 +606,7 @@ Warning: This cannot be undone.',
             'accept-terms' => '_start_label_ Jeg aksepterer _start_link_ vilkårene _end_link_ _end_label_',
             'note' => 'PS! Vi respekterer personvernretten og deler ikke e-posten din med noen.',
             'save-data-title' => 'Dine data, dine valg',
-            'save-data-description' => 'Forfatterskolen er den som behandler dine data. Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
+            'save-data-description' => 'Easywrite er den som behandler dine data. Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
             'send' => 'Send',
         ],
         'shop-manuscript' => [
@@ -620,7 +620,7 @@ Warning: This cannot be undone.',
             'first-section' => [
                 'description' => '<p class="mb-5">Er du usikker på om ideen og utkastet ditt kan bli en god fortelling? Står du fast med manuset, og er usikker på hva som funker og ikke funker? Eller trenger du en tilbakemelding, og kvalitetssikring, før du sender inn til forlag? </p>
 
-<p class="mb-5">Forfatterskolen tilbyr profesjonell tilbakemelding på ditt manus. En erfaren redaktør vil gi deg en grundig og detaljert tilbakemelding - med kommentarer i margen - på tekstens svake og sterke sider. Du får vite hva som er bra, og hvorfor det er bra, hva som kan utvikles videre og hvordan det kan gjøres. </p>
+<p class="mb-5">Easywrite tilbyr profesjonell tilbakemelding på ditt manus. En erfaren redaktør vil gi deg en grundig og detaljert tilbakemelding - med kommentarer i margen - på tekstens svake og sterke sider. Du får vite hva som er bra, og hvorfor det er bra, hva som kan utvikles videre og hvordan det kan gjøres. </p>
 
 <p class="mb-0">Vi har hjulpet mange elever på vei mot utgivelse, og hjelper gjerne flere. Er du den neste? Ikke nøl med å sende oss manuset ditt, det er slik du kommer videre!</p>',
                 'title' => 'TRENGER DU PROFESJONELL TILBAKEMELDING PÅ DITT MANUS?',
@@ -657,9 +657,9 @@ Warning: This cannot be undone.',
             'next-writing-workshop' => 'Neste skriveverksted',
         ],
         'publishing' => [
-            'main-description' => 'Mange av Forfatterskolens elever har etter hvert fått gitt ut bøkene sine, og flere kommer etter. Vi har fulgt elevene underveis, mange helt fra starten. Det gjør oss superstolte, og understreker slagordet til rektor: "Kan jeg, kan du". På disse sidene kan du bli litt bedre kjent med noen av forfatterne, og kikke på bøkene deres. Er du den neste som blir utgitt?',
+            'main-description' => 'Mange av Easywrites elever har etter hvert fått gitt ut bøkene sine, og flere kommer etter. Vi har fulgt elevene underveis, mange helt fra starten. Det gjør oss superstolte, og understreker slagordet til rektor: "Kan jeg, kan du". På disse sidene kan du bli litt bedre kjent med noen av forfatterne, og kikke på bøkene deres. Er du den neste som blir utgitt?',
             'second-description' => 'PS! Klikk på bøkene for å komme til forlagssiden med bokkjøp.',
-            'title' => 'Forfatterskolens utgitte elever',
+            'title' => 'Easywrites utgitte elever',
         ],
         'accept-terms' => 'Jeg aksepterer [start_link]vilkårene[end_link]',
         'latest-seminars' => 'Siste nyheter',
@@ -673,7 +673,7 @@ Warning: This cannot be undone.',
         'our-course' => [
             'details' => 'Å skrive et manus kan være en utfordring. Det mangler sjelden på ideer og lyst, men hvordan komme i gang? Og hvordan lykkes med å skrive et godt manus – uten å gi opp på veien? Fortvil ikke, vi har skreddersydde kurs til å hjelpe deg. I tillegg får du profesjonell veiledning og en uunnværlig heiagjeng. Et godt bevis på at metoden vår funker: Vi har hjulpet mange elever med å bli utgitt – og flere er på vei (se "utgitte elever").',
             'title' => 'Våre Kurs',
-            'second-description' => 'Forfatterskolens nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
+            'second-description' => 'Easywrites nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
             'highlight' => 'Vi er der for deg – hele veien!',
             'course-holder' => 'Kursholder',
             'date' => 'Date',
@@ -682,7 +682,7 @@ Warning: This cannot be undone.',
                 'price' => 'Fra _price_ kroner',
                 'continue-course' => 'Fortsett Kurset',
                 'buy-course' => 'Bestill Kurset',
-                'description' => 'Velkommen til Forfatterskolen. Vi gleder oss til å hjelpe deg med å nå forfatterdrømmen din!',
+                'description' => 'Velkommen til Easywrite. Vi gleder oss til å hjelpe deg med å nå forfatterdrømmen din!',
                 'photo' => 'Foto',
                 'overview' => 'Oversikt',
                 'package-details-text' => 'Kurset inneholder:',
@@ -843,7 +843,7 @@ Warning: This cannot be undone.',
             'note' => 'PS! Vi respekterer personvernretten og deler ikke e-posten din med noen.',
             'send' => 'Send inn',
             'success-message' => 'Takk for at du skrev deg på, du vil snart få en epost i innboksen din.',
-            'jumbotron' => 'Forfatterskolen har jobbet med kjente forfattere og redaktører i mange år, og hatt flere eminente webinar-gjester. Tipsene du får er hentet fra oss selv, og forfattere som _start_span_ Tove Nilsen, Ingvar Ambjørnsen, Tom Egeland, Maja Lunde, Gro Dahle og Herbjørg Wassmo. _end_span_',
+            'jumbotron' => 'Easywrite har jobbet med kjente forfattere og redaktører i mange år, og hatt flere eminente webinar-gjester. Tipsene du får er hentet fra oss selv, og forfattere som _start_span_ Tove Nilsen, Ingvar Ambjørnsen, Tom Egeland, Maja Lunde, Gro Dahle og Herbjørg Wassmo. _end_span_',
         ],
         'opt-in-thanks' => [
             'thank-you-for-signing' => 'Takk for at du skrev deg på! Nå kan du laste ned din gratis PDF.',
@@ -900,7 +900,7 @@ Juryen består av:
 
 Anne Gaathaug, forlagssjef Papermoon
 Helene Uri, forfatter og redaktør
-Kristine Storli Henningsen, forlegger Papermoon og rektor Forfatterskolen
+Kristine Storli Henningsen, forlegger Papermoon og rektor Easywrite
 Annika Bohnenblust, Content Manager Plan Norge
 
 Frist for innsendelse: 10.7.2021.
@@ -1046,7 +1046,7 @@ kvittering.',
         'search-placeholder' => 'Søk kurs, oppgaver, workshops, webinars..',
         'expected-finish' => 'Forventet ferdig',
         'see-manuscript' => 'Se tilbakemelding',
-        'pending' => 'Venter godkjenning fra Forfatterskolen',
+        'pending' => 'Venter godkjenning fra Easywrite',
         'copy-editing' => 'Språkvask',
         'date-ordered' => 'Dato bestilt',
         'download-original-script' => 'Last ned orginal manus',
@@ -1067,7 +1067,7 @@ kvittering.',
         'coaching-timer' => 'Coaching Timer',
         'add-coaching-lesson' => 'Bestill coaching-time',
         'my-suggested-dates' => 'Mine foreslåtte datoer',
-        'admin-proposed-dates' => 'Forfatterskolens foreslåtte datoer',
+        'admin-proposed-dates' => 'Easywrites foreslåtte datoer',
         'agreed-date-time' => 'Avtalt dato og tid',
         'reprise-text' => 'Reprise',
         'suggest-other-dates' => 'Foreslå andre datoer',
@@ -1213,7 +1213,7 @@ kvittering.',
         'product' => 'Produkt',
         'package' => 'Kurspakke',
         'edit-company' => 'Rediger Bedrift',
-        'fs-name' => 'Forfatterskolen AS',
+        'fs-name' => 'Easywrite AS',
         'fs-address1' => 'Betzy Kjeldsbergvei 263',
         'fs-address2' => '3028 DRAMMEN',
         'fs-country' => 'Norge',

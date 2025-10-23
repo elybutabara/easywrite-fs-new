@@ -76,7 +76,7 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
                                         <!-- Greeting -->
                                         <h1 style="{{ $style['header-1'] }}">
-                                            <h3 style="font-size: 26px; color: rgb(32,151,244); font-weight: 200; margin-top: 0">Forfatterskolen</h3>
+                                            <h3 style="font-size: 26px; color: rgb(32,151,244); font-weight: 200; margin-top: 0">Easywrite</h3>
                                             <div style="border-bottom: 1px solid #EDEFF2"></div><br>
                                             <span style="color: #74787E; font-size: 16px; line-height: 1.5em">Hello,</span>
                                         </h1>
@@ -122,7 +122,7 @@ $style = [
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Thanks,<br>Forfatterskolen
+                                            Thanks,<br>Easywrite
                                         </p>
 
                                         <!-- Sub Copy -->

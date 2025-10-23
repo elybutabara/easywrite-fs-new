@@ -535,7 +535,7 @@ class ShopManuscriptController extends Controller
             return redirect()->route('front.shop-manuscript.paypal-payment', encrypt($invoice->invoiceID));
             /*echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -1276,7 +1276,7 @@ class ShopManuscriptController extends Controller
         if ($paymentMode->mode == 'Paypal') {
             $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -1360,7 +1360,7 @@ Er det feil må du sende en mail til <a href="mailto:post@easywrite.se">post@eas
             // Send email
             $actionText = 'View Our Courses';
             $actionUrl = 'http://www.easywrite.se/course';
-            $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+            $headers = "From: Easywrite<post@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

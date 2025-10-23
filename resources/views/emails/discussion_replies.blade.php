@@ -28,7 +28,7 @@
             </tr>
             @endif
             <tr>
-                <td style="padding-top: .3rem">This is an automated email from Forfatterskolen. {{ "Please don't reply to this." }}</td>
+                <td style="padding-top: .3rem">This is an automated email from Easywrite. {{ "Please don't reply to this." }}</td>
             </tr>
         </table>
     </body>

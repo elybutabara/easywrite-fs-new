@@ -564,8 +564,8 @@ Warning: This cannot be undone.',
     'delete-faq-question' => 'Are you sure to delete this FAQ?',
     'front' => [
         'main-form' => [
-            'heading' => 'Skrivetips fra Forfatterskolen',
-            'sub-heading' => 'Forfatterskolen har utviklet 66 inspirerende tips som vil hjelpe deg, uansett hvor du er i skriveprosessen.',
+            'heading' => 'Skrivetips fra Easywrite',
+            'sub-heading' => 'Easywrite har utviklet 66 inspirerende tips som vil hjelpe deg, uansett hvor du er i skriveprosessen.',
             'heading-description' => 'for deg som vil gjøre alvor av skrivedrømmen',
             'note' => 'PS! Vi deler ikke e-postadressen din med noen',
             'submit-text' => 'Ja, jeg vil ha gratis tips!',
@@ -575,9 +575,9 @@ Warning: This cannot be undone.',
         ],
         'course' => [
             'main' => [
-                'description' => 'Å skrive et manus kan være en utfordring. Det mangler sjelden på ideer, men hvordan komme i gang? Og hvordan lykkes med å skrive et godt manus – uten å gi opp på veien? Vi gir deg alt som skal til: Gode skriveverktøy, profesjonell veiledning og et støttende miljø. Det beste beviset på at metoden vår funker: Vi har hjulpet mange elever med å bli utgitt på de store forlagene, og flere er på vei. Er du den neste? Forfatterskolen - din litterære familie',
+                'description' => 'Å skrive et manus kan være en utfordring. Det mangler sjelden på ideer, men hvordan komme i gang? Og hvordan lykkes med å skrive et godt manus – uten å gi opp på veien? Vi gir deg alt som skal til: Gode skriveverktøy, profesjonell veiledning og et støttende miljø. Det beste beviset på at metoden vår funker: Vi har hjulpet mange elever med å bli utgitt på de store forlagene, og flere er på vei. Er du den neste? Easywrite - din litterære familie',
             ],
-            'second-description' => 'Forfatterskolens nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
+            'second-description' => 'Easywrites nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
         ],
         'nav' => [
             'blog' => 'Blogg',
@@ -594,11 +594,11 @@ Warning: This cannot be undone.',
 
 <p>Kristine har også jobbet som journalist og spaltist i 15 år, og som redaktør i fem av dem. Hun er ikke alene om å administrere skolen, som teller flere tusen elever – mange av dem utgitt på de store forlagene. Med seg på laget har hun dyktige ansatte, og et knippe erfarne redaktører til å vurdere og veilede elevene. </p>
 
-<p>Vi hos Forfatterskolen har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe flere. Er du den neste? </p>
+<p>Vi hos Easywrite har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe flere. Er du den neste? </p>
 
 <p>Send oss en mail, da vel: <a href="mailto:post@easywrite.se" class="text-theme">post@easywrite.se</a>. Vi ser frem til å høre fra deg! </p>
 
-<p>Skriveglad hilsen fra Team Forfatterskolen</p>',
+<p>Skriveglad hilsen fra Team Easywrite</p>',
             'first-description' => 'Inspirerende rektor',
             'main-container-photo-text' => 'Foto: Angel Carlos',
             'our-staff' => 'Vår eminente stab',
@@ -607,7 +607,7 @@ Warning: This cannot be undone.',
             'accept-terms' => '_start_label_ Jeg aksepterer _start_link_ vilkårene _end_link_ _end_label_',
             'note' => 'PS! Vi respekterer personvernretten og deler ikke e-posten din med noen.',
             'save-data-title' => 'Dine data, dine valg',
-            'save-data-description' => 'Forfatterskolen er den som behandler dine data. Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
+            'save-data-description' => 'Easywrite er den som behandler dine data. Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
             'send' => 'Send',
             'mail' => 'post@easywrite.se',
             'address' => 'Lihagen 21, 3029 Drammen',
@@ -623,7 +623,7 @@ Warning: This cannot be undone.',
             'first-section' => [
                 'description' => '&lt;p class=&quot;mb-5&quot;&gt;Er du usikker p&aring; om ideen og utkastet ditt kan bli en god fortelling? St&aring;r du fast med manuset, og lurer p&aring; hva som funker og ikke funker? Eller trenger du en tilbakemelding, og kvalitetssikring, f&oslash;r du sender inn til forlag? &lt;/p&gt;
 
-&lt;p class=&quot;mb-5&quot;&gt;Forfatterskolen tilbyr profesjonell tilbakemelding p&aring; ditt manus. En erfaren redakt&oslash;r vil gi deg en grundig og detaljert tilbakemelding &ndash; med kommentarer i margen &ndash; p&aring; tekstens svake og sterke sider. Du f&aring;r vite hva som er bra, og hvorfor det er bra, hva som kan utvikles videre og hvordan det kan gj&oslash;res. &lt;/p&gt;
+&lt;p class=&quot;mb-5&quot;&gt;Easywrite tilbyr profesjonell tilbakemelding p&aring; ditt manus. En erfaren redakt&oslash;r vil gi deg en grundig og detaljert tilbakemelding &ndash; med kommentarer i margen &ndash; p&aring; tekstens svake og sterke sider. Du f&aring;r vite hva som er bra, og hvorfor det er bra, hva som kan utvikles videre og hvordan det kan gj&oslash;res. &lt;/p&gt;
 
 &lt;p class=&quot;mb-0&quot;&gt;Vi har hjulpet mange elever p&aring; vei mot utgivelse, og bist&aring;r gjerne flere. Er du den neste? Ikke n&oslash;l med &aring; sende oss manuset ditt, det er slik du kommer videre!&lt;/p&gt;
 NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
@@ -661,9 +661,9 @@ NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
             'next-writing-workshop' => 'Neste skriveverksted',
         ],
         'publishing' => [
-            'main-description' => 'Mange av Forfatterskolens elever har etter hvert fått gitt ut bøkene sine, og flere er på vei. Vi har fulgt elevene underveis, mange helt fra starten. Det gjør oss superstolte, og understreker slagordet til rektor: "Kan jeg, kan du". På disse sidene kan du bli litt bedre kjent med noen av forfatterne – og kikke på bøkene deres. Er du den neste som blir utgitt?',
+            'main-description' => 'Mange av Easywrites elever har etter hvert fått gitt ut bøkene sine, og flere er på vei. Vi har fulgt elevene underveis, mange helt fra starten. Det gjør oss superstolte, og understreker slagordet til rektor: "Kan jeg, kan du". På disse sidene kan du bli litt bedre kjent med noen av forfatterne – og kikke på bøkene deres. Er du den neste som blir utgitt?',
             'second-description' => 'Klikk på bøkene for å komme til forlagssiden med bokkjøp.',
-            'title' => 'Forfatterskolens utgitte elever',
+            'title' => 'Easywrites utgitte elever',
         ],
         'accept-terms' => 'Jeg aksepterer [start_link]vilkårene[end_link]',
         'latest-seminars' => 'Siste nytt',
@@ -677,7 +677,7 @@ NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
         'our-course' => [
             'details' => 'Å skrive et manus kan være en utfordring. Det mangler sjelden på ideer, men hvordan komme i gang? Og hvordan lykkes med å skrive et godt manus – uten å gi opp på veien? Vi gir deg alt som skal til: Gode skriveverktøy, profesjonell veiledning og et støttende miljø. Det beste beviset på at metoden vår funker: Vi har hjulpet mange elever med å bli utgitt på de store forlagene, og flere er på vei. Er du den neste?',
             'title' => 'Våre Kurs',
-            'second-description' => 'Forfatterskolens nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
+            'second-description' => 'Easywrites nettbaserte skrivekurs tar deg 10 steg fra idé til ferdig manus – i ditt eget tempo. Du får verktøyet, veiledningen og vennegjengen du trenger for å skrive og fullføre ditt manus – og inspirerende møter med landets mest kjente forfattere og redaktører. Et godt bevis på at metoden vår funker: Kursene våre har allerede avlet flere utgitte elever på de store forlagene. Er du den neste? Velg din favorittsjanger under, og sikre deg en plass på et av våre kommende kurs. Husk: Det viktigste steget er å bestemme seg. Resten hjelper vi deg med.',
             'highlight' => 'Vi er der for deg – hele veien!',
             'course-holder' => 'Kursholder',
             'date' => 'Dato',
@@ -686,7 +686,7 @@ NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
                 'continue-course' => 'Fortsett Kurset',
                 'price' => 'Fra _price_ kroner',
                 'buy-course' => 'Bestill Kurset',
-                'description' => 'Velkommen til Forfatterskolen. Vi gleder oss til å hjelpe deg med å nå forfatterdrømmen din!',
+                'description' => 'Velkommen til Easywrite. Vi gleder oss til å hjelpe deg med å nå forfatterdrømmen din!',
                 'photo' => 'Foto',
                 'course-plan' => 'Om kurset',
                 'overview' => 'Oversikt',
@@ -846,7 +846,7 @@ NB! Dersom du ikke er elev, er denne tjenesten momsbelagt.',
             'note' => 'PS! Vi respekterer personvernretten og deler ikke e-posten din med noen.',
             'send' => 'Send inn',
             'success-message' => 'Takk for at du skrev deg på, du vil snart få en epost i innboksen din.',
-            'jumbotron' => 'Forfatterskolen har jobbet med kjente forfattere og redaktører i mange år, og hatt flere eminente webinar-gjester. Tipsene du får er hentet fra oss selv, og forfattere som _start_span_ Tove Nilsen, Ingvar Ambjørnsen, Tom Egeland, Maja Lunde, Gro Dahle og Herbjørg Wassmo. _end_span_',
+            'jumbotron' => 'Easywrite har jobbet med kjente forfattere og redaktører i mange år, og hatt flere eminente webinar-gjester. Tipsene du får er hentet fra oss selv, og forfattere som _start_span_ Tove Nilsen, Ingvar Ambjørnsen, Tom Egeland, Maja Lunde, Gro Dahle og Herbjørg Wassmo. _end_span_',
         ],
         'opt-in-thanks' => [
             'thank-you-for-signing' => 'Takk for at du skrev deg på! Nå kan du laste ned din gratis PDF.',
@@ -921,7 +921,7 @@ De tolv villender',
         ],
         'home' => [
             'title' => 'For deg som vil gjøre alvor av skrivedrømmen',
-            'description' => 'Vi hos Forfatterskolen har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe flere. Er du den neste?',
+            'description' => 'Vi hos Easywrite har fulgt mange elever tett frem mot utgivelse, og ønsker å hjelpe flere. Er du den neste?',
             'all-course' => 'Alle Kurs',
             'free-writing-tips' => 'Gratis skrivetips',
             'quality-course' => 'Høykvalitets kurs',
@@ -942,7 +942,7 @@ De tolv villender',
             'like-pro-feedback' => 'Vil du ha profesjonell tilbakemelding på en smakebit av din personlige tekst, helt gratis?',
             'like-pro-feedback-yes' => 'Ja, dette vil jeg ha!',
             'gdpr-title' => 'Dine data, dine valg',
-            'gdpr-description-1' => 'Forfatterskolen er den som behandler dine data.',
+            'gdpr-description-1' => 'Easywrite er den som behandler dine data.',
             'gdpr-description-2' => 'Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.',
             'gdpr-understand' => 'JEG FORSTÅR',
             'gdpr-view-terms' => 'Vis meg mer',
@@ -1078,7 +1078,7 @@ kvittering.',
         'search-placeholder' => 'Søk kurs, oppgaver, workshops, webinars..',
         'expected-finish' => 'Forventet ferdig',
         'see-manuscript' => 'Se Manuskript',
-        'pending' => 'Venter godkjenning fra Forfatterskolen',
+        'pending' => 'Venter godkjenning fra Easywrite',
         'copy-editing' => 'Språkvask',
         'date-ordered' => 'Dato bestilt',
         'download-original-script' => 'Last ned orginal manus',
@@ -1099,7 +1099,7 @@ kvittering.',
         'coaching-timer' => 'Coaching Timer',
         'add-coaching-lesson' => 'Add Coaching Lesson',
         'my-suggested-dates' => 'Mine foreslåtte datoer',
-        'admin-proposed-dates' => 'Forfatterskolens foreslåtte datoer',
+        'admin-proposed-dates' => 'Easywrites foreslåtte datoer',
         'reprise-text' => 'Reprise',
         'suggest-other-dates' => 'Foreslå andre datoer',
         'need-help-with-text' => 'Trykk her for å skrive hva du trenger hjelp til',
@@ -1245,7 +1245,7 @@ kvittering.',
         'product' => 'Produkt',
         'package' => 'Kurspakke',
         'edit-company' => 'Rediger Bedrift',
-        'fs-name' => 'Forfatterskolen AS',
+        'fs-name' => 'Easywrite AS',
         'fs-address1' => 'Lihagen 21',
         'fs-address2' => '3029 DRAMMEN',
         'fs-country' => 'Norge',
@@ -1316,7 +1316,7 @@ Dette er alt du får på det store årskurset:
 
 - Lukket gruppe som er eksklusiv for oss på årskurset, med samskrivningsøkter flere ganger i måneden.
 
-- Tilgang til Forfatterskolens store romankurs (med alt du trenger om skrivehåndverket).
+- Tilgang til Easywrites store romankurs (med alt du trenger om skrivehåndverket).
 
 - Oppfølging av personlig skrivetrener som pusher deg hele veien till til mål
 
@@ -1490,7 +1490,7 @@ Rektor Kristine',
         'read-less' => 'Les mindre',
     ],
     'gift-card' => [
-        'description' => '<p class="mb-3">Vil du hjelpe noen med å realisere en drøm? Nå tilbyr Forfatterskolen gavekort på skrivekurs i flere sjangre. Du kan også bestille gavekort på manusutvikling. </p>
+        'description' => '<p class="mb-3">Vil du hjelpe noen med å realisere en drøm? Nå tilbyr Easywrite gavekort på skrivekurs i flere sjangre. Du kan også bestille gavekort på manusutvikling. </p>
 
 <p class="mb-3">Stadig blir vi kontaktet av personer som vil gi en av sine kjære et skrivekurs i julegave – en mor man vil skal skrive sine memoarer, en bestemor som bør lage barnebok av historiene til barnebarna, en far som vil hjelpe en kreativ datter, en som vet kjæresten er god til å skrive – og at hun ikke tør å ta spranget helt ut.</p> 
 
@@ -1643,7 +1643,7 @@ Rektor Kristine',
     'q4-cost' => 'Q4 lager kostnad',
     'total-storage-cost' => 'Totalt lager kostnad (inkl.frakt)',
     'payout' => 'Utbetaling',
-    'generated-by' => 'Generated by Forfatterskolen',
+    'generated-by' => 'Generated by Easywrite',
     'sales-distribution-cost' => 'Sales - distribution cost',
     'contract' => [
         'signature-note' => 'Signatures will appear here once this document is signed.',

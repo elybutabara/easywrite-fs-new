@@ -60,7 +60,7 @@ class ResetPasswordController extends Controller
             $actionText = 'Tilbakestille Passord';
             $actionUrl = url('/auth/passwordreset').'/'.$passwordReset->token;
             $level = 'default';
-            $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
+            $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -256,7 +256,7 @@ class ResetPasswordController extends Controller
         // send password reset link to email
         $actionText = 'Tilbakestille Passord';
         $level = 'default';
-        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
+        $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

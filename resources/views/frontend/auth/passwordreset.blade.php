@@ -9,7 +9,7 @@ Register
 @elseif(Request::input('t') == 'passwordreset')
 Password Reset
 @endif
-&rsaquo; Forfatterskolen
+&rsaquo; Easywrite
 </title>
 @stop
 

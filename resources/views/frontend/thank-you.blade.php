@@ -1,16 +1,16 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Thank You &rsaquo; Forfatterskolen</title>
+    <title>Thank You &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
-{{-- data-bg="https://www.forfatterskolen.no/images-new/thankyou-bg.png" --}}
+{{-- data-bg="https://www.easywrite.se/images-new/thankyou-bg.png" --}}
     <div class="thank-you-page">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 left-container">
-                    {{-- <img data-src="https://www.forfatterskolen.no/images-new/thumb-icon.png" alt="" class="thumb"> --}}
+                    {{-- <img data-src="https://www.easywrite.se/images-new/thumb-icon.png" alt="" class="thumb"> --}}
                     <h1>{{ trans('site.front.thank-you.title') }}</h1>
                     <p>
                         {{ trans('site.front.thank-you.description') }} <br>
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="col-sm-6 right-container">
-                    <img data-src="https://www.forfatterskolen.no/images-new/thankyou-hero.png" alt="">
+                    <img data-src="https://www.easywrite.se/images-new/thankyou-hero.png" alt="">
                 </div>
             </div>
         </div>

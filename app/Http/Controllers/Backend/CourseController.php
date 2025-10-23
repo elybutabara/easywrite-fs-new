@@ -546,7 +546,7 @@ class CourseController extends Controller
             $subject = $request->subject;
             $message = '';
             $from_email = $request->from_email ?: 'post@easywrite.se';
-            $from_name = $request->from_name ?: 'Forfatterskolen';
+            $from_name = $request->from_name ?: 'Easywrite';
 
             // check for attachment
             // save the file first before attaching it on email
@@ -1006,7 +1006,7 @@ class CourseController extends Controller
             asset('/email-attachments/skjema-for-opplysninger-om-angrerett.docx')];
 
         dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-            'post@easywrite.se', 'Forfatterskolen', $attachments, 'courses-taken-order',
+            'post@easywrite.se', 'Easywrite', $attachments, 'courses-taken-order',
             $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
     }
 

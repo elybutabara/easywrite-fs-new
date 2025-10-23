@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title> {{$lesson->title}} &rsaquo; {{$lesson->course->title}} &rsaquo; Forfatterskolen</title>
+<title> {{$lesson->title}} &rsaquo; {{$lesson->course->title}} &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

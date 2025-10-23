@@ -201,7 +201,7 @@ class EmailController extends Controller implements HasMiddleware
         $email_id = \Session::get('reply_email_id');
         $to = \Session::get('reply_to_email');
 
-        $headers = 'From: Forfatterskolen<'.$from.">\r\n";
+        $headers = 'From: Easywrite<'.$from.">\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         $headers .= 'In-Reply-To: '.$email_id."\r\n";
@@ -257,7 +257,7 @@ class EmailController extends Controller implements HasMiddleware
 
             }
 
-            $headers = 'From: Forfatterskolen<'.$from.">\r\n";
+            $headers = 'From: Easywrite<'.$from.">\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             // $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

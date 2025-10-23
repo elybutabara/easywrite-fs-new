@@ -10,7 +10,7 @@
 @stop
 
 @section('title')
-    <title>Cover Details &rsaquo; Forfatterskolen</title>
+    <title>Cover Details &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

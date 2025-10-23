@@ -1,7 +1,7 @@
 <div id="topbar">
     <div class="col-md-6">
         <h3>
-            Velkommen til Forfatterskolens portal
+            Velkommen til Easywrites portal
         </h3>
     </div>
     <div class="col-md-6 text-right">

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Publishing</title>
+    <title>Easywrite Publishing</title>
 @stop
 
 @section('styles')
@@ -33,7 +33,7 @@
 @stop
 
 @section('content')
-    <div class="publishing-page" data-bg="https://www.forfatterskolen.no/images-new/publishing-bg.jpg">
+    <div class="publishing-page" data-bg="https://www.easywrite.se/images-new/publishing-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -64,7 +64,7 @@
                                                 <?php
                                                     $author_image = \App\Http\FrontendHelpers::checkJpegImg($book['author_image']);
                                                 ?>
-                                                <img data-src="https://www.forfatterskolen.no/{{ $author_image }}"
+                                                <img data-src="https://www.easywrite.se/{{ $author_image }}"
                                                      alt="{{ $book['title'] }}" class="img-responsive"
                                                      style="max-height: 105px; margin: auto">
                                             </div>
@@ -90,12 +90,12 @@
                                                     ?>
                                                     @if($library->book_link)
                                                         <a href="{{ $library->book_link }}" target="_blank">
-                                                            <img data-src="https://www.forfatterskolen.no/{{ $book_image }}" alt="{{ $book['title'] }}"
+                                                            <img data-src="https://www.easywrite.se/{{ $book_image }}" alt="{{ $book['title'] }}"
                                                                  class="img-responsive pull-right right-image mr-2"
                                                                  style="max-height: 105px; max-width: 105px">
                                                         </a>
                                                     @else
-                                                        <img data-src="https://www.forfatterskolen.no/{{ $book_image }}" alt="{{ $book['title'] }}"
+                                                        <img data-src="https://www.easywrite.se/{{ $book_image }}" alt="{{ $book['title'] }}"
                                                              class="img-responsive pull-right right-image mr-2"
                                                              style="max-height: 105px; max-width: 105px">
                                                     @endif

@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Coaching Timer</title>
+    <title>Easywrite Coaching Timer</title>
 @stop
 
 @section('content')
 
-    <div class="coaching-timer-page" data-bg="https://www.forfatterskolen.no/images-new/ctimer-bg.png">
+    <div class="coaching-timer-page" data-bg="https://www.easywrite.se/images-new/ctimer-bg.png">
         <div class="container">
             <h1 class="title text-center">
                 {{ trans('site.front.coaching-timer.title') }}
@@ -14,7 +14,7 @@
 
             <div class="row details-container text-center">
                 <div class="col-md-6">
-                    <div class="left-column" data-bg="https://www.forfatterskolen.no/images-new/ctimer-left.jpg">
+                    <div class="left-column" data-bg="https://www.easywrite.se/images-new/ctimer-left.jpg">
                         <div class="circle">
                             <div class="smaller-circle">
                                 <div class="h1">1190 KR</div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="right-column" data-bg="https://www.forfatterskolen.no/images-new/ctimer-right.jpg">
+                    <div class="right-column" data-bg="https://www.easywrite.se/images-new/ctimer-right.jpg">
                         <div class="circle">
                             <div class="smaller-circle">
                                 <div class="h1">1690 KR</div>

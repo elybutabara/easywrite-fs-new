@@ -47,7 +47,7 @@ class PackageWorkshopController extends Controller
         $workshop = Workshop::find($request->workshop_id);
         if ($user && $workshop && $workshop->email_title && $workshop->email_body) {
             $to = $user->email;
-            $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+            $headers = "From: Easywrite<post@easywrite.se>\r\n";
             $emailData['email_subject'] = $workshop->email_title;
             $emailData['email_message'] = nl2br($workshop->email_body);
             $emailData['from_name'] = null;
