@@ -168,7 +168,7 @@ class HomeController extends Controller
                 'email_subject' => $email_template->subject,
                 'email_message' => view('emails.fb-leads-registration', compact('message'))->render(),
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             // \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -209,13 +209,13 @@ class HomeController extends Controller
             $email_content .= 'Email: '.$request->email.'<br/>';
             $email_content .= 'Message: '.$request->message;
 
-            $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+            $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-            // mail('post@forfatterskolen.no', 'Inquiry Message', $email_content, $headers);
-            // AdminHelpers::send_email('Inquiry Message','post@forfatterskolen.no','post@forfatterskolen.no', $email_content);
-            $to = 'post@forfatterskolen.no'; //
+            // mail('post@easywrite.se', 'Inquiry Message', $email_content, $headers);
+            // AdminHelpers::send_email('Inquiry Message','post@easywrite.se','post@easywrite.se', $email_content);
+            $to = 'post@easywrite.se'; //
             $emailData = [
                 'email_subject' => 'Inquiry Message',
                 'email_message' => $email_content,
@@ -1036,14 +1036,14 @@ class HomeController extends Controller
         ]);
 
         /*AdminHelpers::send_email('New Coaching Session',
-            'post@forfatterskolen.no', 'camilla@forfatterskolen.no', Auth::user()->first_name
+            'post@easywrite.se', 'post@easywrite.se', Auth::user()->first_name
             . ' has ordered the Coaching Time '.$title);*/
-        $to = 'post@forfatterskolen.no'; //
+        $to = 'post@easywrite.se'; //
         $emailData = [
             'email_subject' => 'New Coaching Session',
             'email_message' => Auth::user()->first_name.' has ordered the Coaching Time '.$title,
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -1584,13 +1584,13 @@ class HomeController extends Controller
     public function testemail()
     {
         $subject = 'Fresh email subject';
-        $from = 'post@forfatterskolen.no';
+        $from = 'post@easywrite.se';
         $from_name = 'Forfatterskolen';
         $to = 'elybutabara@gmail.com';
         $content = 'this is a test only from PORT '.env('MAIL_PORT');
         echo $to.'<br/>';
         echo env('MAIL_PORT').' '.env('MAIL_PORT_SITE').'<br/>';
-        // AdminHelpers::send_email($subject,'postmail@forfatterskolen.no', $to, $content);
+        // AdminHelpers::send_email($subject,'post@easywrite.se', $to, $content);
         $emailData['email_subject'] = $subject;
         $emailData['email_message'] = $content." using queue with plain text <a href='#'>link here</a>";
         $emailData['from_name'] = null;
@@ -1599,14 +1599,14 @@ class HomeController extends Controller
         // \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
         $parent = 'test';
         $parent_id = 1;
-        dispatch(new AddMailToQueueJob($to, $subject, 'testing', 'post@forfatterskolen.no', null, null,
+        dispatch(new AddMailToQueueJob($to, $subject, 'testing', 'post@easywrite.se', null, null,
             $parent, $parent_id));
 
         $emailData = [
             'email_subject' => 'testing',
             'email_message' => 'testing mail queue',
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -1615,7 +1615,7 @@ class HomeController extends Controller
 
     public function testEmail2()
     {
-        /*AdminHelpers::send_email('Subject','post@forfatterskolen.no','elybutabara@yahoo.com','this is a test only');
+        /*AdminHelpers::send_email('Subject','post@easywrite.se','elybutabara@yahoo.com','this is a test only');
         echo "<br/>sent";*/
 
         /*$message = 'Inquiry Message <br/>'.PHP_EOL;
@@ -1623,7 +1623,7 @@ class HomeController extends Controller
         $message .= 'Email: elybutabara@gmail.com <br/>'.PHP_EOL;
         $message .= 'Message: this is my message';
 
-        $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -1691,7 +1691,7 @@ class HomeController extends Controller
                     // AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
 
                     // Email to support
-                    // mail('support@forfatterskolen.no', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
+                    // mail('post@easywrite.se', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
                 }
 
             }
@@ -1994,11 +1994,11 @@ text-decoration:none;border-radius:3px;padding:12px 18px;border:1px solid #114c7
             $emailData['email_subject'] = $subject;
             $emailData['email_message'] = $message;
             $emailData['from_name'] = null;
-            $emailData['from_email'] = 'postmail@forfatterskolen.no';
+            $emailData['from_email'] = 'post@easywrite.se';
             $emailData['attach_file'] = null;
 
             \Mail::to($user_email)->queue(new SubjectBodyEmail($emailData));
-            // AdminHelpers::send_email($subject,'postmail@forfatterskolen.no', $user_email, $message);
+            // AdminHelpers::send_email($subject,'post@easywrite.se', $user_email, $message);
         }
     }
 

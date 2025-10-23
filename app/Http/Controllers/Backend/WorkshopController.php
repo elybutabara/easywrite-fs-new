@@ -250,8 +250,8 @@ class WorkshopController extends Controller
 
             $subject = $request->subject;
             $message = $request->message;
-            $from_email = $request->from_email ?: 'post@forfatterskolen.no';
-            $from_name = $request->from_name ?: 'Forfatterskolen';
+            $from_email = $request->from_email ?: 'post@easywrite.se';
+            $from_name = $request->from_name ?: 'Easywrite';
 
             // check for attachment
             // save the file first before attaching it on email

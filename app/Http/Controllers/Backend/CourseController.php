@@ -329,7 +329,7 @@ class CourseController extends Controller
                 'email_subject' => $course->title,
                 'email_message' => $course->email,
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -545,7 +545,7 @@ class CourseController extends Controller
                 : $course->learners->get();
             $subject = $request->subject;
             $message = '';
-            $from_email = $request->from_email ?: 'postmail@forfatterskolen.no';
+            $from_email = $request->from_email ?: 'post@easywrite.se';
             $from_name = $request->from_name ?: 'Forfatterskolen';
 
             // check for attachment
@@ -1006,7 +1006,7 @@ class CourseController extends Controller
             asset('/email-attachments/skjema-for-opplysninger-om-angrerett.docx')];
 
         dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-            'postmail@forfatterskolen.no', 'Forfatterskolen', $attachments, 'courses-taken-order',
+            'post@easywrite.se', 'Forfatterskolen', $attachments, 'courses-taken-order',
             $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
     }
 

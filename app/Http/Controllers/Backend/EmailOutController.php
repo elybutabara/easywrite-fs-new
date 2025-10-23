@@ -89,7 +89,7 @@ class EmailOutController extends Controller
 
         if ($request->send_to) {
             $subject = $request->subject;
-            $from = 'post@forfatterskolen.no';
+            $from = 'post@easywrite.se';
             $to = $request->send_to;
             $content = $request->message;
             $messageBag = new MessageBag;
@@ -203,7 +203,7 @@ class EmailOutController extends Controller
             $userCounter = 0;
             foreach ($users as $user) {
                 $subject = $email_out->subject;
-                $from = 'post@forfatterskolen.no';
+                $from = 'post@easywrite.se';
                 $to = $user->email;
                 $content = $email_out->message;
 
@@ -241,7 +241,7 @@ class EmailOutController extends Controller
 
         if ($request->send_to) {
             $subject = $email_out->subject;
-            $from = 'post@forfatterskolen.no';
+            $from = 'post@easywrite.se';
             $to = $request->send_to;
             $content = $email_out->message;
             $messageBag = new MessageBag;
@@ -416,7 +416,7 @@ class EmailOutController extends Controller
                 'email_subject' => $request->subject,
                 'email_message' => $content,
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

@@ -102,8 +102,8 @@ class CheckAutoRenewCourses
                             'from_email' => null,
                             'attach_file' => null,
                         ];
-                        \Mail::to('support@forfatterskolen.no')->queue(new SubjectBodyEmail($emailData));
-                        // mail('support@forfatterskolen.no', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
+                        \Mail::to('post@easywrite.se')->queue(new SubjectBodyEmail($emailData));
+                        // mail('post@easywrite.se', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
                     }
                 }
             }

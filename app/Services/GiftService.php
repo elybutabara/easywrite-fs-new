@@ -375,7 +375,7 @@ class GiftService
                 asset('/email-attachments/skjema-for-opplysninger-om-angrerett.docx')];
 
             dispatch(new AddMailToQueueJob($user_email, $package->course->title, '',
-                'postmail@forfatterskolen.no', 'Forfatterskolen', $attachments,
+                'post@easywrite.se', 'Forfatterskolen', $attachments,
                 'gift-purchase', $giftPurchase->id));
 
         }
@@ -408,8 +408,8 @@ class GiftService
             $itemName = 'manuscript '.$shopManuscript->title;
         }
 
-        $to = 'support@forfatterskolen.no';
-        $from = 'post@forfatterskolen.no';
+        $to = 'post@easywrite.se';
+        $from = 'post@easywrite.se';
         $subject = 'New Gift Order';
         $message = $user->first_name.
             ' has purchased a gift '.$itemName;
@@ -504,7 +504,7 @@ class GiftService
         $table->addCell($width, [
             'borderBottomSize' => 6,
             'height' => 1,
-        ])->addText('post@forfatterskolen.no', [
+        ])->addText('post@easywrite.se', [
             'bgColor' => 'CCCCCC',
         ], [
             'space' => ['before' => 250, 'after' => 0],

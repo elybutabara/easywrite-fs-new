@@ -22,7 +22,7 @@ class CoachingSuggestionDateEmail extends Mailable
 
     public function build()
     {
-        return $this->from('post@forfatterskolen.no', 'Forfatterskolen')
+        return $this->from('post@easywrite.se', 'Easywrite')
             ->subject('New suggestion date')
             ->view('emails.suggestion_date');
     }

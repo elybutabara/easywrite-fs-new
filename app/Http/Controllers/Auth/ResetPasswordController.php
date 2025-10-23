@@ -60,7 +60,7 @@ class ResetPasswordController extends Controller
             $actionText = 'Tilbakestille Passord';
             $actionUrl = url('/auth/passwordreset').'/'.$passwordReset->token;
             $level = 'default';
-            $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+            $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -72,7 +72,7 @@ class ResetPasswordController extends Controller
                 'email_subject' => 'Forespørsel om å tilbakestille passordet ditt',
                 'email_message' => view('emails.passwordreset', compact('actionText', 'actionUrl', 'level'))->render(),
                 'from_name' => '',
-                'from_email' => 'postmail@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -256,7 +256,7 @@ class ResetPasswordController extends Controller
         // send password reset link to email
         $actionText = 'Tilbakestille Passord';
         $level = 'default';
-        $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -264,7 +264,7 @@ class ResetPasswordController extends Controller
             'email_subject' => 'Forespørsel om å tilbakestille passordet ditt',
             'email_message' => view('emails.passwordreset', compact('actionText', 'actionUrl', 'level'))->render(),
             'from_name' => '',
-            'from_email' => 'postmail@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

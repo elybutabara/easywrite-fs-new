@@ -725,10 +725,10 @@ class CourseService
         $user_email = $user->email;
         $email_content = $package->course->email;
         $actionText = 'Mine Kurs';
-        $actionUrl = 'http://www.forfatterskolen.no/account/course';
+        $actionUrl = 'http://www.easywrite.se/account/course';
 
         dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-            'postmail@forfatterskolen.no', 'Forfatterskolen', null, 'courses-taken-upgrade',
+            'post@easywrite.se', 'Easywrite', null, 'courses-taken-upgrade',
             $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
     }
 
@@ -896,7 +896,7 @@ class CourseService
         $table->addCell($width, [
             'borderBottomSize' => 6,
             'height' => 1,
-        ])->addText('post@forfatterskolen.no', [
+        ])->addText('post@easywrite.se', [
             'bgColor' => 'CCCCCC',
         ], [
             'space' => ['before' => 250, 'after' => 0],

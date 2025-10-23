@@ -699,7 +699,7 @@ class AssignmentController extends Controller
                 // queue sending of email for fast loading
                 // \Mail::to($userEmail)->queue(new AssignmentManuscriptEmailToList($emailData));
                 dispatch(new AddMailToQueueJob($userEmail, $request->subject, $request->message,
-                    'post@forfatterskolen.no', null, null,
+                    'post@easywrite.se', null, null,
                     'assignment-manuscripts', $manuscript->id));
             }
 
@@ -790,7 +790,7 @@ class AssignmentController extends Controller
                 $userEmail = $manuscript->user->email;
                 $subject = 'Din tekst på dagens redigeringswebinar';
                 $message = 'Du har fått tekst nr. "'.$count.'"';
-                $from = 'postmail@forfatterskolen.no';
+                $from = 'post@easywrite.se';
 
                 $updateAssignment = AssignmentManuscript::find($manuscript->id);
                 $updateAssignment->text_number = $count;
@@ -798,7 +798,7 @@ class AssignmentController extends Controller
 
                 // AdminHelpers::send_mail( $userEmail, $subject, $message, $from);
                 /*AdminHelpers::send_email($subject,
-                    'postmail@forfatterskolen.no', $userEmail, $message);*/
+                    'post@easywrite.se', $userEmail, $message);*/
                 $emailData['email_subject'] = $subject;
                 $emailData['email_message'] = $message;
                 $emailData['from_name'] = null;

@@ -301,7 +301,7 @@ class User extends Authenticatable
             return $value;
         }
 
-        return 'https://www.forfatterskolen.no/images/user.png';
+        return 'https://www.easywrite.se/images/user.png';
 
     }
 

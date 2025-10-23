@@ -215,12 +215,12 @@ class CoachingTimeService
         }
 
         $message = $user->full_name.' has ordered the '.$title;
-        $to = 'post@forfatterskolen.no';
+        $to = 'post@easywrite.se';
         $emailData = [
             'email_subject' => 'New Coaching Session',
             'email_message' => $message,
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

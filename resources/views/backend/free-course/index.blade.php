@@ -92,7 +92,7 @@
                                         </div>
                                         <div class="pull-right button-container">
                                             <?php
-                                            $webinarUrl = "https://forfatterskolen.no/free-webinar/".$webinar->id;
+                                            $webinarUrl = "https://easywrite.se/free-webinar/".$webinar->id;
                                             ?>
                                             <input type="text" value="{{ $webinarUrl }}"
                                                    style="position: absolute; left: -10000px;">

@@ -1275,7 +1275,7 @@ class LearnerController extends Controller
 
         $email_content = $request->email_content ?: '';
         dispatch(new AddMailToQueueJob($user->email, $package->course->title, $email_content,
-            'postmail@forfatterskolen.no', 'Forfatterskolen', $attachments, 'courses-taken-order', $courseTaken->id));
+            'post@easywrite.se', 'Forfatterskolen', $attachments, 'courses-taken-order', $courseTaken->id));
 
         return redirect()->back()->with([
             'errors' => AdminHelpers::createMessageBag('Regret schema sent.'),
@@ -1430,8 +1430,8 @@ class LearnerController extends Controller
         $data['email'] = $data['message'];
         $learner->emails()->create($data);
 
-        $from_email = $request->from_email ?: 'postmail@forfatterskolen.no';
-        $from_name = $request->from_name ?: 'Forfatterskolen';
+        $from_email = $request->from_email ?: 'post@easywrite.se';
+        $from_name = $request->from_name ?: 'Easwyrite';
 
         $email = $learner->email;
         $encode_email = encrypt($email);
@@ -1479,7 +1479,7 @@ class LearnerController extends Controller
     {
         $learner = User::findOrFail($id);
         $to = $learner->email;
-        $from = 'elin@forfatterskolen.no'; // $request->from_email;
+        $from = 'post@easywrite.se'; // $request->from_email;
         $message = $request->message;
         $subject = $request->subject;
         // AdminHelpers::send_mail( $to, $subject, $message, $from);

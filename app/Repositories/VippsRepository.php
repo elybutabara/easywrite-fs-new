@@ -207,8 +207,8 @@ class VippsRepository
 <br/> Transaction id: '.$transactionInfo->transactionId.'</p>';
 
         $subject = 'Payment Captured for Invoice #'.$orderId;
-        $from = 'postmail@forfatterskolen.no';
-        $to = 'support@forfatterskolen.no';
+        $from = 'post@easywrite.se';
+        $to = 'post@easywrite.se';
         $emailData['email_subject'] = $subject;
         $emailData['email_message'] = $message;
         $emailData['from_name'] = null;
@@ -257,7 +257,7 @@ class VippsRepository
 
             // AdminHelpers::send_email($subject,$from, $to, $message);
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
-            \Mail::to('post@forfatterskolen.no')->queue(new SubjectBodyEmail($emailData));
+            \Mail::to('post@easywrite.se')->queue(new SubjectBodyEmail($emailData));
             \Mail::to('elybutabara@gmail.com')->queue(new SubjectBodyEmail($emailData));
         }
 

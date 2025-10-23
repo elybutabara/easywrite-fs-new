@@ -220,7 +220,7 @@ class AdminHelpers
      */
     /* public static function send_email($subject, $from, $to, $content, string $from_name = 'Forfatterskolen', $attachment = null): bool
     {
-        $from = $from ?: 'postmail@forfatterskolen.no';
+        $from = $from ?: 'post@easywrite.se';
         $host = env('MAIL_HOST_SITE');
         $port = env('MAIL_PORT_SITE');
         $email_sender = config('mail.username'); // env('MAIL_USERNAME');

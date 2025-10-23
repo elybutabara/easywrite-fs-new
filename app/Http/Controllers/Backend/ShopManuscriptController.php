@@ -350,7 +350,7 @@ class ShopManuscriptController extends Controller
 
             $user = User::find($updatedManuscript->user_id);
 
-            $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+            $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -364,7 +364,7 @@ class ShopManuscriptController extends Controller
             $emailData['email_subject'] = $subject;
             $emailData['email_message'] = $email_body;
             $emailData['from_name'] = null;
-            $emailData['from_email'] = 'postmail@forfatterskolen.no';
+            $emailData['from_email'] = 'post@easywrite.se';
             $emailData['attach_file'] = null;
 
             /*\Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -372,7 +372,7 @@ class ShopManuscriptController extends Controller
             $this->saleService->createEmailHistory($subject, 'postmail@forfatterskolen.no', $email_body,
                 'shop-manuscripts-taken-expected-finish', $shopManuscriptTakenID);*/
 
-            dispatch(new AddMailToQueueJob($to, $subject, $email_body, 'postmail@forfatterskolen.no', null, null,
+            dispatch(new AddMailToQueueJob($to, $subject, $email_body, 'post@easywrite.se', null, null,
                 'shop-manuscripts-taken-expected-finish', $shopManuscriptTakenID));
 
             // mail($to, 'Forventet dato for tilbakemelding', $email_body, $headers);
@@ -597,13 +597,13 @@ class ShopManuscriptController extends Controller
         include base_path().'/resources/views/emails/free-manuscript-feedback.blade.php';
         $message = ob_get_clean();
 
-        $headers = "From: Forfatterskolen<post@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         // $headers .= 'Reply-To: '. $from . "\r\n";
 
         $subject = 'Tilbakemelding på din tekst';
-        $from = 'postmail@forfatterskolen.no';
+        $from = 'post@easywrite.se';
 
         // AdminHelpers::send_mail($to, $subject, $message, $from );
         // AdminHelpers::send_email($subject, $from, $to, $message);
@@ -629,7 +629,7 @@ class ShopManuscriptController extends Controller
         $message .= 'Email: elybutabara@gmail.com'.PHP_EOL;
         $message .= 'Message: this is my message';
 
-        $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

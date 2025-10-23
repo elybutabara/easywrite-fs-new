@@ -67,7 +67,7 @@ class FreeCourseDelayedEmailCommand extends Command
 
             if (!$user->is_disabled) {
                 // \Mail::to($toEmail)->queue(new FreeCourseNewUserEmail($email_data));
-                dispatch(new AddMailToQueueJob($toEmail, $course->title, $message, 'postmail@forfatterskolen.no', null, null,
+                dispatch(new AddMailToQueueJob($toEmail, $course->title, $message, 'post@easywrite.se', null, null,
                     'learner', $user->id));
                 CronLog::create(['activity' => 'FreeCourseDelayedEmailCommand sent email to user '.$user->id]);
             }

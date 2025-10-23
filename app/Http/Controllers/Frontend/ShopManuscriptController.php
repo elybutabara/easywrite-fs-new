@@ -411,15 +411,15 @@ class ShopManuscriptController extends Controller
 
             // Admin notification
             $message = Auth::user()->full_name.' submitted a manuscript for shop manuscript '.$shopManuscriptTaken->shop_manuscript->title;
-            $toMail = 'post@forfatterskolen.no'; // post@forfatterskolen.no
+            $toMail = 'post@easywrite.se'; // post@easywrite.se
             /*AdminHelpers::send_email('New manuscript submitted for shop manuscript',
-                'post@forfatterskolen.no',$toMail, $message);*/
-            $to = 'post@forfatterskolen.no'; //
+                'post@easywrite.se',$toMail, $message);*/
+            $to = 'post@easywrite.se'; //
             $emailData = [
                 'email_subject' => 'New manuscript submitted for shop manuscript',
                 'email_message' => $message,
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -690,16 +690,16 @@ class ShopManuscriptController extends Controller
             ]);
             // Admin notification
             $message = Auth::user()->full_name.' submitted a manuscript for shop manuscript '.$shopManuscriptTaken->shop_manuscript->title;
-            $toMail = 'post@forfatterskolen.no'; // post@forfatterskolen.no
+            $toMail = 'post@easywrite.se'; // post@easywrite.se
             // mail($toMail, 'New manuscript submitted for shop manuscript', $message);
             /*AdminHelpers::send_email('New manuscript submitted for shop manuscript',
-                'post@forfatterskolen.no', $toMail, $message);*/
+                'post@easywrite.se', $toMail, $message);*/
             $to = $toMail; //
             $emailData = [
                 'email_subject' => 'New manuscript submitted for shop manuscript',
                 'email_message' => $message,
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -861,16 +861,16 @@ class ShopManuscriptController extends Controller
             ]);
             // Admin notification
             $message = Auth::user()->full_name.' submitted a manuscript for shop manuscript '.$shopManuscriptTaken->shop_manuscript->title;
-            // mail('post@forfatterskolen.no', 'New manuscript submitted for shop manuscript', $message);
-            $toMail = 'post@forfatterskolen.no'; // post@forfatterskolen.no
+            // mail('post@easywrite.se', 'New manuscript submitted for shop manuscript', $message);
+            $toMail = 'post@easywrite.se'; // post@easywrite.se
             /*AdminHelpers::send_email('New manuscript submitted for shop manuscript',
-                'post@forfatterskolen.no', $toMail, $message);*/
+                'post@easywrite.se', $toMail, $message);*/
             $to = $toMail; //
             $emailData = [
                 'email_subject' => 'New manuscript submitted for shop manuscript',
                 'email_message' => $message,
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -1342,7 +1342,7 @@ class ShopManuscriptController extends Controller
         if (in_array($request->email, $existing_emails)) {
             return redirect()->back()->withInput()->with([
                 'errors' => AdminHelpers::createMessageBag('Beklager, men du har allerede benyttet deg av dette gratistilbudet
-Er det feil må du sende en mail til <a href="mailto:post@forfatterskolen.no">post@forfatterskolen.no</a>'),
+Er det feil må du sende en mail til <a href="mailto:post@easywrite.se">post@easywrite.se</a>'),
             ]);
         }
 
@@ -1359,12 +1359,12 @@ Er det feil må du sende en mail til <a href="mailto:post@forfatterskolen.no">po
         if ($word_count > 0) {
             // Send email
             $actionText = 'View Our Courses';
-            $actionUrl = 'http://dev.forfatterskolen.no/course';
-            $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+            $actionUrl = 'http://www.easywrite.se/course';
+            $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-            // mail('post@forfatterskolen.no', 'Free Manuscript', view('emails.free-manuscript', compact('name', 'email', 'content', 'word_count')), $headers);
+            // mail('post@easywrite.se', 'Free Manuscript', view('emails.free-manuscript', compact('name', 'email', 'content', 'word_count')), $headers);
             FreeManuscript::create([
                 'name' => $request->name,
                 'last_name' => $request->last_name,
@@ -1375,14 +1375,14 @@ Er det feil må du sende en mail til <a href="mailto:post@forfatterskolen.no">po
                 'deadline' => Carbon::today()->addDays(6),
             ]);
             /*AdminHelpers::send_email('Free Manuscript',
-                'post@forfatterskolen.no', 'post@forfatterskolen.no',
+                'post@easywrite.se', 'post@easywrite.se',
                 view('emails.free-manuscript', compact('name', 'email', 'content', 'word_count')));*/
-            $to = 'post@forfatterskolen.no'; //
+            $to = 'post@easywrite.se'; //
             $emailData = [
                 'email_subject' => 'Free Manuscript',
                 'email_message' => view('emails.free-manuscript', compact('name', 'last_name', 'email', 'content', 'word_count'))->render(),
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

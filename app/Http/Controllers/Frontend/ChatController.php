@@ -36,7 +36,7 @@ class ChatController extends Controller
             // 'prompt' => $message,
             'model' => 'gpt-3.5-turbo',
             'messages' => [
-                ['role' => 'system', 'content' => 'You are a helpful assistant for https://www.forfatterskolen.no website.'],
+                ['role' => 'system', 'content' => 'You are a helpful assistant for https://www.easywrite.se website.'],
                 ['role' => 'user', 'content' => $message],
             ],
             'temperature' => 0.5,

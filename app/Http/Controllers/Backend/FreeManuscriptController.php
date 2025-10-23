@@ -155,11 +155,11 @@ class FreeManuscriptController extends Controller
             $message = str_replace($search_string, $replace_string, $message);
 
             $subject = $emailTemplate->subject; // 'Tilbakemelding på din tekst';
-            $from = 'postmail@forfatterskolen.no';
+            $from = 'post@easywrite.se';
 
             /* AdminHelpers::send_mail($to, $subject, $message, $from ); */
             /*AdminHelpers::send_email($subject,
-                'postmail@forfatterskolen.no', $to, $message);*/
+                'post@easywrite.se', $to, $message);*/
             $emailData['email_subject'] = $subject;
             $emailData['email_message'] = $message;
             $emailData['from_name'] = null;
@@ -276,7 +276,7 @@ class FreeManuscriptController extends Controller
         include base_path().'/resources/views/emails/free-manuscript-feedback.blade.php';
         $message = ob_get_clean();
 
-        $headers = "From: Forfatterskolen<postmail@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         // $headers .= 'Reply-To: '. $from . "\r\n";
@@ -293,7 +293,7 @@ class FreeManuscriptController extends Controller
         $message = str_replace($search_string, $replace_string, $message);
 
         $subject = $emailTemplate->subject;
-        $from = $emailTemplate->from; // "postmail@forfatterskolen.no";
+        $from = $emailTemplate->from; // "post@easywrite.se";
 
         $emailData['email_subject'] = $subject;
         $emailData['email_message'] = $message;

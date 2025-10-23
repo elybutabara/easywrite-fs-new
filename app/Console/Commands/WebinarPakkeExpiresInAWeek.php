@@ -143,8 +143,8 @@ class WebinarPakkeExpiresInAWeek extends Command
                     AdminHelpers::addToAutomation($user_email, $automation_id, $user_name);
 
                     // Email to support
-                    $from = 'postmail@forfatterskolen.no';
-                    $to = 'support@forfatterskolen.no';
+                    $from = 'post@easywrite.se';
+                    $to = 'post@easywrite.se';
                     /*AdminHelpers::send_email('All Courses Renewed',
                         $from, $to,
                         $user_name . ' has renewed all the courses');*/

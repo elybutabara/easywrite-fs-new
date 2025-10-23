@@ -625,7 +625,7 @@ class ShopManuscriptService
             'email_subject' => 'New manuscript submitted for shop manuscript',
             'email_message' => $message,
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

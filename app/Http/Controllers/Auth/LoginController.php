@@ -641,7 +641,7 @@ class LoginController extends Controller
                 'email_subject' => 'Velkommen til Forfatterskolen',
                 'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
                 'from_name' => '',
-                'from_email' => 'post@forfatterskolen.no',
+                'from_email' => 'post@easywrite.se',
                 'attach_file' => null,
             ];
 

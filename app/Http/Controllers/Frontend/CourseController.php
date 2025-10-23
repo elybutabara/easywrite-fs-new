@@ -252,7 +252,7 @@ class CourseController extends Controller
                         $message = str_replace($search_string, $replace_string, $emailOut->message);
                     }
 
-                    dispatch(new AddMailToQueueJob($toEmail, $course->title, $message, 'postmail@forfatterskolen.no', null, null,
+                    dispatch(new AddMailToQueueJob($toEmail, $course->title, $message, 'post@easywrite.se', null, null,
                         'learner', $user->id));
                 }
             }

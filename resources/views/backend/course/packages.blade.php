@@ -86,7 +86,7 @@
             data-months_12_enable="{{ $package->months_12_enable }}"
             data-id="{{ $package->id }}"
             data-due-date="{{ $package->full_price_due_date }}"
-                                data-sale_link = "{{ 'https://forfatterskolen.no/course/'.$package->course_id
+                                data-sale_link = "{{ 'https://easywrite.se/course/'.$package->course_id
                                 .'/checkout?sp='.encrypt($package->id) }}"
                         data-has_student_discount="{{ $package->has_student_discount }}"
                                 data-is_show="{{ $package->is_show }}"

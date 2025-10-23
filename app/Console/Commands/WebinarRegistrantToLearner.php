@@ -116,11 +116,11 @@ class WebinarRegistrantToLearner extends Command
                 $message = str_replace($search_string, $replace_string, $emailOut->message).$attachmentText;
                 // check if already added
                 if (! $alreadyAdded) {
-                    // AdminHelpers::send_email($subject,'post@forfatterskolen.no', $user_email, $message);
+                    // AdminHelpers::send_email($subject,'post@easywrite.se', $user_email, $message);
                     $emailData['email_subject'] = $subject;
                     $emailData['email_message'] = $message;
                     $emailData['from_name'] = null;
-                    $emailData['from_email'] = 'postmail@forfatterskolen.no';
+                    $emailData['from_email'] = 'post@easywrite.se';
                     $emailData['attach_file'] = null;
 
                     \Mail::to($user_email)->queue(new SubjectBodyEmail($emailData));

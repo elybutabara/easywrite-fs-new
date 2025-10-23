@@ -14,7 +14,7 @@
 
         body {
             font-family: Denk One, sans-serif;
-            background-image: url('https://www.forfatterskolen.no/images-new/certificate/template.png');
+            background-image: url('https://www.easywrite.se/images-new/certificate/template.png');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -41,7 +41,7 @@
 <center>
     <div class="certificate-content">
         <div>
-            <img src="https://www.forfatterskolen.no/images-new/logo-tagline.png" alt="Forfatterskolen" title="Logo" style="height: 6rem;">
+            <img src="https://www.easywrite.se/images-new/logo-tagline.png" alt="Forfatterskolen" title="Logo" style="height: 6rem;">
         </div>
         <span style="font-size:50px; font-weight:bold">10 weeks novelcourse</span>
         <br><br>
@@ -68,7 +68,7 @@
                 <!-- Signature -->
                 <td style="width: 40%; text-align: center;">
                     <div>
-                        <img src="https://www.forfatterskolen.no/images-new/certificate/signature.png" style="height: 30px">
+                        <img src="https://www.easywrite.se/images-new/certificate/signature.png" style="height: 30px">
                     </div>
                     <div style="border-bottom: 1px solid #000; height: 20px;"></div>
                     <div><b>Signatur</b></div>

@@ -45,7 +45,7 @@ class RegisterController extends Controller
         // Send welcome email
         $actionText = 'Se dine kurs';
         $actionUrl = \URL::to('/account/course');
-        $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'email_subject' => 'Velkommen til Forfatterskolen',
             'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
@@ -109,7 +109,7 @@ class RegisterController extends Controller
         // Send welcome email
         $actionText = 'Se dine kurs';
         $actionUrl = \URL::to('/account/course');
-        $headers = "From: Forfatterskolen<no-reply@forfatterskolen.no>\r\n";
+        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -118,7 +118,7 @@ class RegisterController extends Controller
             'email_subject' => 'Velkommen til Forfatterskolen',
             'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
             'from_name' => '',
-            'from_email' => 'post@forfatterskolen.no',
+            'from_email' => 'post@easywrite.se',
             'attach_file' => null,
         ];
         \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

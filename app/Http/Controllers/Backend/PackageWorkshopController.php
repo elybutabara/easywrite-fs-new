@@ -47,11 +47,11 @@ class PackageWorkshopController extends Controller
         $workshop = Workshop::find($request->workshop_id);
         if ($user && $workshop && $workshop->email_title && $workshop->email_body) {
             $to = $user->email;
-            $headers = "From: Forfatterskolen<postmail@forfatterskolen.no>\r\n";
+            $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
             $emailData['email_subject'] = $workshop->email_title;
             $emailData['email_message'] = nl2br($workshop->email_body);
             $emailData['from_name'] = null;
-            $emailData['from_email'] = 'elin@forfatterskolen.no';
+            $emailData['from_email'] = 'post@easywrite.se';
             $emailData['attach_file'] = null;
 
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));

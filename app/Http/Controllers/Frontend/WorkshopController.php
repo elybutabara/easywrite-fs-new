@@ -178,7 +178,7 @@ class WorkshopController extends Controller
         $emailData['email_subject'] = $workshop->email_title;
         $emailData['email_message'] = nl2br($workshop->email_body);
         $emailData['from_name'] = null;
-        $emailData['from_email'] = 'post@forfatterskolen.no';
+        $emailData['from_email'] = 'post@easywrite.se';
         $emailData['attach_file'] = null;
         $user_email = $user->email;
 
@@ -193,7 +193,7 @@ class WorkshopController extends Controller
         $adminEmailData['attach_file'] = null;
 
         // add email to queue
-        \Mail::to('post@forfatterskolen.no')->queue(new SubjectBodyEmail($adminEmailData));
+        \Mail::to('post@easywrite.se')->queue(new SubjectBodyEmail($adminEmailData));
 
         if ($paymentMode->mode == 'Paypal') {
             $paypal = new Paypal;
