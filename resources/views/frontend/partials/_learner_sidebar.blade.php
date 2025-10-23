@@ -26,23 +26,19 @@
     </div>
 
     <div class="icons-container">
-        <a href="https://www.facebook.com/bliforfatter/" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=100063692359984" target="_blank">
             <img src="{{ asset('images-new/icon/facebook.png') }}" alt="facebook-icon">
         </a>
         <a href="https://twitter.com/Forfatterrektor" target="_blank" class="ml-0">
             <img src="{{ asset('images-new/icon/twitter.png') }}" alt="twitter-icon">
         </a>
-        <a href="https://www.instagram.com/forfatterskolen_norge/" target="_blank">
+        <a href="https://www.instagram.com/easywrite_sverige/" target="_blank">
             <img src="{{ asset('images-new/icon/instagram.png') }}" alt="instagram-icon">
         </a>
         <a href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
             <img src="{{ asset('images-new/icon/pinterest.png') }}" alt="pinterest-icon">
         </a>
     </div>
-
-    <a href="{{ route('learner.change-portal', 'self-publishing') }}" class="btn portal-btn">
-        Selvpubliseringsportal
-    </a>
 
     <a href="{{ route('auth.logout-get') }}" style="display: block">
         <form method="POST" action="{{route('auth.logout')}}" class="form-logout">
