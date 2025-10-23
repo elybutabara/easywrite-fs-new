@@ -478,7 +478,7 @@ class ShopController extends Controller
 
         // Email to support
         $from = 'post@easywrite.se';
-        $headers1 = 'From: Forfatterskolen<'.$from.">\r\n";
+        $headers1 = 'From: Easywrite<'.$from.">\r\n";
         $headers1 .= "MIME-Version: 1.0\r\n";
         $headers1 .= "Content-Type: text/html; charset=UTF-8\r\n";
         // mail('post@easywrite.se', 'New Course Order', Auth::user()->first_name . ' has ordered the course ' . $package->course->title, $headers1);
@@ -496,7 +496,7 @@ class ShopController extends Controller
             'post@easywrite.se', 'post@easywrite.se', Auth::user()->first_name . ' has ordered the course ' . $package->course->title);*/
 
         // Send course email
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         $user = Auth::user();
@@ -1443,7 +1443,7 @@ class ShopController extends Controller
 
         // Email to support
         $from = 'post@easywrite.se';
-        $headers1 = 'From: Forfatterskolen<'.$from.">\r\n";
+        $headers1 = 'From: Easywrite<'.$from.">\r\n";
         $headers1 .= "MIME-Version: 1.0\r\n";
         $headers1 .= "Content-Type: text/html; charset=UTF-8\r\n";
         // mail('post@easywrite.se', 'New Course Order', Auth::user()->first_name . ' has ordered the course ' . $package->course->title, $headers1);
@@ -1460,7 +1460,7 @@ class ShopController extends Controller
             'post@easywrite.se', 'post@easywrite.se', Auth::user()->first_name . ' has ordered the course ' . $package->course->title);*/
 
         // Send course email
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         $user = Auth::user();
@@ -1488,9 +1488,9 @@ class ShopController extends Controller
         /*AdminHelpers::send_email($package->course->title,
             'post@easywrite.se', $user_email,
             view('emails.course_order', compact('actionText', 'actionUrl', 'user', 'email_content')),
-            'Forfatterskolen', $attachments);*/
+            'Easywrite', $attachments);*/
         dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-            'post@easywrite.se', 'Forfatterskolen', $attachments, 'courses-taken-order',
+            'post@easywrite.se', 'Easywrite', $attachments, 'courses-taken-order',
             $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
 
         if ($paymentMode->mode == 'Paypal') {
@@ -1513,7 +1513,7 @@ class ShopController extends Controller
             ]);
             /*echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -1864,7 +1864,7 @@ class ShopController extends Controller
 
         // Email to support
         $from = 'post@easywrite.se';
-        $headers1 = 'From: Forfatterskolen<'.$from.">\r\n";
+        $headers1 = 'From: Easywrite<'.$from.">\r\n";
         $headers1 .= "MIME-Version: 1.0\r\n";
         $headers1 .= "Content-Type: text/html; charset=UTF-8\r\n";
         // mail('post@easywrite.se', 'New Course Order', Auth::user()->first_name . ' has ordered the course ' . $package->course->title, $headers1);
@@ -1874,7 +1874,7 @@ class ShopController extends Controller
         // Send course email
         $actionText = 'Mine Kurs';
         $actionUrl = 'http://www.easywrite.se/account/course';
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         $user = Auth::user();
@@ -1887,7 +1887,7 @@ class ShopController extends Controller
         if ($paymentMode->mode == 'Paypal') {
             $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
             <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+            <input type="hidden" name="business" value="post.easywrite@gmail.com">
             <input type="hidden" name="currency_code" value="NOK">
             <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
             <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -2267,7 +2267,7 @@ class ShopController extends Controller
         $table->addCell($width, [
             'borderBottomSize' => 6,
             'height' => 1,
-        ])->addText('Forfatterskolen, Postboks 9233, 3064 DRAMMEN', [
+        ])->addText('Easywrite, Postboks 9233, 3064 DRAMMEN', [
             'bgColor' => 'CCCCCC',
         ], [
             'space' => ['before' => 150, 'after' => 0],

@@ -209,7 +209,7 @@ class HomeController extends Controller
             $email_content .= 'Email: '.$request->email.'<br/>';
             $email_content .= 'Message: '.$request->message;
 
-            $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
+            $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
@@ -607,7 +607,7 @@ class HomeController extends Controller
         if ($paymentMode->mode == 'Paypal') {
             $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -1052,13 +1052,13 @@ class HomeController extends Controller
         $emailContent = AdminHelpers::formatEmailContent($emailTemplate->email_content, $user->email,
             Auth::user()->first_name, '');
         dispatch(new AddMailToQueueJob($user->email, $emailTemplate->subject, $emailContent,
-            $emailTemplate->from_email, 'Forfatterskolen', null,
+            $emailTemplate->from_email, 'Easywrite', null,
             'coaching-time-order', $coaching->id));
 
         if ($paymentMode->mode == 'Paypal') {
             $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -1585,7 +1585,7 @@ class HomeController extends Controller
     {
         $subject = 'Fresh email subject';
         $from = 'post@easywrite.se';
-        $from_name = 'Forfatterskolen';
+        $from_name = 'Easywrite';
         $to = 'elybutabara@gmail.com';
         $content = 'this is a test only from PORT '.env('MAIL_PORT');
         echo $to.'<br/>';
@@ -1623,7 +1623,7 @@ class HomeController extends Controller
         $message .= 'Email: elybutabara@gmail.com <br/>'.PHP_EOL;
         $message .= 'Message: this is my message';
 
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

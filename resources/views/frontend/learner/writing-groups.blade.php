@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Writing Groups &rsaquo; Forfatterskolen</title>
+    <title>Writing Groups &rsaquo; Easywrite</title>
 @stop
 
 @section('heading') Skrivegrupper @stop

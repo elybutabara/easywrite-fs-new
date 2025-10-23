@@ -1,6 +1,6 @@
 <nav id="learnerNav" class="navbar navbar-light">
     <a class="navbar-brand" href="javascript:void(0)" style="cursor: default">{{--{{url('')}}--}}
-        <img data-src="https://www.forfatterskolen.no/images-new/logo11.png" alt="Forfatterskolen-logo">
+        <img data-src="https://www.easywrite.se/images-new/logo11.png" alt="Easywrite-logo">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
@@ -44,13 +44,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
+            <a class="nav-link" href="https://no.pinterest.com/easywrite_norge/" target="_blank">
                 <i class="sprite-social pinterest"></i>
                 {{--<img src="{{asset('images-new/social-icons/pinterest.png')}}" class="social-image" alt="Pinterest">--}}
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/forfatterskolen_norge/" target="_blank">
+            <a class="nav-link" href="https://www.instagram.com/easywrite_norge/" target="_blank">
                 <i class="sprite-social instagram"></i>
                 {{--<img src="{{asset('images-new/social-icons/instagram.png')}}" class="social-image" alt="Instagram">--}}
             </a>
@@ -78,7 +78,7 @@
                 <h2 class="w-100">Kontrollpanel</h2>
             </a>
             <p class="float-left">
-                Velkommen til Forfatterskolens portal
+                Velkommen til Easywrites portal
             </p>
 
             @if (Auth::user())
@@ -138,7 +138,7 @@
     </button>
 
     <a class="navbar-brand mx-auto" href="{{url('')}}">
-        <img src="{{asset('images-new/logo.png')}}" alt="Forfatterskolen-logo">
+        <img src="{{asset('images-new/logo.png')}}" alt="Easywrite-logo">
     </a>
 </div>
 

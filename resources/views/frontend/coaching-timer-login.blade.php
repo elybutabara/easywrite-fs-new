@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Checkout &rsaquo; Forfatterskolen</title>
+    <title>Checkout &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
 <div class="global-checkout-page" id="app-container">
-    <div class="header" data-bg="https://www.forfatterskolen.no/images-new/checkout-top.png">
+    <div class="header" data-bg="https://www.easywrite.se/images-new/checkout-top.png">
     </div>
     <div class="body">
         <div class="container d-flex align-items-center justify-content-center min-vh-100">

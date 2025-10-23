@@ -108,7 +108,7 @@
 @stop
 
 @section('content')
-<div class="coaching-timer-page" data-bg="https://www.forfatterskolen.no/images-new/ctimer-bg.png">
+<div class="coaching-timer-page" data-bg="https://www.easywrite.se/images-new/ctimer-bg.png">
     <div class="container" id="app-container">
 
         <div class="card card-global">

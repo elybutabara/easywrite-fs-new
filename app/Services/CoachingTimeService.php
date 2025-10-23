@@ -198,7 +198,7 @@ class CoachingTimeService
             $user->first_name, '');
 
         dispatch(new AddMailToQueueJob($user->email, $emailTemplate->subject, $emailContent,
-            $emailTemplate->from_email, 'Forfatterskolen', null,
+            $emailTemplate->from_email, 'Easywrite', null,
             'coaching-time-order', $coaching->id));
     }
 

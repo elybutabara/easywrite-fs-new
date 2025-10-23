@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Forfatterskolen | Sign In</title>
+        <title>Easywrite | Sign In</title>
         @include('backend.partials.backend-css')
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.0, user-scalable=no">
     </head>

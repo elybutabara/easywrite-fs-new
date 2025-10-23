@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-	<title>Thank You for Subscribing &rsaquo; Forfatterskolen</title>
+	<title>Thank You for Subscribing &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -36,7 +36,7 @@
 
 							<div class="name">
 								<h1 class="font-montserrat-semibold mb-0">Kristine S.Henningsen</h1>
-								<h2 class="font-montserrat-regular mb-0">Rektor på Forfatterskolen​</h2>
+								<h2 class="font-montserrat-regular mb-0">Rektor på Easywrite​</h2>
 							</div>
 						</div>
 					</div>

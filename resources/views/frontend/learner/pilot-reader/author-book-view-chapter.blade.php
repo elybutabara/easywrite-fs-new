@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>{{ $book->title }}, {{ $chapter->title ? $chapter->title : \App\Http\FrontendHelpers::getChapterTitle($book, $chapter->id)}} &rsaquo; Forfatterskolen</title>
+    <title>{{ $book->title }}, {{ $chapter->title ? $chapter->title : \App\Http\FrontendHelpers::getChapterTitle($book, $chapter->id)}} &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

@@ -6,11 +6,11 @@
 
 @section('content')
 
-    <div class="henrik-page"data-bg="https://www.forfatterskolen.no/images-new/langeland/bg-image.png">
+    <div class="henrik-page"data-bg="https://www.easywrite.se/images-new/langeland/bg-image.png">
         <div class="container">
             <div class="row header">
                 <div class="col-md-12 text-center">
-                    <img data-src="https://www.forfatterskolen.no/images-new/langeland/header-image.png" alt="">
+                    <img data-src="https://www.easywrite.se/images-new/langeland/header-image.png" alt="">
                     <h1>
                         Henrik H. Langeland
                     </h1>
@@ -19,7 +19,7 @@
 
             <div class="row first-container">
                 <div class="col-md-6">
-                    <div class="owner-image-container"data-bg="https://www.forfatterskolen.no/images-new/langeland/henrik.jpg">
+                    <div class="owner-image-container"data-bg="https://www.easywrite.se/images-new/langeland/henrik.jpg">
                     </div>
                 </div>
                 <div class="col-md-6 d-flex owner-details-container">
@@ -107,11 +107,11 @@
                             <!-- The slideshow -->
                             <div class="container carousel-inner no-padding">
                                 <div class="carousel-item active">
-                                    <img data-src="https://www.forfatterskolen.no/images-new/langeland/maja-text.jpg" alt="">
+                                    <img data-src="https://www.easywrite.se/images-new/langeland/maja-text.jpg" alt="">
                                 </div>
 
                                 <div class="carousel-item">
-                                    <img data-src="https://www.forfatterskolen.no/images-new/langeland/henrik-med-text.jpg" alt="">
+                                    <img data-src="https://www.easywrite.se/images-new/langeland/henrik-med-text.jpg" alt="">
                                 </div>
                             </div> <!-- end carouse-inner -->
 
@@ -159,7 +159,7 @@
             </div> <!-- end container -->
         </div> <!-- end third-container -->
 
-        <div class="fourth-container" data-bg="https://www.forfatterskolen.no/images-new/langeland/testimonial-bg.png">
+        <div class="fourth-container" data-bg="https://www.easywrite.se/images-new/langeland/testimonial-bg.png">
             <div class="container">
                 <div class="col-md-8 head">
                     <div class="row">
@@ -322,7 +322,7 @@
             </div> <!-- end container -->
         </div> <!-- end fourth-container -->
 
-        <div class="fifth-container" data-bg="https://www.forfatterskolen.no/images-new/langeland/book-subtle-bg.png">
+        <div class="fifth-container" data-bg="https://www.easywrite.se/images-new/langeland/book-subtle-bg.png">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d-flex left-container">
@@ -346,7 +346,7 @@
 
                             <p class="mt-4 mb-0 border-bottom">
                                 <span class="font-montserrat-medium">Pris:</span> Kroner 1490,- og kroner 990,- for
-                                elever ved Forfatterskolen (med aktivt webinarabonnement)
+                                elever ved Easywrite (med aktivt webinarabonnement)
                             </p>
 
                             <p class="mt-4 mb-0">

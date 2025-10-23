@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>{{$course->title}} &rsaquo; Course &rsaquo; Forfatterskolen Admin</title>
+<title>{{$course->title}} &rsaquo; Course &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

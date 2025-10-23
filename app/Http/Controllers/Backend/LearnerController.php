@@ -77,7 +77,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/Odt2Text.php';
 class LearnerController extends Controller
 {
     // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-    // Forfatterskolen: forfatterskolen-as
+    // Easywrite: forfatterskolen-as
     // DemoAS: fiken-demo-glede-og-bil-as2
     public $fikenInvoices = 'https://fiken.no/api/v1/companies/forfatterskolen-as/invoices/';
 
@@ -1275,7 +1275,7 @@ class LearnerController extends Controller
 
         $email_content = $request->email_content ?: '';
         dispatch(new AddMailToQueueJob($user->email, $package->course->title, $email_content,
-            'post@easywrite.se', 'Forfatterskolen', $attachments, 'courses-taken-order', $courseTaken->id));
+            'post@easywrite.se', 'Easywrite', $attachments, 'courses-taken-order', $courseTaken->id));
 
         return redirect()->back()->with([
             'errors' => AdminHelpers::createMessageBag('Regret schema sent.'),

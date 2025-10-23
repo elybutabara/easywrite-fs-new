@@ -1,7 +1,7 @@
 @extends('backend.layout-pulse')
 
 @section('title')
-<title>Board &rsaquo; Forfatterskolen Admin</title>
+<title>Board &rsaquo; Easywrite Admin</title>
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @stop
 

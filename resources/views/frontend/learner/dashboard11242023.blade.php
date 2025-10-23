@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Dashboard &rsaquo; Forfatterskolen</title>
+<title>Dashboard &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')
@@ -29,7 +29,7 @@
                                 <div class="col-md-12 course-item">
                                     <div class="row align-items-center">
                                         <div class="col-md-3 image-container">
-                                            <img data-src="https://www.forfatterskolen.no/{{$courseTaken->package->course->course_image}}" alt="">
+                                            <img data-src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}" alt="">
                                         </div>
                                         <div class="col-md-6 course-details">
                                             <h3 class="font-weight-normal">
@@ -301,7 +301,7 @@
                                 }
                             ?>
                             <a href="{{ $img_web_link }}">
-                                <div class="image-container" data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                <div class="image-container" data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                 </div>
                             </a>
                             <div class="details-container">
@@ -358,11 +358,11 @@
                                 ?>
                                     @if($webinar->link)
                                         <a href="{{ $img_web_link }}">
-                                            <div class="image-container" data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                            <div class="image-container" data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                             </div>
                                         </a>
                                     @else
-                                        <div class="image-container" data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                        <div class="image-container" data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                         </div>
                                     @endif
                                 <div class="card-body" style="padding: 0; background-color: #fff; border: 1px solid #e8e8e8">

@@ -1,7 +1,7 @@
 @extends($layout)
 
 @section('title')
-    <title>Publishing &rsaquo; Forfatterskolen Admin</title>
+    <title>Publishing &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

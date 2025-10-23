@@ -11,7 +11,7 @@ Password Reset
 @elseif(Request::input('t') == 'password-change')
 Password Change
 @endif
-&rsaquo; Forfatterskolen
+&rsaquo; Easywrite
 </title>
 @stop
 

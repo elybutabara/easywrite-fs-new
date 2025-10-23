@@ -6,11 +6,11 @@ use App\Http\Controllers\Giutbok;
 use Illuminate\Support\Facades\Route;
 
 if (config('app.app_site') == 'no') {
-    $domain = 'giutbok.forfatterskolen.no';
+    $domain = 'giutbok.easywrite.se';
 } elseif (config('app.app_site') == 'localhost') {
     $domain = 'giutbok.forfatterskolen.local';
 } elseif (config('app.app_site') == 'dev.no') {
-    $domain = 'giutbok.forfatterskolen.no';
+    $domain = 'giutbok.easywrite.se';
 }
 
 Route::domain($domain)->group(function () {

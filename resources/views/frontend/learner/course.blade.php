@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Mine Kurs &rsaquo; Forfatterskolen</title>
+<title>Mine Kurs &rsaquo; Easywrite</title>
 @stop
 
 @section('heading') {{ trans('site.learner.my-course') }} @stop
@@ -46,7 +46,7 @@
 								@endphp
 								<div class="course-item">
 									<div class="col-md-5">
-										<img data-src="https://www.forfatterskolen.no/{{$courseTaken->package->course->course_image}}" 
+										<img data-src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}" 
                                             alt="{{ $courseTaken->package->course->title }}">
 									</div>
 									<div class="col-md-7">
@@ -117,7 +117,7 @@
 								@foreach ($formerCourses as $formerCourse)
 									<div class="card">
 										<div class="card-header p-0">
-											<img src="https://www.forfatterskolen.no/{{ $formerCourse->package->course->course_image }}" 
+											<img src="https://www.easywrite.se/{{ $formerCourse->package->course->course_image }}" 
 											alt="">
 										</div>
 										<div class="card-body p-3">

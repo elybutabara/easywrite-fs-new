@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Mine Kurs &rsaquo; Forfatterskolen</title>
+<title>Mine Kurs &rsaquo; Easywrite</title>
 @stop
 
 @section('heading') {{ trans('site.learner.my-course') }} @stop
@@ -89,7 +89,7 @@
 					@foreach( Auth::user()->coursesTaken as $courseTaken )
 						<div class="col-md-12 col-lg-3 no-right-padding adjust-right-padding">
 							<div class="learner-course card border-0">
-								<div class="course-thumb" data-bg="https://www.forfatterskolen.no/{{$courseTaken->package->course->course_image}}"></div>
+								<div class="course-thumb" data-bg="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}"></div>
 								<div class="course-details card-body">
 									<h3 class="font-weight-normal font-barlow-regular">
 										{{$courseTaken->package->course->title}}

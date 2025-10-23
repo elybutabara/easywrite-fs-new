@@ -538,8 +538,8 @@ class PageController extends Controller
             mkdir($backupDir);
         }
 
-        $dump = new \MySQLDump(new \mysqli('forfatterskolen3.mysql.domeneshop.no', 'forfatterskolen3', '2KJM8yuQoWL7Zkg', 'forfatterskolen3'));
-        // $dump = new \MySQLDump(new \mysqli('localhost', 'root', 'root', 'forfatterskolen_laravel'));
+        $dump = new \MySQLDump(new \mysqli('easywrite3.mysql.domeneshop.no', 'easywrite3', '2KJM8yuQoWL7Zkg', 'easywrite3'));
+        // $dump = new \MySQLDump(new \mysqli('localhost', 'root', 'root', 'easywrite_laravel'));
 
         $dump->save($backupDir.'/'.$time.'.sql');
 

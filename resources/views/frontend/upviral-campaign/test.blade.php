@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Upviral &rsaquo; Forfatterskolen</title>
+    <title>Upviral &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

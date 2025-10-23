@@ -5,7 +5,7 @@
 @stop
 
 @section('title')
-<title>Assignments &rsaquo; {{$course->title}} &rsaquo; Forfatterskolen Admin</title>
+<title>Assignments &rsaquo; {{$course->title}} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

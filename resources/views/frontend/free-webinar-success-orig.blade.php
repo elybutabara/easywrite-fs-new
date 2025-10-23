@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-	<title>Thank You for Subscribing &rsaquo; Forfatterskolen</title>
+	<title>Thank You for Subscribing &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -42,7 +42,7 @@
 							</p>
 
 							<p>
-								Rektor på Forfatterskolen​
+								Rektor på Easywrite​
 							</p>
 						</section>
 					</div>

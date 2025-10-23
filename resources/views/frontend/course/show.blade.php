@@ -1,14 +1,14 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>{{$course->title}} &rsaquo; Forfatterskolen</title>
+<title>{{$course->title}} &rsaquo; Easywrite</title>
 @stop
 
 @section('metas')
 	<meta property="og:title" content="{{ $course->meta_title }}">
 	<meta property="og:description" content="{{ $course->meta_description }}">
 	<meta name="description" content="{{ $course->meta_description }}">
-	<meta property="og:site_name" content="Forfatterskolen">
+	<meta property="og:site_name" content="Easywrite">
 	<meta property="og:url" content="{{ url()->current() }}">
 	<meta property="og:type" content="website" />
 	@if ($course->meta_image)
@@ -48,7 +48,7 @@
     ?>
 
 	<div class="course-single-page">
-		<div class="header" data-bg="https://www.forfatterskolen.no/images-new/course-single-bg.png">
+		<div class="header" data-bg="https://www.easywrite.se/images-new/course-single-bg.png">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 details">
@@ -123,7 +123,7 @@
 		</div> <!-- end header -->
 
 		<div class="container single-content">
-			<div class="row course-image-row" data-bg="https://www.forfatterskolen.no/{{$course->course_image}}">
+			<div class="row course-image-row" data-bg="https://www.easywrite.se/{{$course->course_image}}">
 				@if($course->photographer)
 					<div class="photographer-container">
 						<div class="h1" style="margin-top: 0">{{ trans('site.front.our-course.show.photo') }}: {{ $course->photographer }}</div>
@@ -285,7 +285,7 @@
 
 										<hr>
 
-										<img src="https://www.forfatterskolen.no/{{$course->course_image}}" alt="course-image"
+										<img src="https://www.easywrite.se/{{$course->course_image}}" alt="course-image"
 										class="w-100">
 
 										@if (!$course->is_free && !$course->hide_price)

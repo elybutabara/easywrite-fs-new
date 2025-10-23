@@ -1,13 +1,13 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Coaching Timer</title>
+    <title>Easywrite Coaching Timer</title>
 @stop
 
 @section('content')
 
     <div class="coaching-timer-page-new">
-        <div class="header" style="background-image: url('https://www.forfatterskolen.no/images-new/red-header-new.png')">
+        <div class="header" style="background-image: url('https://www.easywrite.se/images-new/red-header-new.png')">
             <div class="container">
                 <h1>
                     {{ trans('site.front.coaching-timer.title') }}

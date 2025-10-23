@@ -1,7 +1,7 @@
 @extends('backend.layout-pulse')
 
 @section('title')
-<title>Pulse &rsaquo; Forfatterskolen Admin</title>
+<title>Pulse &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

@@ -1,14 +1,14 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Forfatterskolen</title>
+<title>Easywrite</title>
 @stop
 
 @section('content')
-    <div class="login-container" data-bg="https://www.forfatterskolen.no/images-new/login/login-bg.jpg">
+    <div class="login-container" data-bg="https://www.easywrite.se/images-new/login/login-bg.jpg">
         <div class="container">
             <div class="row first-row">
-                <div class="col-md-6 left-container" data-bg="https://www.forfatterskolen.no/images-new/login/left-bg.jpg">
+                <div class="col-md-6 left-container" data-bg="https://www.easywrite.se/images-new/login/left-bg.jpg">
                 </div>
                 <div class="col-md-6 right-container">
                     <div class="d-table h-100 w-100 text-center">

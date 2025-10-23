@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Application &rsaquo; Forfatterskolen Admin</title>
+<title>Application &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

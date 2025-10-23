@@ -1,7 +1,7 @@
 @extends('giutbok.layout')
 
 @section('title')
-    <title>Learners &rsaquo; Forfatterskolen Admin</title>
+    <title>Learners &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')

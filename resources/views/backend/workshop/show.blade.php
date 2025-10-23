@@ -6,7 +6,7 @@
 @stop
 
 @section('title')
-<title>{{ $workshop->title }} &rsaquo; Workshops &rsaquo; Forfatterskolen Admin</title>
+<title>{{ $workshop->title }} &rsaquo; Workshops &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')
@@ -226,7 +226,7 @@
 									<td>{!! nl2br($log->message) !!}</td>
 									<td>{{ $log->date_sent }}</td>
 									<td>
-                                                                                {{ $log->from_name ?: 'Forfatterskolen' }} <br>
+                                                                                {{ $log->from_name ?: 'Easywrite' }} <br>
                                                                                 {{ $log->from_email ?: 'post@easywrite.se' }}
 									</td>
 									<td>

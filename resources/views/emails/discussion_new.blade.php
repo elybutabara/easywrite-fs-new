@@ -18,7 +18,7 @@
                 <td style="padding-top: .3rem">{{ $sender}} has posted {{ $type }} titled <a href="{{ $discussion_url }}">{{ $discussion_title}}</a> on <a href="{{ $group_url }}">{{ $group_title }}</a></td>
             </tr>
             <tr>
-                <td style="padding-top: .3rem">This is an automated email from Forfatterskolen. {{ "Please don't reply to this." }}</td>
+                <td style="padding-top: .3rem">This is an automated email from Easywrite. {{ "Please don't reply to this." }}</td>
             </tr>
         </table>
     </body>

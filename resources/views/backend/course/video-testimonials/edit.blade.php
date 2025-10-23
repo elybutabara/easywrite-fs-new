@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Edit {{$testimonial['name']}} &rsaquo; Forfatterskolen Admin</title>
+<title>Edit {{$testimonial['name']}} &rsaquo; Easywrite Admin</title>
 @stop
 
 

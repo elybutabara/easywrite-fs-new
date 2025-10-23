@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Shop Manuscripts &rsaquo; Forfatterskolen</title>
+<title>Shop Manuscripts &rsaquo; Easywrite</title>
 @stop
 
 @section('heading') {{ trans('site.learner.manuscript.title') }} @stop

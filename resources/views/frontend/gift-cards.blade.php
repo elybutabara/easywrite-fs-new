@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Gift Cards &rsaquo; Forfatterskolen</title>
+    <title>Gift Cards &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
 
-    <div class="gift-cards-page" data-bg="https://www.forfatterskolen.no/images-new/gift-cards/bg-image.jpg">
+    <div class="gift-cards-page" data-bg="https://www.easywrite.se/images-new/gift-cards/bg-image.jpg">
         <div class="container">
 
             <div class="card details-container">

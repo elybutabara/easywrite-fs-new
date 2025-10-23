@@ -55,7 +55,7 @@
                                 </td>
                                 <td style="color: #B3B3B3">
                                     @if( $feedback->is_admin ) 
-                                        Forfatterskolens redaktør
+                                        Easywrites redaktør
                                     @endif
                                 </td>
                                 <td>

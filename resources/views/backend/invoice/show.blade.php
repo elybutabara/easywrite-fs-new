@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Invoice #{{$invoice->invoice_number}} &rsaquo; Forfatterskolen Admin</title>
+<title>Invoice #{{$invoice->invoice_number}} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

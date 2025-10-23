@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Checkout &rsaquo; Forfatterskolen</title>
+    <title>Checkout &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
 
-    <div class="checkout-page" data-bg="https://www.forfatterskolen.no/images-new/checkout-bg.png" id="app-container">
+    <div class="checkout-page" data-bg="https://www.easywrite.se/images-new/checkout-bg.png" id="app-container">
         <div class="container">
             <gift-course-checkout :course="{{ json_encode($course) }}" :package-id="{{ $package_id }}"
                              :passed-coupon="{{ json_encode($coupon) }}"

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen – Din litterære familie. Skrivekurs for deg</title>
+    <title>Easywrite – Din litterære familie. Skrivekurs for deg</title>
 @stop
 
 @section('styles')
@@ -15,12 +15,12 @@
 
 @section('content')
     <div class="front-page-new">
-        <div class="header" data-bg="https://www.forfatterskolen.no/images-new/home/main-image.png">
+        <div class="header" data-bg="https://www.easywrite.se/images-new/home/main-image.png">
             <div class="container h-100 position-relative">
 
                 <div class="main-form">
                     <div class="envelope-container">
-                        <img data-src="https://www.forfatterskolen.no/images-new/home/envelope.png" alt="envelope icon">
+                        <img data-src="https://www.easywrite.se/images-new/home/envelope.png" alt="envelope icon">
                     </div>
 
                     <div class="form-container">
@@ -115,8 +115,8 @@
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#vooModal" class="vooBtn"
                                    data-link="{{ $testimonial->testimony }}">
                                     <div class="img-container"
-                                         data-bg="https://www.forfatterskolen.no/{{ $testimonial->author_image }}">
-                                        <img data-src="https://www.forfatterskolen.no/{{ '/images-new/play-white.png' }}" class="play-image">
+                                         data-bg="https://www.easywrite.se/{{ $testimonial->author_image }}">
+                                        <img data-src="https://www.easywrite.se/{{ '/images-new/play-white.png' }}" class="play-image">
                                     </div> <!-- end image container -->
                                 </a>
 
@@ -198,7 +198,7 @@
                                                  itemtype="http://schema.org/CreativeWork">
                                                 <div class="card rounded-0 border-0">
                                                     <div class="card-header p-0 rounded-0"
-                                                         data-bg="https://www.forfatterskolen.no/{{$popular_course->course_image}}">
+                                                         data-bg="https://www.easywrite.se/{{$popular_course->course_image}}">
                                                         <span>{{ trans('site.front.course-text') }}</span>
                                                     </div>
                                                     <div class="card-body">
@@ -240,7 +240,7 @@
 
                 <div class="row poem-details">
                     <div class="col-md-6 col-sm-12 poem-author-container">
-                        <img data-src="https://www.forfatterskolen.no/{{ $latestPoem->author_image }}" class="author-image" alt="author image">
+                        <img data-src="https://www.easywrite.se/{{ $latestPoem->author_image }}" class="author-image" alt="author image">
                         <div class="author-info">
                             <span class="indicator">{{ trans('site.front.poem-of-the-week') }}</span>
                             <h3 class="font-weight-normal font-montserrat-regular">{{ $latestPoem->title }}</h3>
@@ -260,7 +260,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5 text-center">
-                        <img src="https://www.forfatterskolen.no/{{ '/images-new/illustrationcomputer.png' }}" 
+                        <img src="https://www.easywrite.se/{{ '/images-new/illustrationcomputer.png' }}" 
                         alt="illustration-computer">
                     </div>
                     <div class="col-md-7">
@@ -284,7 +284,7 @@
                     <div class="h1 mt-0 gdpr-title">Dine data, dine valg</div>
                     <div>
                         <p>
-                            Forfatterskolen er den som behandler dine data.
+                            Easywrite er den som behandler dine data.
                         </p>
                         <p>
                             Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.

@@ -1,7 +1,7 @@
 @extends($layout)
 
 @section('title')
-    <title>{{ $title }} &rsaquo; Forfatterskolen Admin</title>
+    <title>{{ $title }} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')

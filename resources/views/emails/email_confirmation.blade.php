@@ -10,7 +10,7 @@
         <td style="padding-top: 1rem">Hei {{ $email_data['name'] }},</td>
     </tr>
     <tr>
-        <td style="padding-top: .3rem">Dette er en automatisk epost fra Forfatterskolen for å bekrefte at du eier denne epost adressen:  <strong>{{ $email_data['email'] }}</strong>.</td>
+        <td style="padding-top: .3rem">Dette er en automatisk epost fra Easywrite for å bekrefte at du eier denne epost adressen:  <strong>{{ $email_data['email'] }}</strong>.</td>
     </tr>
     <tr>
         <td style="padding-top:1.2rem;padding-bottom:0.5rem;">

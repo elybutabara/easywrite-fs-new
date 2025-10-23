@@ -1,13 +1,13 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Forfatterskolen Publishing</title>
+    <title>Easywrite Publishing</title>
 @stop
 
 
 @section('content')
     <div class="publishing-page-new" id="app-container">
-        <div class="header" data-bg="https://www.forfatterskolen.no/images-new/publishing-bg.png">
+        <div class="header" data-bg="https://www.easywrite.se/images-new/publishing-bg.png">
             <div class="container">
                 <h1 class="text-center">
                     {{ trans('site.front.publishing.title') }}
