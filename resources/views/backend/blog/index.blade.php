@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    @include('backend.blog.partials.delete')
+    {{-- @include('backend.blog.partials.delete') --}}
 
 @stop
 

@@ -165,7 +165,7 @@
         </div>
     </div>
 
-    @include('backend.sos-children.partials.delete')
+    {{-- @include('backend.sos-children.partials.delete') --}}
 @stop
 
 @section('scripts')

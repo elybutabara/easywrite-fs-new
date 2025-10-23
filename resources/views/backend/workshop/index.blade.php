@@ -147,7 +147,7 @@
               </div>
               <div class="form-group">
                 <label>Fiken product</label>
-                <input type="text" name="fiken_product" placeholder="Fiken product" value="{{ $workshop->fiken_product }}" min="0" required class="form-control">
+                                <input type="text" name="fiken_product" placeholder="Fiken product" value="" min="0" required class="form-control">
               </div>
               <div class="form-group">
                 <label>{{ trans('site.seats') }}</label>

@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    @include('backend.goto-webinar.partials.delete')
+    {{-- @include('backend.goto-webinar.partials.delete') --}}
 @stop
 
 @section('scripts')
