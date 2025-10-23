@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>Create Opt-in &rsaquo; Forfatterskolen Admin</title>
+    <title>Create Opt-in &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

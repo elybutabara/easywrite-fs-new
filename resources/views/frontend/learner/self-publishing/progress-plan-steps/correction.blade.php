@@ -1,7 +1,7 @@
 @extends('frontend.learner.self-publishing.layout')
 
 @section('title')
-    <title>Project &rsaquo; Forfatterskolen</title>
+    <title>Project &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
@@ -37,7 +37,7 @@
                                 <?php $extension = explode('.', basename($correction->file)); ?>
                                 <tr>
                                     <td>
-                                        @if (strpos($correction->file, 'Forfatterskolen_app'))
+                                        @if (strpos($correction->file, 'Easywrite_app'))
                                             <a href="/dropbox/shared-link/{{ $correction->file }}" target="_blank">
                                                 {{ basename($correction->file) }}
                                             </a>
@@ -79,7 +79,7 @@
                                     </td>
                                     <td>
                                         @if ($correction->file)
-                                            @if (strpos($correction->file, 'Forfatterskolen_app'))
+                                            @if (strpos($correction->file, 'Easywrite_app'))
                                                 <a href="{{ url('dropbox/download/' . trim($correction->file)) }}">
                                                     {{ trans('site.learner.download-original-script') }}
                                                 </a>

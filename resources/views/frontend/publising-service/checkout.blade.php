@@ -1,7 +1,7 @@
 @extends('frontend.layout-self-publishing')
 
 @section('title')
-    <title>Checkout &rsaquo; Forfatterskolen</title>
+    <title>Checkout &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

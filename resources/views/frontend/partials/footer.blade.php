@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 text-center">
-                                        <a href="{{ url('') }}" class="footer-brand"><img src="{{asset('images/logo-footer.png')}}" alt="Forfatterskolen-logo"></a>
+                                        <a href="{{ url('') }}" class="footer-brand"><img src="{{asset('images/logo-footer.png')}}" alt="Easywrite-logo"></a>
 				</div>
 
 				<div class="col-md-4">
@@ -53,12 +53,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					Copyright © 2016 Forfatterskolen. All Rights Reserved
+					Copyright © 2016 Easywrite. All Rights Reserved
 					<div class="social pull-right">
-						<a href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<a href="https://no.pinterest.com/easywrite_norge/" target="_blank"><i class="fa fa-pinterest"></i></a>
 					    <a href="https://www.facebook.com/bliforfatter/" target="_blank"><i class="fa fa-facebook"></i></a>
 					    <a href="https://twitter.com/Forfatterrektor" target="_blank"><i class="fa fa-twitter"></i></a>
-					    <a href="https://www.instagram.com/forfatterskolen_norge/" target="_blank"><i class="fa fa-instagram"></i></a>
+					    <a href="https://www.instagram.com/easywrite_norge/" target="_blank"><i class="fa fa-instagram"></i></a>
 					</div>
 				</div>
 			</div>

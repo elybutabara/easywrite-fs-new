@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>{{ $solution->title }} Articles &rsaquo; Forfatterskolen</title>
+    <title>{{ $solution->title }} Articles &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

@@ -137,7 +137,7 @@ class ProgressPlanController extends Controller
             }
 
             $standardProject = FrontendHelpers::getLearnerStandardProject(Auth::id());
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$standardProject->id.'/project-manuscripts/';
+            $destinationPath = 'Easywrite_app/project/project-'.$standardProject->id.'/project-manuscripts/';
             $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
             $expFileName = explode('/', $fileName);
             $dropboxFileName = end($expFileName);
@@ -170,7 +170,7 @@ class ProgressPlanController extends Controller
 
             $folderName = $type == 1 ? 'copy-editing-manuscripts' : 'correction-manuscripts';
             $projectId = $data->project_id ?? $request->project_id;
-            $destinationPath = "Forfatterskolen_app/project/project-{$projectId}/{$folderName}/";
+            $destinationPath = "Easywrite_app/project/project-{$projectId}/{$folderName}/";
 
             $requestFilename = 'manuscript';
             $file = \request()->file($requestFilename);
@@ -290,7 +290,7 @@ class ProgressPlanController extends Controller
             }
 
             $standardProject = FrontendHelpers::getLearnerStandardProject(Auth::id());
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$standardProject->id.'/type-setting/';
+            $destinationPath = 'Easywrite_app/project/project-'.$standardProject->id.'/type-setting/';
             $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
             $expFileName = explode('/', $fileName);
             $dropboxFileName = end($expFileName);

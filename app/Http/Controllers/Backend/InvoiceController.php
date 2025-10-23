@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 class InvoiceController extends Controller
 {
     // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-    // Forfatterskolen: forfatterskolen-as
+    // Easywrite: forfatterskolen-as
     public $fikenInvoices = 'https://fiken.no/api/v1/companies/forfatterskolen-as/invoices';
 
     public $username = 'cleidoscope@gmail.com';

@@ -8,7 +8,7 @@ use Carbon\Carbon;
 set_time_limit(300);
 
 // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-// Forfatterskolen: forfatterskolen-as
+// Easywrite: forfatterskolen-as
 
 class FikenInvoiceOrig
 {
@@ -38,13 +38,13 @@ class FikenInvoiceOrig
     {
         $fiken_company = 'https://fiken.no/api/v1/companies/forfatterskolen-as';
         // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-        // Forfatterskolen: forfatterskolen-as
+        // Easywrite: forfatterskolen-as
         // DemoAS: fiken-demo-glede-og-bil-as2
 
         $this->fiken_contacts = $fiken_company.'/contacts';
         $this->fiken_document_sending_service = $fiken_company.'/document-sending-service';
         $this->fiken_create_invoice_service = $fiken_company.'/create-invoice-service';
-        $this->fiken_bank_account = $fiken_company.'/bank-accounts/55204077'; // Demo: 313581398  Forfatterskolen: 55204077 DemoAS: 279632077
+        $this->fiken_bank_account = $fiken_company.'/bank-accounts/55204077'; // Demo: 313581398  Easywrite: 55204077 DemoAS: 279632077
         $this->fiken_product = $fiken_company.'/products/';
         $this->fiken_sales = $fiken_company.'/sales/';
 

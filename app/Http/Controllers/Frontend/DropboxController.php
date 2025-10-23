@@ -102,10 +102,10 @@ class DropboxController extends Controller
 
     public function dropboxPostUpload(Request $request)
     {
-        $destinationPath = 'Forfatterskolen_app/assignment-manuscripts/'; // upload path
+        $destinationPath = 'Easywrite_app/assignment-manuscripts/'; // upload path
         $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION); // getting document extension
         $actual_name = pathinfo($_FILES['file']['name'], PATHINFO_FILENAME);
-        $fileName = AdminHelpers::getUniqueFilename('dropbox', 'Forfatterskolen_app/assignment-manuscripts', $actual_name.'.'.$extension);
+        $fileName = AdminHelpers::getUniqueFilename('dropbox', 'Easywrite_app/assignment-manuscripts', $actual_name.'.'.$extension);
         $file = $request->file('file');
         $expFileName = explode('/', $fileName);
         $dropboxFileName = end($expFileName);

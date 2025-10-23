@@ -19,7 +19,7 @@
 
         <!-- use meta title first before the title on the actual page added-->
         @yield('title')
-        <meta name="keywords" content="forfatterskolen, forfatter, kurs, manusutvikling, manus, manuskript, kikt, sakprosa, serieroman, krim, roman">
+        <meta name="keywords" content="easywrite, forfatter, kurs, manusutvikling, manus, manuskript, kikt, sakprosa, serieroman, krim, roman">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.0, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="p:domain_verify" content="eca72f9965922b1f82c80a1ef6e62743"/>
@@ -37,8 +37,8 @@
         <script type="text/javascript">
             window.GUMLET_CONFIG = {
                 hosts: [{
-                    current: "https://www.forfatterskolen.no/",
-                    gumlet: "forfatterskolen.gumlet.com"
+                    current: "https://www.easywrite.se/",
+                    gumlet: "easywrite.gumlet.com"
                 }]
             };
         </script>
@@ -87,7 +87,7 @@
         @endif
 
         @include('frontend.partials.scripts')
-        <script src="https://Forfatterskolen.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
+        <script src="https://Easywrite.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
         <script src="/js/lang.js"></script>
         <script async>
             $.ajaxSetup({
@@ -200,7 +200,7 @@
         @yield('scripts')
         {{--<script type="text/javascript" defer>
             (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-                'https://forfatterskolen.ladesk.com/scripts/track.js',
+                'https://easywrite.ladesk.com/scripts/track.js',
                 function(e){ LiveAgent.createButton('bocb2pt7', e); });
         </script>--}}
         @if (!in_array(Route::currentRouteName(),['front.course.checkout', 'front.shop-manuscript.checkout']))

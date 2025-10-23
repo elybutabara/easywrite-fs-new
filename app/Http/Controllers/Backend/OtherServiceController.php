@@ -343,7 +343,7 @@ class OtherServiceController extends Controller
                 $filename = pathinfo($original_filename, PATHINFO_FILENAME);
 
                 if ($request->has('project_id')) {
-                    $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/other-service-feedback/';
+                    $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/other-service-feedback/';
                     $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $original_filename);
                     $expFileName = explode('/', $fileName);
                     $dropboxFileName = end($expFileName);

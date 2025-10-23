@@ -22,7 +22,7 @@
     <div class="col-sm-12">
         <div class="w-50 float-left">
             <span>Retur:</span> <br>
-            <span>Forfatterskolen AS</span> <br>
+            <span>Easywrite AS</span> <br>
             <span>Postboks 9233 Kjøsterud</span> <br>
             <span>3064 DRAMMEN</span> <br>
             <span>NORWAY</span>

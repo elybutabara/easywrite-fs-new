@@ -64,7 +64,7 @@ class VippsRepository
         $method = 'POST';
         $header = [];
         $header[] = 'Authorization: '.$token_access;
-        $fallbackUrl = isset($data['fallbackUrl']) ? $data['fallbackUrl'] : route('front.shop.thankyou'); // 'https://www.forfatterskolen.no/thankyou'
+        $fallbackUrl = isset($data['fallbackUrl']) ? $data['fallbackUrl'] : route('front.shop.thankyou'); // 'https://www.easywrite.se/thankyou'
 
         $body = [
             'customerInfo' => [

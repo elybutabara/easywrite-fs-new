@@ -45,17 +45,17 @@ class RegisterController extends Controller
         // Send welcome email
         $actionText = 'Se dine kurs';
         $actionUrl = \URL::to('/account/course');
-        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
+        $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-        // mail($user->email, 'Velkommen til Forfatterskolen', view('emails.registration', compact('actionText', 'actionUrl', 'user')), $headers);
-        /*AdminHelpers::send_email('Velkommen til Forfatterskolen',
+        // mail($user->email, 'Velkommen til Easywrite', view('emails.registration', compact('actionText', 'actionUrl', 'user')), $headers);
+        /*AdminHelpers::send_email('Velkommen til Easywrite',
             'post@easywrite.se', $user->email, view('emails.registration', compact('actionText', 'actionUrl', 'user')));*/
 
         $to = $user->email; //
         $emailData = [
-            'email_subject' => 'Velkommen til Forfatterskolen',
+            'email_subject' => 'Velkommen til Easywrite',
             'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
             'from_name' => '',
             'from_email' => 'post@easywrite.se',
@@ -66,7 +66,7 @@ class RegisterController extends Controller
 
         $to = $user->email;
         $emailData = [
-            'email_subject' => 'Velkommen til Forfatterskolen - Bekreft e-post',
+            'email_subject' => 'Velkommen til Easywrite - Bekreft e-post',
             'email_message' => view('emails.verify_email', compact('verificationUrl', 'user'))->render(),
             'from_name' => '',
             'from_email' => 'post@easywrite.se',
@@ -109,13 +109,13 @@ class RegisterController extends Controller
         // Send welcome email
         $actionText = 'Se dine kurs';
         $actionUrl = \URL::to('/account/course');
-        $headers = "From: Forfatterskolen<no-reply@easywrite.se>\r\n";
+        $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         $to = $user->email; //
         $emailData = [
-            'email_subject' => 'Velkommen til Forfatterskolen',
+            'email_subject' => 'Velkommen til Easywrite',
             'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
             'from_name' => '',
             'from_email' => 'post@easywrite.se',

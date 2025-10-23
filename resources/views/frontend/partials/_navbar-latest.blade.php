@@ -34,11 +34,11 @@
                        title="View publishing">{{ trans('site.front.nav.publishing') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://arskurs.forfatterskolen.no/" class="nav-link"
+                    <a href="https://arskurs.easywrite.se/" class="nav-link"
                        title="Årskurs" target="_blank">Årskurs</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://blog.forfatterskolen.no" class="nav-link">
+                    <a href="https://blog.easywrite.se" class="nav-link">
                         Blogg</a>
                 </li>
                 <li class="nav-item @if(Route::currentRouteName() == 'front.contact-us') active @endif">

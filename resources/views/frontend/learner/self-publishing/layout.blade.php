@@ -22,7 +22,7 @@
 
         <!-- use meta title first before the title on the actual page added-->
         @yield('title')
-        <meta name="keywords" content="forfatterskolen, forfatter, kurs, manusutvikling, manus, manuskript, kikt, sakprosa, serieroman, krim, roman">
+        <meta name="keywords" content="easywrite, forfatter, kurs, manusutvikling, manus, manuskript, kikt, sakprosa, serieroman, krim, roman">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 maximum-scale=1.0, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="p:domain_verify" content="eca72f9965922b1f82c80a1ef6e62743"/>
@@ -59,8 +59,8 @@
         <script type="text/javascript">
             window.GUMLET_CONFIG = {
                 hosts: [{
-                    current: "https://www.forfatterskolen.no/",
-                    gumlet: "forfatterskolen.gumlet.com"
+                    current: "https://www.easywrite.se/",
+                    gumlet: "easywrite.gumlet.com"
                 }]
             };
         </script>
@@ -96,7 +96,7 @@
         @endif
 
         @include('frontend.partials.scripts')
-        <script src="https://Forfatterskolen.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
+        <script src="https://Easywrite.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
         <script src="/js/lang.js"></script>
         <script async>
             $.ajaxSetup({

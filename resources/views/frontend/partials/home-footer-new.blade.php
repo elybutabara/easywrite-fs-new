@@ -94,7 +94,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-6">
-                <img data-src="https://www.forfatterskolen.no/{{'images-new/home/logo_2.png'}}" class="logo" alt="Forfatterskolen-logo">
+                <img data-src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}" class="logo" alt="Easywrite-logo">
             </div>
             <div class="col-md-6">
                 <div class="col-sm-4">
@@ -173,7 +173,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="https://www.instagram.com/forfatterskolen_norge/" target="_blank">
+                            <a class="nav-link" href="https://www.instagram.com/easywrite_norge/" target="_blank">
                                 Instagram
                             </a>
                         </li>
@@ -183,7 +183,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
+                            <a class="nav-link" href="https://no.pinterest.com/easywrite_norge/" target="_blank">
                                 Pinterest
                             </a>
                         </li>
@@ -230,7 +230,7 @@
         <div class="row footer-bottom pb-0 mt-5">
             <div class="col-md-12">
                 <p>
-                    Copyright © 2022 Forfatterskolen, All Rights Reserved
+                    Copyright © 2022 Easywrite, All Rights Reserved
                 </p>
             </div>
         </div>

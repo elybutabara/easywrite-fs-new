@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Learners &rsaquo; {{$course->title}} &rsaquo; Forfatterskolen Admin</title>
+<title>Learners &rsaquo; {{$course->title}} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')
@@ -225,7 +225,7 @@
 										<td>{!!  $log->message !!}</td>
 										<td>{{ $log->date_sent }}</td>
 										<td>
-											{{ $log->from_name ?: 'Forfatterskolen' }} <br>
+											{{ $log->from_name ?: 'Easywrite' }} <br>
 											{{ $log->from_email ?: 'post@forfaterskolen.no' }}
 										</td>
 										<td>

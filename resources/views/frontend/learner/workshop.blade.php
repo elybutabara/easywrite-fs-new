@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Workshops &rsaquo; Forfatterskolen</title>
+<title>Workshops &rsaquo; Easywrite</title>
 @stop
 
 @section('content')

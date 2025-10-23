@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Forfatterskolen Copy Editing</title>
+<title>Easywrite Copy Editing</title>
 @stop
 
 @section('content')
 
-    <div class="other-service-page correction-page" data-bg="https://www.forfatterskolen.no/images-new/correction-bg.jpg">
+    <div class="other-service-page correction-page" data-bg="https://www.easywrite.se/images-new/correction-bg.jpg">
         <div class="container">
             <h1 class="text-center">
                 {{ trans('site.front.correction.title') }}

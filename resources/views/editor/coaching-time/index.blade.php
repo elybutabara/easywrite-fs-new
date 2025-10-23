@@ -1,7 +1,7 @@
 @extends('editor.layout')
 
 @section('title')
-    <title>Coaching Time &rsaquo; Forfatterskolen Admin</title>
+    <title>Coaching Time &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')

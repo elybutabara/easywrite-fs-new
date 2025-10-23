@@ -1,7 +1,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-    <title>Available Time Slots &rsaquo; Forfatterskolen</title>
+    <title>Available Time Slots &rsaquo; Easywrite</title>
 @endsection
 
 @section('styles')

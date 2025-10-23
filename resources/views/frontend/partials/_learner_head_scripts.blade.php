@@ -6,8 +6,8 @@
 <script type="text/javascript">
     window.GUMLET_CONFIG = {
         hosts: [{
-            current: "https://www.forfatterskolen.no/",
-            gumlet: "forfatterskolen.gumlet.com"
+            current: "https://www.easywrite.se/",
+            gumlet: "easywrite.gumlet.com"
         }]
     };
 </script>

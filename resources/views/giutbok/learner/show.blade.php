@@ -22,7 +22,7 @@
 @stop
 
 @section('title')
-<title>{{ $learner->first_name }} &rsaquo; Learners &rsaquo; Forfatterskolen Admin</title>
+<title>{{ $learner->first_name }} &rsaquo; Learners &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')
@@ -2172,7 +2172,7 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<span>Retur:</span> <br>
-						<span>Forfatterskolen AS</span> <br>
+						<span>Easywrite AS</span> <br>
 						<span>Postboks 9233 Kjøsterud</span> <br>
 						<span>3064 DRAMMEN</span> <br>
 						<span>NORWAY</span>

@@ -5,7 +5,7 @@
 @stop
 
 @section('title')
-    <title>Edit {{ $blog['title'] }} &rsaquo; Forfatterskolen Admin</title>
+    <title>Edit {{ $blog['title'] }} &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

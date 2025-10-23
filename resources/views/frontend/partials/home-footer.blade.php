@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-7">
-                <img data-src="https://www.forfatterskolen.no/{{'images-new/home/logo_2.png'}}" class="logo" alt="Forfatterskolen-logo">
+                <img data-src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}" class="logo" alt="Easywrite-logo">
                 <p class="mt-5">
                     <i class="icons marker"></i><span class="font-montserrat-semibold text-uppercase">Adresse:</span>
                     <span class="font-montserrat-light">Lihagen 21, 3029 DRAMMEN</span>
@@ -40,11 +40,11 @@
                        title="View twitter page">
                         <i class="sprite-social twitter"></i>
                     </a>
-                    <a href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank" class="mr-3"
+                    <a href="https://no.pinterest.com/easywrite_norge/" target="_blank" class="mr-3"
                        title="View pinterest page">
                         <i class="sprite-social pinterest"></i>
                     </a>
-                    <a href="https://www.instagram.com/forfatterskolen_norge/" target="_blank" class="mr-3"
+                    <a href="https://www.instagram.com/easywrite_norge/" target="_blank" class="mr-3"
                        title="View instagram page">
                         <i class="sprite-social instagram"></i>
                     </a>
@@ -56,7 +56,7 @@
                 </p>
 
                 <p class="copyright">
-                    Copyright © 2016 Forfatterskolen, All Rights Reserved |
+                    Copyright © 2016 Easywrite, All Rights Reserved |
                     <a href="{{ route('front.terms', 'all') }}" class="color-white" title="View terms">Vilkår</a>
                 </p>
             </div>

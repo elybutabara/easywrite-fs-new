@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Dashboard &rsaquo; Forfatterskolen Admin</title>
+<title>Dashboard &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('styles')
@@ -470,7 +470,7 @@
                                 <?php $extension = explode('.', basename($correction->file)); ?>
 								<tr>
 									<td>
-										@if (strpos($correction->file, 'Forfatterskolen_app'))
+										@if (strpos($correction->file, 'Easywrite_app'))
 											<a href="{{ url('/dropbox/download/' . trim($correction->file)) }}">
 												<i class="fa fa-download" aria-hidden="true"></i>
 											</a>&nbsp;
@@ -578,7 +578,7 @@
                                 <?php $extension = explode('.', basename($copyEditing->file)); ?>
 								<tr>
 									<td>
-										@if (strpos($copyEditing->file, 'Forfatterskolen_app'))
+										@if (strpos($copyEditing->file, 'Easywrite_app'))
 											<a href="{{ url('/dropbox/download/' . trim($copyEditing->file)) }}">
 												<i class="fa fa-download" aria-hidden="true"></i>
 											</a>&nbsp;
@@ -640,7 +640,7 @@
 												['id' => $copyEditing->id, 'type' => 1]) }}"> {{ trans('site.approve-feedback') }}</a> &nbsp;
 											<?php $files = explode(',',$copyEditing->feedback->manuscript); ?>
 											@foreach($files as $file)
-												@if(strpos($file, 'Forfatterskolen_app'))
+												@if(strpos($file, 'Easywrite_app'))
 													<a href="{{ route('dropbox.download_file', trim($file)) }}"><i class="fa fa-download" aria-hidden="true"></i></a> &nbsp;
 												@else
 													<a href="{{ $file }}" download><i class="fa fa-download" aria-hidden="true"></i></a> &nbsp;

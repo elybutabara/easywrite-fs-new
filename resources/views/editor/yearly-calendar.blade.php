@@ -1,7 +1,7 @@
 @extends('editor.layout')
 
 @section('title')
-    <title>Yearly Calendar &rsaquo; Forfatterskolen Admin</title>
+    <title>Yearly Calendar &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

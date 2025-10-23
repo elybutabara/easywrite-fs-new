@@ -1,7 +1,7 @@
 @extends('frontend.learner.self-publishing.layout')
 
 @section('title')
-    <title>Project &rsaquo; Forfatterskolen</title>
+    <title>Project &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')
@@ -197,7 +197,7 @@
                                             </td>
                                             <td>
                                                 @if ($editing->file)
-                                                    @if (strpos($editing->file, 'Forfatterskolen_app'))
+                                                    @if (strpos($editing->file, 'Easywrite_app'))
                                                         <a href="{{ url('dropbox/download/' . trim($editing->file)) }}">
                                                             {{ trans('site.learner.download-original-script') }}
                                                         </a>
@@ -286,7 +286,7 @@
                                         </td>
                                         <td>
                                             @if ($correction->file)
-                                                @if (strpos($correction->file, 'Forfatterskolen_app'))
+                                                @if (strpos($correction->file, 'Easywrite_app'))
                                                     <a href="{{ url('dropbox/download/' . trim($correction->file)) }}">
                                                         {{ trans('site.learner.download-original-script') }}
                                                     </a>

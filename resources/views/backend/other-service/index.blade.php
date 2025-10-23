@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-    <title>Other Services &rsaquo; Forfatterskolen Admin</title>
+    <title>Other Services &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')
@@ -41,7 +41,7 @@
                                         <?php $extension = explode('.', basename($correction->file)); ?>
                                         <tr>
                                             <td>
-                                                @if (strpos($correction->file, 'Forfatterskolen_app'))
+                                                @if (strpos($correction->file, 'Easywrite_app'))
                                                     <a href="/dropbox/shared-link/{{ $correction->file }}" target="_blank">
                                                         {{ basename($correction->file) }}
                                                     </a>
@@ -149,7 +149,7 @@
                                             <?php $extension = explode('.', basename($editing->file)); ?>
                                             <tr>
                                                 <td>
-                                                    @if (strpos($editing->file, 'Forfatterskolen_app'))
+                                                    @if (strpos($editing->file, 'Easywrite_app'))
                                                         <a href="/dropbox/shared-link/{{ $editing->file }}" target="_blank">
                                                             {{ basename($editing->file) }}
                                                         </a>

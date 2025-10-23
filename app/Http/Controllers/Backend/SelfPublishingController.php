@@ -86,7 +86,7 @@ class SelfPublishingController extends Controller
                 $actual_name = pathinfo($_FILES['manuscript']['name'][$k], PATHINFO_FILENAME);
 
                 if ($request->project_id) {
-                    $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
+                    $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
                     $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
                     $expFileName = explode('/', $fileName);
                     $dropboxFileName = end($expFileName);
@@ -138,7 +138,7 @@ class SelfPublishingController extends Controller
                 $actual_name = pathinfo($_FILES['add_files']['name'][$k], PATHINFO_FILENAME);
                 // $fileName = AdminHelpers::checkFileName($destinationPath, $actual_name, $extension);// rename document
 
-                $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
+                $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
                 $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
                 $expFileName = explode('/', $fileName);
                 $dropboxFileName = end($expFileName);
@@ -379,7 +379,7 @@ class SelfPublishingController extends Controller
             $actual_name = pathinfo($_FILES['manuscript']['name'][$k], PATHINFO_FILENAME);
 
             if ($selfPublishing->project_id) {
-                $destinationPath = 'Forfatterskolen_app/project/project-'.$selfPublishing->project_id.'/self-publishing-feedback/';
+                $destinationPath = 'Easywrite_app/project/project-'.$selfPublishing->project_id.'/self-publishing-feedback/';
                 $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
                 $expFileName = explode('/', $fileName);
                 $dropboxFileName = end($expFileName);

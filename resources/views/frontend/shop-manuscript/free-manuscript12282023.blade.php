@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Forfatterskolen &rsaquo; Free Manuscripts</title>
+<title>Easywrite &rsaquo; Free Manuscripts</title>
 @stop
 
 @section('styles')
@@ -14,7 +14,7 @@
 
 @section('content')
 <div class="free-manuscript-page">
-    <div class="header" data-bg="https://www.forfatterskolen.no/images-new/free-manuscript-header.jpg">
+    <div class="header" data-bg="https://www.easywrite.se/images-new/free-manuscript-header.jpg">
         <div class="container text-center position-relative">
             <h1>{{ trans('site.front.free-manuscript.header-title') }}</h1>
             <p>
@@ -23,7 +23,7 @@
         </div>
     </div> <!-- end header-->
 
-    <div class="body" data-bg="https://www.forfatterskolen.no/images-new/free-manuscript-body.png">
+    <div class="body" data-bg="https://www.easywrite.se/images-new/free-manuscript-body.png">
         <div class="container">
             <div class="row form-container">
                 <div class="col-lg-8 col-md-12 col-md-offset-2">

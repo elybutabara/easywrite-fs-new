@@ -131,7 +131,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/Odt2Text.php';
 class LearnerController extends Controller
 {
     // Demo: fiken-demo-nordisk-og-tidlig-rytme-enk
-    // Forfatterskolen: forfatterskolen-as
+    // Easywrite: forfatterskolen-as
     public $fikenInvoices = 'https://fiken.no/api/v1/companies/forfatterskolen-as/invoices';
 
     public $username = 'elybutabara@yahoo.com';
@@ -2940,10 +2940,10 @@ class LearnerController extends Controller
         $publishing = SelfPublishing::find($id);
 
         // $destinationPath = 'storage/self-publishing-manuscript/'; // upload path
-        $destinationPath = 'Forfatterskolen_app/self-publishing-manuscript/';
+        $destinationPath = 'Easywrite_app/self-publishing-manuscript/';
 
         if ($publishing->project_id) {
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$publishing->project_id.'/self-publishing-manuscript/';
+            $destinationPath = 'Easywrite_app/project/project-'.$publishing->project_id.'/self-publishing-manuscript/';
         }
 
         if ($request->hasFile('manuscript')) {
@@ -3071,7 +3071,7 @@ class LearnerController extends Controller
             $request->merge(['type' => $type]);
 
             $folderName = $type == 1 ? 'copy-editing-manuscripts' : 'correction-manuscripts';
-            $destinationPath = 'Forfatterskolen_app/'.($data->project_id ? 'project/project-'.$data->project_id.'/' : '')
+            $destinationPath = 'Easywrite_app/'.($data->project_id ? 'project/project-'.$data->project_id.'/' : '')
                 .$folderName.'/';
 
             $requestFilename = 'manuscript';
@@ -3526,7 +3526,7 @@ class LearnerController extends Controller
             // Send course email
             $actionText = 'Mine Kurs';
             $actionUrl = 'http://www.easywrite.se/account/course';
-            $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+            $headers = "From: Easywrite<post@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             $email_content = $package->course->email;
@@ -3546,7 +3546,7 @@ class LearnerController extends Controller
             if ($paymentMode->mode == 'Paypal') {
                 $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                    <input type="hidden" name="business" value="post.easywrite@gmail.com">
                     <input type="hidden" name="currency_code" value="NOK">
                     <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                     <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -4242,7 +4242,7 @@ class LearnerController extends Controller
         // Send course email
         $actionText = 'Mine Kurs';
         $actionUrl = 'http://www.easywrite.se/account/course';
-        $headers = "From: Forfatterskolen<post@easywrite.se>\r\n";
+        $headers = "From: Easywrite<post@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         $user = Auth::user();
@@ -4253,7 +4253,7 @@ class LearnerController extends Controller
             'post@easywrite.se', $user->email,
             view('emails.course_order', compact('actionText', 'actionUrl', 'user', 'email_content')));*/
         dispatch(new CourseOrderJob($user_email, $package->course->title, $email_content,
-            'post@easywrite.se', 'Forfatterskolen', null, 'courses-taken-upgrade',
+            'post@easywrite.se', 'Easywrite', null, 'courses-taken-upgrade',
             $courseTaken->id, $actionText, $actionUrl, $user, $package->id));
 
         if ($paymentMode->mode == 'Paypal') {
@@ -4275,7 +4275,7 @@ class LearnerController extends Controller
             ]);
             /*echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -4493,7 +4493,7 @@ class LearnerController extends Controller
                 ]);
                 /*echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="business" value="post.easywrite@gmail.com">
                 <input type="hidden" name="currency_code" value="NOK">
                 <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                 <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -4621,7 +4621,7 @@ class LearnerController extends Controller
             if ($paymentMode->mode == 'Paypal') {
                 $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                    <input type="hidden" name="business" value="post.easywrite@gmail.com">
                     <input type="hidden" name="currency_code" value="NOK">
                     <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
                     <input type="hidden" name="item_name" value="Course Order Invoice">
@@ -5809,7 +5809,7 @@ class LearnerController extends Controller
     public function forum(): JsonResponse
     {
         $token = $this->createUserToken();
-        $redirect_url = 'https://forum.forfatterskolen.no/auth/sso?ssoToken='.$token.'&redirect=/';
+        $redirect_url = 'https://forum.easywrite.se/auth/sso?ssoToken='.$token.'&redirect=/';
 
         return response()->json([
             'redirect_url' => $redirect_url,

@@ -35,7 +35,7 @@
         <a href="https://www.instagram.com/easywrite_sverige/" target="_blank">
             <img src="{{ asset('images-new/icon/instagram.png') }}" alt="instagram-icon">
         </a>
-        <a href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
+        <a href="https://no.pinterest.com/easywrite_norge/" target="_blank">
             <img src="{{ asset('images-new/icon/pinterest.png') }}" alt="pinterest-icon">
         </a>
     </div>

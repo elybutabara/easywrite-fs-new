@@ -11,7 +11,7 @@ Password Reset
 @elseif(Request::input('t') == 'password-change')
 Password Change
 @endif
-&rsaquo; Forfatterskolen
+&rsaquo; Easywrite
 </title>
 @stop
 
@@ -31,10 +31,10 @@ Password Change
 @stop
 
 @section('content')
-<div class="login-container" data-bg="https://www.forfatterskolen.no/images-new/login/login-bg.jpg">
+<div class="login-container" data-bg="https://www.easywrite.se/images-new/login/login-bg.jpg">
 	<div class="container">
 		<div class="row first-row">
-			<div class="col-md-6 left-container" data-bg="https://www.forfatterskolen.no/images-new/login/left-bg.jpg">
+			<div class="col-md-6 left-container" data-bg="https://www.easywrite.se/images-new/login/left-bg.jpg">
 				<ul class="nav flex-column signup-tab" role="tablist">
 					<li class="nav-item">
 						<a data-toggle="tab" href="#login" class="nav-link @if(!Request::input('t')) active @endif" role="tab">

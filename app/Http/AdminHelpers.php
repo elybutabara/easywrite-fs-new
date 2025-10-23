@@ -218,7 +218,7 @@ class AdminHelpers
      *
      * @param  string  $from_name  Not required field with default value
      */
-    /* public static function send_email($subject, $from, $to, $content, string $from_name = 'Forfatterskolen', $attachment = null): bool
+    /* public static function send_email($subject, $from, $to, $content, string $from_name = 'Easywrite', $attachment = null): bool
     {
         $from = $from ?: 'post@easywrite.se';
         $host = env('MAIL_HOST_SITE');
@@ -257,7 +257,7 @@ class AdminHelpers
         return false;
     } */
 
-    /* public static function send_mail($subject, $from, $to, $content, $from_name = 'Forfatterskolen')
+    /* public static function send_mail($subject, $from, $to, $content, $from_name = 'Easywrite')
     {
         $headers = 'From: '.$from_name.'<'.$from.">\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
@@ -304,7 +304,7 @@ class AdminHelpers
 
     public static function checkNearlyExpiredCourses()
     {
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         // $courses_taken = CoursesTaken::where('user_id', 899)->get();
         $courses_taken = CoursesTaken::all();
@@ -529,7 +529,7 @@ class AdminHelpers
 
     public static function addToAutomation($email, $automation_id, $name)
     {
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         $params = [
             'api_key' => 'ee9f1cb27fe33c7197d722f434493d4440cf5da6be8114933fd0fdae40fc03a197388b99',
@@ -605,7 +605,7 @@ class AdminHelpers
      */
     public static function addToActiveCampaignList($list_id, $data): bool
     {
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         $params = [
             'api_key' => 'ee9f1cb27fe33c7197d722f434493d4440cf5da6be8114933fd0fdae40fc03a197388b99',
@@ -714,7 +714,7 @@ class AdminHelpers
 
     public static function addToActiveCampaignListTest($list_id, $data)
     {
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         $params = [
             'api_key' => 'ee9f1cb27fe33c7197d722f434493d4440cf5da6be8114933fd0fdae40fc03a197388b99',
@@ -792,7 +792,7 @@ class AdminHelpers
     public static function getActiveCampaignDataByEmail($email)
     {
         // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         $params = [
 
@@ -876,7 +876,7 @@ class AdminHelpers
     public static function updateActiveCampaignContactEmailForList($user_id, $email, $list_id)
     {
         // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
-        $url = 'https://forfatterskolen.api-us1.com';
+        $url = 'https://easywrite.api-us1.com';
 
         $params = [
 

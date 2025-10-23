@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-    <title>Mine Webinar &rsaquo; Forfatterskolen</title>
+    <title>Mine Webinar &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')
@@ -200,7 +200,7 @@
                                                             }
                                                         ?>
                                                         <a href="{{ $img_web_link }}">
-                                                            <div data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                                            <div data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                                                 <i class="play-button"></i>
                                                             </div>
                                                         </a>
@@ -298,12 +298,12 @@
                                                         ?>
                                                         @if($webinar->link)
                                                             <a href="{{ $img_web_link }}">
-                                                                <div data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                                                <div data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                                                     <i class="play-button"></i>
                                                                 </div>
                                                             </a>
                                                         @else
-                                                            <div data-bg="https://www.forfatterskolen.no/{{ $webinar->image }}">
+                                                            <div data-bg="https://www.easywrite.se/{{ $webinar->image }}">
                                                                 <i class="play-button"></i>
                                                             </div>
                                                         @endif

@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Forfatterskolen</title>
+<title>Easywrite</title>
 @stop
 
 @section('styles')
@@ -171,9 +171,9 @@
                                                 <blockquote>
                                                     "Boken min, ”Uten vesentlige feil eller mangler” kom ut på Gyldendal
                                                     våren 2017. Og med hånden på hjertet: Jeg vet ikke om jeg hadde
-                                                    klart det uten Forfatterskolen, og den støtten det ligger i å være
+                                                    klart det uten Easywrite, og den støtten det ligger i å være
                                                     en del av et skrivefellesskap. Jeg vil fortsette å la meg inspirere
-                                                    av Rektor Kristine og hennes medarbeidere på Forfatterskolen. Og
+                                                    av Rektor Kristine og hennes medarbeidere på Easywrite. Og
                                                     ikke minst: Elevene".
                                                 </blockquote>
                                             </div>
@@ -192,7 +192,7 @@
                                                 <h3>Forfatterdrøm i 2017</h3>
                                                 <blockquote>
                                                     "Det har vært en utrolig stor glede å bli kjent med rektor Kristine
-                                                    Henningsen og resten av forfatterskolen. Jeg har lært å skrive med
+                                                    Henningsen og resten av easywrite. Jeg har lært å skrive med
                                                     hjertet uten å miste hodet, og lært å se forskjellen. Samarbeidet
                                                     har resultert i at min debutroman, Armageddon-algoritmen, kom ut i
                                                     2017. Kristine har enestående evner til å inspirere og oppmuntre, og
@@ -214,7 +214,7 @@
                                                 <h1>Wenche Fuglseth Spjelkavik</h1>
                                                 <h3>debutant på Pax Forlag i 2017</h3>
                                                 <blockquote>
-                                                    "Å samtidig være medlem i Forfatterskolen og denne fantastiske
+                                                    "Å samtidig være medlem i Easywrite og denne fantastiske
                                                     gruppen har vært avgjørende for å greie å stå løpet ut. Har
                                                     diskutert prosjektet med Kristine tidligere og hun er velvilligheten
                                                     selv. Bøyer meg i støvet og har stor respekt for henne og jobben hun
@@ -612,7 +612,7 @@
                     <h1 class="gdpr-title">Dine data, dine valg</h1>
                     <div>
                         <p>
-                            Forfatterskolen er den som behandler dine data.
+                            Easywrite er den som behandler dine data.
                         </p>
                         <p>
                             Dine data er trygge hos oss. Vi bruker dem til å tilpasse tjenestene og tilbudene for deg.

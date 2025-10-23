@@ -20,7 +20,7 @@ class ProjectManuscript extends Model
         foreach ($files as $file) {
             $extension = explode('.', basename($file));
 
-            if (strpos($file, 'project-') || strpos($file, 'Forfatterskolen_app')) {
+            if (strpos($file, 'project-') || strpos($file, 'Easywrite_app')) {
                 $fileLink .= '<a href="'.url('/dropbox/shared-link/'.trim($file)).'" target="_blank">'.basename($file).'</a>';
                 $fileLink .= ' <a href="'.url('/dropbox/download/'.trim($file)).'">
                     <i class="fa fa-download" aria-hidden="true"></i></a>';

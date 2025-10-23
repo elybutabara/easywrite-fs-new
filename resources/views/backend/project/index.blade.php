@@ -27,7 +27,7 @@
 @stop
 
 @section('title')
-    <title>Project &rsaquo; Forfatterskolen Admin</title>
+    <title>Project &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

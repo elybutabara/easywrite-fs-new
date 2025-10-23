@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-	<title>Forfatterskolen &rsaquo; Terms</title>
+	<title>Easywrite &rsaquo; Terms</title>
 @stop
 
 @section('styles')

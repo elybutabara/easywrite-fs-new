@@ -10,7 +10,7 @@
                 <td style="padding-top: 1rem">Hi {{ $email_data['receiver'] }},</td>
             </tr>
             <tr> 
-                <td style="padding-top: .3rem">{{ $email_data['sender'] }} has invited you to join "{{ $email_data['group_name'] }}" on Forfatterskolen.</td>
+                <td style="padding-top: .3rem">{{ $email_data['sender'] }} has invited you to join "{{ $email_data['group_name'] }}" on Easywrite.</td>
             </tr>
             @if($email_data['msg'])
                 <tr>

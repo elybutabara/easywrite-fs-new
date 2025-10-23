@@ -5,7 +5,7 @@
 @stop
 
 @section('title')
-    <title>Assemble Book Package Options &rsaquo; Forfatterskolen Admin</title>
+    <title>Assemble Book Package Options &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

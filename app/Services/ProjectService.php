@@ -99,7 +99,7 @@ class ProjectService
 
             AdminHelpers::createDirectory($destinationPath);
             $filePath = $this->saveMultipleFileOrImage($destinationPath, 'images'); */
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/book-pictures/';
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/book-pictures/';
             $filePath = $this->saveMultipleFileOrImageDropbox($destinationPath, 'images');
             if ($request->id) {
                 $bookPicture = ProjectBookPicture::find($request->id);
@@ -129,18 +129,18 @@ class ProjectService
             // $destinationPath = 'storage/project-book-formatting'; // upload path
 
             // AdminHelpers::createDirectory($destinationPath);
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/book-formatting/';
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/book-formatting/';
             $filePath = $this->saveMultipleFileOrImageDropbox($destinationPath, 'file');
         }
 
         if ($request->hasFile('corporate_page')) {
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id
             .'/graphic-work/book-formatting/corporate_page';
             $corporatePage = $this->saveFileOrImageDropbox($destinationPath, 'corporate_page');
         }
 
         if ($request->format && $request->hasFile('format_image')) {
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id
                 .'/graphic-work/book-formatting/format_image';
             $formatImage = $this->saveFileOrImageDropbox($destinationPath, 'format_image');
         }
@@ -207,7 +207,7 @@ class ProjectService
 
     public function saveBookFormatFeedback(Request $request)
     {
-        $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/book-formatting/feedback';
+        $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/book-formatting/feedback';
         $filePath = $this->saveFileOrImageDropbox($destinationPath, 'file');
 
         $bookPicture = ProjectBookFormatting::find($request->id);
@@ -252,10 +252,10 @@ class ProjectService
     public function saveFile($project_id, Request $request): string
     {
         $extension = $request->manuscript->extension();
-        $destinationPath = 'Forfatterskolen_app/project/project-'.$project_id.'/correction-manuscripts'; // upload path
+        $destinationPath = 'Easywrite_app/project/project-'.$project_id.'/correction-manuscripts'; // upload path
 
         if ($request->type == 1) {
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$project_id.'/copy-editing-manuscripts'; // upload path
+            $destinationPath = 'Easywrite_app/project/project-'.$project_id.'/copy-editing-manuscripts'; // upload path
         }
 
         $time = time();
@@ -313,7 +313,7 @@ class ProjectService
 
         switch ($request->type) {
             case 'cover':
-                $destinationPathCover = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/cover/';
+                $destinationPathCover = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/cover/';
                 if (\request()->hasFile('cover')) {
                     $data['value'] = $this->saveMultipleFileOrImageDropbox($destinationPathCover, 'cover');
                 }
@@ -334,7 +334,7 @@ class ProjectService
                 $data['format'] = $finalFormat;
 
                 if (\request()->hasFile('backside_image')) {
-                    $destinationPathCover = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/cover/backside_image/';
+                    $destinationPathCover = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/cover/backside_image/';
                     $data['backside_image'] = $this->saveMultipleFileOrImageDropbox($destinationPathCover, 'backside_image');
                 }
 
@@ -388,7 +388,7 @@ class ProjectService
             case 'indesign':
                 // $data['value'] = $this->saveGraphicWorkFileOrImage($request, 'cover', 'indesign/');
                 if (\request()->hasFile('cover')) {
-                    $destinationPathCover = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/indesign/cover/';
+                    $destinationPathCover = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/indesign/cover/';
                     $data['value'] = $this->saveMultipleFileOrImageDropbox($destinationPathCover, 'cover');
                 }
 
@@ -491,7 +491,7 @@ class ProjectService
 
         if ($request->hasFile($fieldName)) {
             // $destinationPath = 'storage/project-graphic-work/' . $fieldName; // upload path
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/graphic-work/'
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/graphic-work/'
                 .$additionFolder.$fieldName; // upload path
 
             // AdminHelpers::createDirectory($destinationPath);
@@ -513,7 +513,7 @@ class ProjectService
 
         if ($request->hasFile($fieldName)) {
             // $destinationPath = 'storage/project-graphic-work/' . $fieldName; // upload path
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/ebook/'.$fieldName; // upload path
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/ebook/'.$fieldName; // upload path
 
             // AdminHelpers::createDirectory($destinationPath);
             $filePath = $this->saveFileOrImageDropbox($destinationPath, $fieldName);
@@ -534,7 +534,7 @@ class ProjectService
 
         if ($request->hasFile($fieldName)) {
             // $destinationPath = 'storage/project-graphic-work/' . $fieldName; // upload path
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/audio/'.$fieldName; // upload path
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/audio/'.$fieldName; // upload path
 
             // AdminHelpers::createDirectory($destinationPath);
             $filePath = $this->saveFileOrImageDropbox($destinationPath, $fieldName);
@@ -554,10 +554,10 @@ class ProjectService
         }
 
         if ($request->hasFile('book_file')) {
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$project_id.'/project-books'; // upload path
+            $destinationPath = 'Easywrite_app/project/project-'.$project_id.'/project-books'; // upload path
 
             if ($request->has('is_book_critique')) {
-                $destinationPath = 'Forfatterskolen_app/project/project-'.$project_id.'/project-book-critique'; // upload path
+                $destinationPath = 'Easywrite_app/project/project-'.$project_id.'/project-book-critique'; // upload path
             }
 
             // AdminHelpers::createDirectory($destinationPath);

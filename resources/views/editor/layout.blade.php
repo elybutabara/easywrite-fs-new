@@ -72,7 +72,7 @@
 
         <script src="{{ mix('/js/app.js') }}"></script>
         @include('backend.partials.scripts')
-        <script src="https://Forfatterskolen.cdn.vooplayer.com/assets/vooplayer.js"></script>
+        <script src="https://Easywrite.cdn.vooplayer.com/assets/vooplayer.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
         {{-- <script src="https://cdn.tiny.cloud/1/winfkv7k6snl5zpwilziro7l9ch3eyhcjlyt30jutsbv5bta/tinymce/5/tinymce.min.js"

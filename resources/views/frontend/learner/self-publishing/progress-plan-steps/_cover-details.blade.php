@@ -19,7 +19,7 @@
                     $coverFiles = explode(',', $cover->value);
                 @endphp
                 @foreach ($coverFiles as $coverFile)
-                    @if (strpos($coverFile, 'Forfatterskolen_app'))
+                    @if (strpos($coverFile, 'Easywrite_app'))
                         <a href="/dropbox/download/{{ trim($coverFile) }}">
                             <i class="fa fa-download" aria-hidden="true"></i>
                         </a>&nbsp;

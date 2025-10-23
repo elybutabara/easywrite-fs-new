@@ -885,7 +885,7 @@ class CourseService
         $table->addCell($width, [
             'borderBottomSize' => 6,
             'height' => 1,
-        ])->addText('Forfatterskolen, Lihagen 21, 3029 DRAMMEN', [
+        ])->addText('Easywrite, Lihagen 21, 3029 DRAMMEN', [
             'bgColor' => 'CCCCCC',
         ], [
             'space' => ['before' => 150, 'after' => 0],

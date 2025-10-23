@@ -638,7 +638,7 @@ class LoginController extends Controller
 
             $to = $user->email; //
             $emailData = [
-                'email_subject' => 'Velkommen til Forfatterskolen',
+                'email_subject' => 'Velkommen til Easywrite',
                 'email_message' => view('emails.registration', compact('actionText', 'actionUrl', 'user'))->render(),
                 'from_name' => '',
                 'from_email' => 'post@easywrite.se',

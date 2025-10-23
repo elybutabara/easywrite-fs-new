@@ -406,7 +406,7 @@ class SelfPublishingController extends Controller
             $extension = pathinfo($_FILES['manuscript']['name'], PATHINFO_EXTENSION); // getting document extension
             $actual_name = pathinfo($_FILES['manuscript']['name'], PATHINFO_FILENAME);
 
-            $destinationPath = 'Forfatterskolen_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
+            $destinationPath = 'Easywrite_app/project/project-'.$request->project_id.'/self-publishing-manuscript/';
             $fileName = AdminHelpers::getUniqueFilename('dropbox', $destinationPath, $actual_name.'.'.$extension);
             $expFileName = explode('/', $fileName);
             $dropboxFileName = end($expFileName);

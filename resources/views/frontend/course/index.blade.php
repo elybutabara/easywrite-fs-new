@@ -1,12 +1,12 @@
 @extends('frontend.layout')
 
 @section('title')
-<title>Courses &rsaquo; Forfatterskolen</title>
+<title>Courses &rsaquo; Easywrite</title>
 @stop
 
 @section('content')
 	<div class="course-page">
-		<div class="header" data-bg="https://www.forfatterskolen.no/images-new/course-header-new.png">
+		<div class="header" data-bg="https://www.easywrite.se/images-new/course-header-new.png">
 			<div class="container text-center position-relative">
 				<h1>
 					{{ trans('site.front.our-course.title') }}
@@ -41,7 +41,7 @@
 							<div class="col-sm-4">
 								<div class="course">
 									<div class="course-header"
-									data-bg="https://www.forfatterskolen.no/{{$course->course_image}}">
+									data-bg="https://www.easywrite.se/{{$course->course_image}}">
 										<div class="header-content">
 											@if ($course->instructor)
 												<div class="left-container">

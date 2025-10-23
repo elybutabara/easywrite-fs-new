@@ -109,7 +109,7 @@
     </div> <!-- end #main-container -->
 
 @include('frontend.partials.scripts')
-<script src="https://Forfatterskolen.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
+<script src="https://Easywrite.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
 <script src="/js/lang.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

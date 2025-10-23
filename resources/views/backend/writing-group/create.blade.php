@@ -1,7 +1,7 @@
 @extends('backend.layout')
 
 @section('title')
-<title>Create New Writing Group &rsaquo; Forfatterskolen Admin</title>
+<title>Create New Writing Group &rsaquo; Easywrite Admin</title>
 @stop
 
 

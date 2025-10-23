@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>{{ $shopManuscriptTaken->shop_manuscript->title }} &rsaquo; Forfatterskolen</title>
+<title>{{ $shopManuscriptTaken->shop_manuscript->title }} &rsaquo; Easywrite</title>
 @stop
 
 @section('styles')

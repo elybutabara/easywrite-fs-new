@@ -2,7 +2,7 @@
 @extends('frontend.layouts.course-portal')
 
 @section('title')
-<title>Invoices &rsaquo; Forfatterskolen</title>
+<title>Invoices &rsaquo; Easywrite</title>
 @stop
 
 @section('heading') {{ trans('site.learner.my-invoice') }} @stop
@@ -471,7 +471,7 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<span>Retur:</span> <br>
-							<span>Forfatterskolen AS</span> <br>
+							<span>Easywrite AS</span> <br>
 							<span>Postboks 9233 Kjøsterud</span> <br>
 							<span>3064 DRAMMEN</span> <br>
 							<span>NORWAY</span>

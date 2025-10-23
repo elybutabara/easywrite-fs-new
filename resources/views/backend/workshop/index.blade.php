@@ -5,7 +5,7 @@
 @stop
 
 @section('title')
-<title>Workshops &rsaquo; Forfatterskolen Admin</title>
+<title>Workshops &rsaquo; Easywrite Admin</title>
 @stop
 
 @section('content')

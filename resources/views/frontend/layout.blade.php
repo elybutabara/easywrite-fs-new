@@ -44,17 +44,17 @@
         <?php
             $pageMeta = \App\PageMeta::where('url', url()->current())->first();
 
-            $checkoutTitle = 'Forfatterskolens utsjekksside der brukerne kan legge inn bestillinger';
+            $checkoutTitle = 'Easywrites utsjekksside der brukerne kan legge inn bestillinger';
             $checkoutDescription = 'Utsjekkssiden viser alle nødvendige felt og betalingsalternativer som gjør det enklere for brukeren å bestille varen';
-            $genericTitle = 'Forfatterskolens side for forfattere';
-            $genericDescription = 'Denne siden tilhører Forfatterskolen og viser innhold som hjelper forfattere å øke sin kunnskap';
+            $genericTitle = 'Easywrites side for forfattere';
+            $genericDescription = 'Denne siden tilhører Easywrite og viser innhold som hjelper forfattere å øke sin kunnskap';
 
             $meta_title = $pageMeta ? $pageMeta->meta_title :
                 (strpos(url()->current(), 'checkout') !== false ? $checkoutTitle : $genericTitle);
             $meta_description = $pageMeta ? $pageMeta->meta_description :
                 (strpos(url()->current(), 'checkout') !== false ? $checkoutDescription : $genericDescription);
 
-            $defaultKeywords = 'forfatterskolen, forfatterkurs, manusutvikling, manuskript, dikt, sakprosa, serieroman, krim, roman';
+            $defaultKeywords = 'easywrite, forfatterkurs, manusutvikling, manuskript, dikt, sakprosa, serieroman, krim, roman';
             $meta_keywords = $pageMeta && $pageMeta->meta_keywords ? $pageMeta->meta_keywords : $defaultKeywords;
         ?>
 
@@ -62,7 +62,7 @@
             <meta property="og:title" content="{{ $meta_title }}">
             <meta property="og:description" content="{{ $meta_description }}">
             <meta name="description" content="{{ $meta_description }}">
-            <meta property="og:site_name" content="Forfatterskolen">
+            <meta property="og:site_name" content="Easywrite">
             <meta property="og:url" content="{{ url()->current() }}">
             <meta property="og:type" content="website" />
             @if ($pageMeta && $pageMeta->meta_image)
@@ -72,7 +72,7 @@
 
             <meta property="twitter:title" content="{{ $meta_title }}">
             <meta property="twitter:description" content="{{ $meta_description }}">
-            <meta name="twitter:site" content="@forfatterskolen" />
+            <meta name="twitter:site" content="@easywrite" />
             <meta name="twitter:card" content="summary" />
             <meta name="twitter:title" content="{{ $meta_title }}" />
             <meta name="twitter:description" content="{{ $meta_description }}" />
@@ -104,8 +104,8 @@
         <script type="text/javascript">
             window.GUMLET_CONFIG = {
                 hosts: [{
-                    current: "https://www.forfatterskolen.no/",
-                    gumlet: "forfatterskolen.gumlet.com"
+                    current: "https://www.easywrite.se/",
+                    gumlet: "easywrite.gumlet.com"
                 }]
             };
         </script>
@@ -217,7 +217,7 @@
         @endif
 
         @include('frontend.partials.scripts')
-        <script src="https://Forfatterskolen.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
+        <script src="https://Easywrite.cdn.vooplayer.com/assets/vooplayer.js" defer></script>
         <script src="/js/lang.js"></script>
         <script async>
             $.ajaxSetup({
@@ -398,7 +398,7 @@
         @yield('scripts')
     {{--<script type="text/javascript" defer>
         (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-            'https://forfatterskolen.ladesk.com/scripts/track.js',
+            'https://easywrite.ladesk.com/scripts/track.js',
             function(e){ LiveAgent.createButton('bocb2pt7', e); });
     </script>--}}
     @if (!in_array(Route::currentRouteName(),['front.course.checkout', 'front.shop-manuscript.checkout']))
