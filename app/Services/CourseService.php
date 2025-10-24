@@ -491,7 +491,7 @@ class CourseService
             }
         }
 
-        if ($package->course->id == 7) { // check if webinar-pakke
+        /* if ($package->course->id == 7) { // check if webinar-pakke
             $add_to_automation++;
         }
 
@@ -503,7 +503,7 @@ class CourseService
             $user_name = $user->first_name;
 
             AdminHelpers::addToAutomation($user_email, $automation_id, $user_name);
-        }
+        } */
 
         // check if the course has activecampaign list then add the user
         if ($package->course->auto_list_id > 0) {
