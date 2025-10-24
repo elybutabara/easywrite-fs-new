@@ -158,7 +158,7 @@ class ShopManuscriptController extends Controller
         $full_payment_price = $shopManuscript->full_payment_price;
 
         // check if manuscript start or manuscript 1
-        if (in_array($shop_manuscript_id, [3, 9])) {
+        if (in_array($shop_manuscript_id, [2, 3])) {
             $excess_words = $new_word_count - 5000;
             $excessPerWordAmount = 0.112;
             $full_payment_price = 1500; // starting price
