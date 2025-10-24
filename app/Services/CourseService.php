@@ -812,7 +812,7 @@ class CourseService
     /**
      * Generate docx attached to the email with user and order info
      */
-    public function generateDocx($user_id, $package_id): string
+    public function generateDocx($user_id, $package_id)
     {
         $user = User::find($user_id);
         $address = $user->address;
@@ -820,14 +820,14 @@ class CourseService
         $course = $package->course;
 
         $parseDate = Carbon::today()->addDays(13);
-        if ($course->type === 'Group' && Carbon::today()->lt(Carbon::parse($course->start_date))) {
+        if ($course->type === "Group" && Carbon::today()->lt(Carbon::parse($course->start_date))) {
             $parseDate = Carbon::parse($course->start_date)->addDays(13);
         }
 
         $expirationDate = $parseDate->format('d.m.Y');
         $expirationDay = FrontendHelpers::convertDayLanguage($parseDate->format('N'));
 
-        $phpWord = new \PhpOffice\PhpWord\PhpWord;
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
         $phpWord->setDefaultFontName('Times New Roman');
         $phpWord->setDefaultFontSize(12);
 
@@ -835,44 +835,89 @@ class CourseService
         $documentProtection = $phpWord->getSettings()->getDocumentProtection();
         $documentProtection->setEditing(DocProtect::FORMS);
 
-        $sectionStyle = [
+        $sectionStyle = array(
             'marginTop' => 1150,
             'marginBottom' => 1150,
             'marginLeft' => 800,
-            'marginRight' => 800,
-        ];
+            'marginRight' => 800
+        );
         $section = $phpWord->addSection(
             $sectionStyle
         );
 
-        $section->addText('Angreskjema',
+        $section->addText("Ångerblankett",
             [
                 'size' => 18,
+                'color' => '1F497D',
+                'bold'  => true,
             ],
             [
                 'alignment' => 'center',
                 'marginBottom' => 0,
-                'space' => ['before' => 0, 'after' => 70],
+                'space' => array('before' => 0, 'after' => 70)
             ]);
 
-        $section->addText('ved kjøp av varer og tjenester som ikke er finansielle tjenester',
+        $section->addText('(vid köp av tjänster och varor som inte är finansiella tjänster)',
             ['size' => 10], [
                 'alignment' => 'center',
-                'space' => ['after' => 250],
+                'space' => array('after' => 250)
             ]);
 
-        $section->addText('Fyll ut og returner dette skjemaet dersom du ønsker å gå fra avtalen', [],
+        $section->addText('Fyll i och returnera denna blankett om du vill utnyttja din ångerrätt.',
+            [], [
+                'space' => array('after' => 0)
+            ]);
+
+        $section->addText('Enligt svensk lag om distansavtal och avtal utanför affärslokaler (2005:59) har konsumenter 14 dagars ångerrätt, med undantag som anges i våra villkor.',
+            [], [
+                'space' => array('after' => 250)
+            ]);
+        
+        $section->addText('Observera: För tjänster som manusutveckling, språkgranskning och korrekturläsning gäller ångerrätten inte '. 
+            'om arbetet har påbörjats med ditt uttryckliga samtycke under ångerfristen och du informerats om att ångerrätten därmed upphör.',
+            [], [
+                'space' => array('after' => 250)
+            ]);
+
+        $section->addText('Mottagare:', 
             [
-                'alignment' => 'center',
-                'space' => ['after' => 350],
+                'color' => '4F81BD',
+                'bold'  => true,
+                'size' => 13,
+            ],
+            [
+                'space' => array('after' => 0)
             ]);
 
-        $section->addText('Utfylt skjema sendes til:', [], [
-            'space' => ['after' => 0],
-        ]);
-        $section->addText('(den næringsdrivende skal sette inn sitt navn, geografiske adresse og ev.'.
-            'telefaksnummer og e-postadresse)', ['size' => 10], [
-                'space' => ['after' => 350],
+        $section->addText('Easywrite.se / Forfatterskolen AS',
+            [], [
+                'space' => array('after' => 0)
+            ]);
+        $section->addText('Lihagen 21',
+            [], [
+                'space' => array('after' => 0)
+            ]);
+        $section->addText('3029 Drammen, Norge',
+            [], [
+                'space' => array('after' => 0)
+            ]);
+        $section->addText('E-post: post@easywrite.se',
+            [], [
+                'space' => array('after' => 250)
+            ]);
+
+        $section->addText('Jag/vi meddelar härmed att jag/vi frånträder avtalet om köp av följande:', 
+            [
+                'color' => '4F81BD',
+                'bold'  => true,
+                'size' => 13,
+            ],
+            [
+                'space' => array('after' => 0)
+            ]);
+        $section->addText('Tjänst (specificera nedan):',
+            [], [
+                'space' => array('after' => 0)
             ]);
 
         $width = 100 * 100;
@@ -880,82 +925,27 @@ class CourseService
         $table = $section->addTable([
             'width' => $width,
         ]);
-
         $table->addRow(0);
         $table->addCell($width, [
             'borderBottomSize' => 6,
             'height' => 1,
-        ])->addText('Easywrite, Lihagen 21, 3029 DRAMMEN', [
+        ])->addText($course->title, [
             'bgColor' => 'CCCCCC',
         ], [
             'space' => ['before' => 150, 'after' => 0],
             'indent' => 0.1,
         ]);
 
-        $table->addRow(0);
-        $table->addCell($width, [
-            'borderBottomSize' => 6,
-            'height' => 1,
-        ])->addText('post@easywrite.se', [
-            'bgColor' => 'CCCCCC',
-        ], [
-            'space' => ['before' => 250, 'after' => 0],
-            'indent' => 0.1,
+        $textRun = $section->addTextRun([
+            'space' => ['before' => 250]
         ]);
-
-        $section->addTable($table);
-
-        $listItemRun = $section->addTextRun([
-            'space' => ['before' => 550],
-        ]);
-        $listItemRun->addText('Jeg/vi underretter herved om at jeg/vi ønsker å gå fra min/vår avtale om kjøp av følgende:');
-        $listItemRun->addText(' (sett kryss)', ['size' => 10]);
-
-        $checkBox = $section->addTextRun();
-        $checkBox->addFormField('checkbox')->setValue(true);
-        $checkBox->addText(' tjenester');
-        $checkBox->addText(' (spesifiser på linjene nedenfor)', ['size' => 10]);
-
-        $table = $section->addTable([
-            'width' => $width,
-        ]);
-        $table->addRow(0);
-        $table->addCell($width, [
-            'borderBottomSize' => 6,
-            'height' => 1,
-        ])->addText('Gjelder kjøp av '.$course->title, [
-            'bgColor' => 'CCCCCC',
-        ], [
-            'space' => ['before' => 150, 'after' => 0],
-            'indent' => 0.1,
-        ]);
-
-        $table->addRow(0);
-        $table->addCell($width, [
-            'borderBottomSize' => 6,
-            'height' => 1,
-        ])->addText('Frist for avbestilling for  å kunne benytte angreretten: Innen klokken 23.59 '
-            .$expirationDay.' '.$expirationDate, [
-                'bgColor' => 'CCCCCC',
-            ], [
-                'space' => ['before' => 150, 'after' => 0],
-                'indent' => 0.1,
-            ]);
-
-        $section->addText('Sett kryss og dato:', ['size' => 10], [
-            'space' => ['before' => 400],
-        ]);
-
-        $textRun = $section->addTextRun();
         $textRun->addFormField('checkbox')->setValue(true);
-        $textRun->addText(' Avtalen ble inngått den');
-        $textRun->addText(' (dato)', ['size' => 10]);
+        $textRun->addText(' Avtalets datum (vid köp av tjänster):');
         $textRun->addText('     '); // spacing
         $textRun->addText(Carbon::today()->format('d.m.Y'), [
             'bgColor' => 'CCCCCC',
             'underline' => 'single',
         ]);
-        $textRun->addText(' (ved kjøp av tjenester)', ['size' => 10]);
 
         $table = $section->addTable([
             'width' => $width,
@@ -963,8 +953,8 @@ class CourseService
         $table->addRow(0);
         $table->addCell($width, [
             'height' => 1,
-        ])->addText('Forbrukerens/forbrukemesnavn:', ['size' => 10], [
-            'space' => ['before' => 500],
+        ])->addText('Konsumentens namn:', [], [
+            'space' => ['before' => 250],
         ]);
 
         $table->addRow(0);
@@ -978,11 +968,14 @@ class CourseService
             'indent' => 0.1,
         ])->setValue(' ');
 
+        $table = $section->addTable([
+            'width' => $width,
+        ]);
         $table->addRow(0);
         $table->addCell($width, [
             'height' => 1,
-        ])->addText('Forbrukerens/forbrukemes adresse:', ['size' => 10], [
-            'space' => ['before' => 300, 'after' => 0],
+        ])->addText('Konsumentens adress:', [], [
+            'space' => ['before' => 250],
         ]);
 
         $table->addRow(0);
@@ -992,56 +985,68 @@ class CourseService
         ])->addFormField('textinput', [
             'bgColor' => 'CCCCCC',
         ], [
-            'space' => ['before' => 200, 'after' => 0],
+            'space' => ['before' => 0, 'after' => 0],
             'indent' => 0.1,
         ])->setValue(' ');
 
         $table = $section->addTable();
         $table->addRow();
         $cell = $table->addCell($width)->addTextRun([
-            'space' => ['before' => 1800, 'after' => 0],
+            'space' => ['before' => 250, 'after' => 0],
         ]);
 
-        $cell->addText('Dato:', ['size' => 10]);
+        $cell->addText('Datum:', ['size' => 10]);
         $cell->addText('     '); // spacing
         $cell->addFormField('textinput', [
             'indent' => 2,
         ])->setValue('dd. dd. åååå');
 
-        $table = $section->addTable();
+        $table = $section->addTable([
+            'width' => $width,
+        ]);
+        $table->addRow(0);
+        $table->addCell($width, [
+            'height' => 1,
+        ])->addText('Konsumentens underskrift (endast om blanketten lämnas in på papper):', [], [
+            'space' => ['before' => 250],
+        ]);
+
         $table->addRow(0);
         $table->addCell($width, [
             'borderBottomSize' => 6,
-        ])->addText('', [], [
-            'space' => ['before' => 500, 'after' => 0],
-        ]);
+            'height' => 1,
+        ])->addFormField('textinput', [
+            'bgColor' => 'CCCCCC',
+        ], [
+            'space' => ['before' => 0, 'after' => 0],
+            'indent' => 0.1,
+        ])->setValue(' ');
 
-        $section->addText('Forbrukerens/forbrukemes underskrift (dersom papirskjema benyttes)',
-            [
-                'size' => 10,
-            ],
-            [
-                'alignment' => 'center',
+        $section->addText('Instruktion: Skicka denna blankett via e-post eller post inom 14 dagar från avtalets ingående.'. 
+            'Om tjänsten redan påbörjats med ditt samtycke under ångerfristen kan ångerrätten inte utnyttjas.',
+            [], [
+                'space' => array('before' => 250)
             ]);
 
         $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
         try {
-            $objWriter->save(public_path('email-attachments/angrerettskjema.docx'));
+            $objWriter->save(public_path('email-attachments/angerblankett.docx'));
 
-            $courseOrderAttachmentCopy = '/storage/course-order-attachments/'.
-                str_replace(':', '-', $course->title).'-'.$user_id.'.docx';
+            $courseOrderAttachmentCopy = '/storage/course-order-attachments/' .
+                str_replace(':','-',$course->title).'-'.$user_id.'.docx';
             $objWriter->save(public_path($courseOrderAttachmentCopy));
 
             CourseOrderAttachment::create([
                 'user_id' => $user_id,
                 'course_id' => $course->id,
                 'package_id' => $package_id,
-                'file_path' => $courseOrderAttachmentCopy,
+                'file_path' => $courseOrderAttachmentCopy
             ]);
 
-            return 'email-attachments/angrerettskjema.docx';
+            return 'email-attachments/angerblankett.docx';
         } catch (\Exception $e) {
-            return '';
+            Log::info(json_encode($e->getMessage()));
+            return "";
         }
     }
 }
