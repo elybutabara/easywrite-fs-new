@@ -47,6 +47,8 @@ class EmailOutController extends Controller
         $data['course_id'] = $course_id;
         $data['for_free_course'] = $request->has('for_free_course') ? 1 : 0;
         $data['send_immediately'] = boolval($request->has('send_immediately'));
+        $data['send_to_learners_no_course'] = boolval($request->has('send_to_learners_no_course'));
+        $data['send_to_learners_with_unpaid_pay_later'] = boolval($request->has('send_to_learners_with_unpaid_pay_later'));
         $data['allowed_package'] = isset($request->allowed_package) ? json_encode($request->allowed_package) : null;
 
         if ($request->hasFile('attachment')) {
@@ -79,17 +81,17 @@ class EmailOutController extends Controller
             $excludeFreeManuscriptLearners = false;
 
             $users = $this->getNonPayingLearners($excludeFreeManuscriptLearners);
-            $totalSent += $this->sendCustomEmailToUsers($users, $request);
+            //$totalSent += $this->sendCustomEmailToUsers($users, $request);
         }
 
         if ($request->send_to_learners_with_unpaid_pay_later) {
             $users = $this->getUnpaidPayLaterLearners($course_id);
-            $totalSent += $this->sendCustomEmailToUsers($users, $request);
+            //$totalSent += $this->sendCustomEmailToUsers($users, $request);
         }
 
         if ($request->send_to) {
             $subject = $request->subject;
-            $from = 'post@easywrite.se';
+            $from = 'post@forfatterskolen.no';
             $to = $request->send_to;
             $content = $request->message;
             $messageBag = new MessageBag;
@@ -125,7 +127,7 @@ class EmailOutController extends Controller
         }
 
         if ($totalSent) {
-            $notif = AdminHelpers::createMessageBag("Email out created successfully. {$totalSent} email(s) sent.");
+            $notif = AdminHelpers::createMessageBag("Email out created successfully.");
         }
 
         return redirect()->back()->with([
@@ -164,6 +166,8 @@ class EmailOutController extends Controller
         $data['course_id'] = $course_id;
         $data['for_free_course'] = $request->has('for_free_course') ? 1 : 0;
         $data['send_immediately'] = boolval($request->has('send_immediately'));
+        $data['send_to_learners_no_course'] = boolval($request->has('send_to_learners_no_course'));
+        $data['send_to_learners_with_unpaid_pay_later'] = boolval($request->has('send_to_learners_with_unpaid_pay_later'));
         $data['allowed_package'] = isset($request->allowed_package) ? json_encode($request->allowed_package) : null;
 
         if ($request->hasFile('attachment')) {
@@ -198,12 +202,12 @@ class EmailOutController extends Controller
                 $excludeFreeManuscriptLearners = true;
             }
 
-            $users = $this->getNonPayingLearners($excludeFreeManuscriptLearners);
+            /* $users = $this->getNonPayingLearners($excludeFreeManuscriptLearners);
 
             $userCounter = 0;
             foreach ($users as $user) {
                 $subject = $email_out->subject;
-                $from = 'post@easywrite.se';
+                $from = 'post@forfatterskolen.no';
                 $to = $user->email;
                 $content = $email_out->message;
 
@@ -233,15 +237,14 @@ class EmailOutController extends Controller
                 \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
 
                 $userCounter++;
-            }
+            } */
 
-            $notif = AdminHelpers::createMessageBag('Email out updated successfully. '
-            .$userCounter.' email(s) sent.');
+            $notif = AdminHelpers::createMessageBag('Email out updated successfully. ');
         }
 
         if ($request->send_to) {
             $subject = $email_out->subject;
-            $from = 'post@easywrite.se';
+            $from = 'post@forfatterskolen.no';
             $to = $request->send_to;
             $content = $email_out->message;
             $messageBag = new MessageBag;
@@ -416,7 +419,7 @@ class EmailOutController extends Controller
                 'email_subject' => $request->subject,
                 'email_message' => $content,
                 'from_name' => '',
-                'from_email' => 'post@easywrite.se',
+                'from_email' => 'post@forfatterskolen.no',
                 'attach_file' => null,
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
