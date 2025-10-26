@@ -1,7 +1,7 @@
 @extends('frontend.layout')
 
 @section('title')
-    <title>Easywrite – Din litterære familie. Skrivekurs for deg</title>
+    <title>Forfatterskolen – Din litterære familie. Skrivekurs for deg</title>
 @stop
 
 @section('styles')
@@ -149,7 +149,7 @@
     <div class="online-courses-row">
         <div class="container">
             <div class="top-container">
-                <img data-src="https://www.easywrite.se/images-new/home/online-course.png" alt="online-course"
+                <img data-src="https://www.forfatterskolen.no/images-new/home/online-course.png" alt="online-course"
                  class="inline-course-img">
                 <div class="details">
                     <h2>{!! trans('site.front.home.advantages-of-online-course') !!}</h2>
@@ -158,15 +158,15 @@
                     </p>
                     <ul>
                         <li>
-                            <img data-src="https://www.easywrite.se/images-new/home/arrow.svg" alt="arrow">
+                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-1') !!}
                         </li>
                         <li>
-                            <img data-src="https://www.easywrite.se/images-new/home/arrow.svg" alt="arrow">
+                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-2') !!}
                         </li>
                         <li>
-                            <img data-src="https://www.easywrite.se/images-new/home/arrow.svg" alt="arrow">
+                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-3') !!}
                         </li>
                     </ul>
@@ -205,8 +205,8 @@
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#vooModal" class="vooBtn"
                                    data-link="{{ $testimonial->testimony }}">
                                     <div class="img-container"
-                                         data-bg="https://www.easywrite.se/{{ $testimonial->author_image }}">
-                                        <img data-src="https://www.easywrite.se/{{ '/images-new/play-white.png' }}" class="play-image">
+                                         data-bg="https://www.forfatterskolen.no/{{ $testimonial->author_image }}">
+                                        <img data-src="https://www.forfatterskolen.no/{{ '/images-new/play-white.png' }}" class="play-image">
                                     </div> <!-- end image container -->
                                 </a>
 
@@ -276,7 +276,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 text-center">
-                    <img src="https://www.easywrite.se/{{ '/images-new/illustrationcomputer.png' }}" 
+                    <img src="https://www.forfatterskolen.no/{{ '/images-new/illustrationcomputer.png' }}" 
                     alt="illustration-computer">
                 </div>
                 <div class="col-md-7">
