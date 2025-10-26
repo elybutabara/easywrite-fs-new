@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend;
 use App\Http\Controllers\Giutbok;
 use Illuminate\Support\Facades\Route;
 
+$domain = '';
 if (config('app.app_site') == 'no') {
     $domain = 'giutbok.easywrite.se';
 } elseif (config('app.app_site') == 'localhost') {
