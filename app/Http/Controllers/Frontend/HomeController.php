@@ -1595,7 +1595,7 @@ class HomeController extends Controller
         $emailData['email_message'] = $content." using queue with plain text <a href='#'>link here</a>";
         $emailData['from_name'] = null;
         $emailData['from_email'] = null;
-        $emailData['attach_file'] = null;
+        $emailData['attach_file'] = public_path('/email-attachments/skjema-for-opplysninger-om-angrerett.docx');
         // \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
         $parent = 'test';
         $parent_id = 1;
