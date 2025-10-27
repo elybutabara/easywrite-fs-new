@@ -254,14 +254,14 @@ class ResetPasswordController extends Controller
     private function sendEmail($actionUrl, $to)
     {
         // send password reset link to email
-        $actionText = 'Tilbakestille Passord';
+        $actionText = trans('site.password-reset-action-text');
         $level = 'default';
         $headers = "From: Easywrite<no-reply@easywrite.se>\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
         $emailData = [
-            'email_subject' => 'Forespørsel om å tilbakestille passordet ditt',
+            'email_subject' => trans('site.password-reset-email-subject'),
             'email_message' => view('emails.passwordreset', compact('actionText', 'actionUrl', 'level'))->render(),
             'from_name' => '',
             'from_email' => 'post@easywrite.se',

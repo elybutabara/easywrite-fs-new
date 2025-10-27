@@ -81,7 +81,7 @@ $style = [
                                         
                                         <!-- Intro -->
                                         <p style="{{ $style['paragraph'] }}">
-                                        Du mottar denne e-posten fordi vi mottok en forespørsel om tilbakestilling av passord for kontoen din.
+                                        {!! trans('site.password-reset-intro') !!}
                                         </p>
 
                                         <!-- Action Button -->
@@ -115,12 +115,12 @@ $style = [
 
                                         <!-- Outro -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Om du ikke ønsker nytt passord, trenger du ikke gjøre noe mer.
+                                            {{ trans('site.password-reset-outro') }}
                                         </p>
 
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Takk,<br>Easywrite
+                                            {!! trans('site.password-reset-salutation') !!}
                                         </p>
 
                                         <!-- Sub Copy -->
@@ -129,7 +129,7 @@ $style = [
                                                 <tr>
                                                     <td style="{{ $fontFamily }}">
                                                         <p style="{{ $style['paragraph-sub'] }}">
-                                                        Hvis du har problemer med å klikke på "{{ $actionText }}" -knappen, kopier og lim inn nettadressen nedenfor i nettleseren din
+                                                       {!! trans('site.password-reset-sub-copy') !!}
                                                         </p>
 
                                                         <p style="{{ $style['paragraph-sub'] }}">
