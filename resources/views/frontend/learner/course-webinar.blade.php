@@ -93,7 +93,8 @@
                                                     ?>
                                                     <a href="{{ !Auth::user()->isDisabled ? ($webinar->set_as_replay 
                                                     ? $webinar->link : ($webinar->link ? $img_web_link : '#')) : '#' }}">
-                                                        <div data-bg="https://www.easywrite.se/{{ $webinar->image }}">
+                                                        <div data-bg="https://www.easywrite.se/{{ $webinar->image }}"
+                                                            style="background-image: url('https://www.easywrite.se/{{ $webinar->image }}')">
                                                             <i class="play-button"></i>
                                                         </div>
                                                     </a>
