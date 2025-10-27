@@ -1225,10 +1225,10 @@ class AdminHelpers
     public static function manuscriptType($id = null)
     {
         $types = [
-            ['id' => 1, 'option' => 'Hele manuset'],
-            ['id' => 2, 'option' => 'Starten av manuset'],
-            ['id' => 3, 'option' => 'Midten av manuset'],
-            ['id' => 4, 'option' => 'Slutten av manuset'],
+            ['id' => 1, 'option' => trans('site.manuscript-type.whole')],
+            ['id' => 2, 'option' => trans('site.manuscript-type.start')],
+            ['id' => 3, 'option' => trans('site.manuscript-type.middle')],
+            ['id' => 4, 'option' => trans('site.manuscript-type.end')],
         ];
 
         if ($id >= 0) {
