@@ -47,7 +47,7 @@
                     </button> --}}
                 </div>
                 <div class="col-md-6">
-                    <img class="w-100" data-src="{{ asset('/images/imgpsh_fullsize_anim.jpg')}}">
+                    <img class="w-100" src="{{ asset('/images/imgpsh_fullsize_anim.jpg')}}">
                 </div>
             </div>
         </div> <!-- end container -->
@@ -149,7 +149,7 @@
     <div class="online-courses-row">
         <div class="container">
             <div class="top-container">
-                <img data-src="https://www.forfatterskolen.no/images-new/home/online-course.png" alt="online-course"
+                <img src="https://www.forfatterskolen.no/images-new/home/online-course.png" alt="online-course"
                  class="inline-course-img">
                 <div class="details">
                     <h2>{!! trans('site.front.home.advantages-of-online-course') !!}</h2>
@@ -158,15 +158,15 @@
                     </p>
                     <ul>
                         <li>
-                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
+                            <img src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-1') !!}
                         </li>
                         <li>
-                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
+                            <img src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-2') !!}
                         </li>
                         <li>
-                            <img data-src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
+                            <img src="https://www.forfatterskolen.no/images-new/home/arrow.svg" alt="arrow">
                             {!! trans('site.front.home.advantages-of-online-course-3') !!}
                         </li>
                     </ul>
