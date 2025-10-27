@@ -94,13 +94,15 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-6">
-                <img data-src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}"
-                src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}" class="logo" alt="Easywrite-logo">
+                {{-- <img data-src="https://www.forfatterskolen.no/{{'images-new/home/logo_2.png'}}" class="logo"
+                     alt="new footer logo"> --}}
+                     <img src="{{asset('images/EasyWrite Logo White.png')}}" class="logo"
+                     alt="new footer logo">
             </div>
             <div class="col-md-6">
                 <div class="col-sm-4">
                     <p>
-                        Hva vil tilbyr
+                        {{ trans('site.footer.what-we-offer') }}
                     </p>
 
                     <ul>
@@ -119,75 +121,75 @@
                         <li>
                             <a href="{{ route('front.free-manuscript.index') }}" class="nav-link"
                             title="View manuscripts">
-                                Gratis tilbakemelding
+                                {{ trans('site.footer.free-feedback') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{route('front.course.show', 7)}}" class="nav-link"
                             title="Mentormøter">
-                                Mentormøter
+                                {{ trans('site.footer.mentor-meetings') }}
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="https://indiemoon.no" class="nav-link"
                             title="Indiepublisering">
-                                Indiepublisering
+                                {{ trans('site.footer.publishing') }}
                             </a>
                         </li>
                         <li>
                             <a href="https://rskolen.no" class="nav-link"
                             title="Redaktørskolen">
-                                Redaktørskolen
+                                {{ trans('site.footer.editor-school') }}
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <div class="col-sm-4">
                     <p>
-                        Informasjon
+                        {{ trans('site.footer.information') }}
                     </p>
 
                     <ul>
                         <li>
                             <a href="{{ route('front.contact-us') }}" class="nav-link"
                             title="Hvem er vi">
-                                Hvem er vi
+                                {{ trans('site.footer.contact-us') }}
                             </a>
                         </li>
                         <li>
                             <a href="/terms/all" class="nav-link"
                             title="Vilkår og betingelser">
-                                Vilkår og betingelser
+                                {{ trans('site.footer.terms') }}
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
                     <p>
-                        Sosiale medier
+                        {{ trans('site.footer.social-media') }}
                     </p>
 
                     <ul>
                         <li>
-                            <a class="nav-link" href="https://www.facebook.com/bliforfatter/" target="_blank">
-                                Facebook
+                            <a class="nav-link" href="https://www.facebook.com/profile.php?id=100063692359984" target="_blank">
+                                {{ trans('site.footer.facebook') }}
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="https://www.instagram.com/easywrite_norge/" target="_blank">
-                                Instagram
+                            <a class="nav-link" href="https://www.instagram.com/easywrite_sverige/" target="_blank">
+                                {{ trans('site.footer.instagram') }}
                             </a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="nav-link" href="https://twitter.com/Forfatterrektor" target="_blank">
-                                Twitter
+                                {{ trans('site.footer.twitter') }}
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" href="https://no.pinterest.com/easywrite_norge/" target="_blank">
-                                Pinterest
+                            <a class="nav-link" href="https://no.pinterest.com/forfatterskolen_norge/" target="_blank">
+                                {{ trans('site.footer.pinterest') }}
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
@@ -197,33 +199,33 @@
 
         <div class="row mt-5">
             <div class="col-md-3">
-                <p>Adresse</p>
+                <p>{{ trans('site.footer.address') }}</p>
 
                 <h2>
-                    Lihagen 21, 3029 DRAMMEN
+                    {{ trans('site.footer.address-value') }}
                 </h2>
             </div>
             <div class="col-md-3">
                 <p>
-                    E-post
+                    {{ trans('site.footer.email') }}
                 </p>
 
                 <h2>
-                    post@easywrite.se
+                    {{ trans('site.footer.email-value') }}
                 </h2>
             </div>
             <div class="col-md-3">
                 <p>
-                    Telefon
+                    {{ trans('site.footer.telephone') }}
                 </p>
 
                 <h2>
-                    +47 411 23 555
+                    {{ trans('site.footer.telephone-value') }}
                 </h2>
             </div>
             <div class="col-md-3 text-right justify-content-center d-flex">
                 <button class="btn site-btn-global" data-toggle="modal" data-target="#writingPlanModal">
-                    Meld meg på nyhetsbrev
+                    {{ trans('site.footer.sign-me-up') }}
                 </button>
             </div>
         </div> <!-- end row -->
@@ -231,7 +233,7 @@
         <div class="row footer-bottom pb-0 mt-5">
             <div class="col-md-12">
                 <p>
-                    Copyright © 2022 Easywrite, All Rights Reserved
+                    {!! trans('site.footer.copyright') !!}
                 </p>
             </div>
         </div>
