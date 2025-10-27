@@ -220,18 +220,18 @@ class FrontendHelpers
     public static function convertMonthLanguage($month_number = null)
     {
         $monthNames = [
-            ['id' => 1, 'option' => 'januar'],
-            ['id' => 2, 'option' => 'februar'],
-            ['id' => 3, 'option' => 'mars'],
-            ['id' => 4, 'option' => 'april'],
-            ['id' => 5, 'option' => 'mai'],
-            ['id' => 6, 'option' => 'juni'],
-            ['id' => 7, 'option' => 'juli'],
-            ['id' => 8, 'option' => 'august'],
-            ['id' => 9, 'option' => 'september'],
-            ['id' => 10, 'option' => 'oktober'],
-            ['id' => 11, 'option' => 'november'],
-            ['id' => 12, 'option' => 'desember'],
+            ['id' => 1, 'option' => trans('site.month.1')],
+            ['id' => 2, 'option' => trans('site.month.2')],
+            ['id' => 3, 'option' => trans('site.month.3')],
+            ['id' => 4, 'option' => trans('site.month.4')],
+            ['id' => 5, 'option' => trans('site.month.5')],
+            ['id' => 6, 'option' => trans('site.month.6')],
+            ['id' => 7, 'option' => trans('site.month.7')],
+            ['id' => 8, 'option' => trans('site.month.8')],
+            ['id' => 9, 'option' => trans('site.month.9')],
+            ['id' => 10, 'option' => trans('site.month.10')],
+            ['id' => 11, 'option' => trans('site.month.11')],
+            ['id' => 12, 'option' => trans('site.month.12')],
         ];
 
         if ($month_number) {
@@ -736,10 +736,10 @@ class FrontendHelpers
     public static function manuscriptType($id = null)
     {
         $types = [
-            ['id' => 1, 'option' => 'Hele manuset'],
-            ['id' => 2, 'option' => 'Starten av manuset'],
-            ['id' => 3, 'option' => 'Midten av manuset'],
-            ['id' => 4, 'option' => 'Slutten av manuset'],
+            ['id' => 1, 'option' => trans('site.manuscript-type.whole')],
+            ['id' => 2, 'option' => trans('site.manuscript-type.start')],
+            ['id' => 3, 'option' => trans('site.manuscript-type.middle')],
+            ['id' => 4, 'option' => trans('site.manuscript-type.end')],
         ];
 
         if ($id) {
