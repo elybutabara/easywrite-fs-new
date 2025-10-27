@@ -6,7 +6,8 @@
 
 @section('content')
 	<div class="course-page">
-		<div class="header" data-bg="https://www.easywrite.se/images-new/course-header-new.png">
+		<div class="header" data-bg="https://www.easywrite.se/images-new/course-header-new.png"
+			style="background-image: url('https://www.easywrite.se/images-new/course-header-new.png')">
 			<div class="container text-center position-relative">
 				<h1>
 					{{ trans('site.front.our-course.title') }}
@@ -41,6 +42,7 @@
 							<div class="col-sm-4">
 								<div class="course">
 									<div class="course-header"
+									style="background-image: url('https://www.easywrite.se/{{$course->course_image}}')"
 									data-bg="https://www.easywrite.se/{{$course->course_image}}">
 										<div class="header-content">
 											@if ($course->instructor)
@@ -81,16 +83,4 @@
 			@endforeach
 		</div> <!-- end courses-list-container -->
 	</div>
-@stop
-
-@section('scripts')
-<script type="text/javascript">
-	window.GUMLET_CONFIG = {
-		hosts: [{
-			current: "https://www.easywrite.se/",
-			gumlet: "forfatterskolen.gumlet.com"
-		}]
-	};
-</script>
-<script async src="https://cdn.gumlet.com/gumlet.js/2.0/gumlet.min.js"></script>
 @stop
