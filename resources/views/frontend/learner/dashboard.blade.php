@@ -32,7 +32,7 @@
                             @foreach ($coursesTaken as $courseTaken)
                                 <div class="course-item">
                                     <div class="col-md-7">
-                                        <img data-src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}" 
+                                        <img src="{{$courseTaken->package->course->course_image}}" 
                                             alt="{{ $courseTaken->package->course->title }}">
                                     </div>
                                     <div class="col-md-5">
@@ -305,7 +305,7 @@
                             @foreach($freeCourses as $free)
                                 <div class="row free-course-row">
                                     <div class="col-md-5">
-                                        <img data-src="https://www.easywrite.se/{{$free->course_image}}" 
+                                        <img src="{{$free->course_image}}" 
                                             alt="{{ $free->title }}">
                                     </div>
                                     <div class="col-md-7">
