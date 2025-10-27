@@ -24,6 +24,7 @@
 									{{csrf_field()}}
 									<div class="circle">
 										<div class="image-preview" data-bg="{{ Auth::user()->profile_image }}"
+											style="background-image: url('{{ Auth::user()->profile_image }}')"
 											 data-default="{{Auth::user()->profile_image}}"
 											 title="Select Image" data-toggle="tooltip" data-placement="bottom"></div>
 										<input type="file" accept="image/*" name="image">
@@ -322,7 +323,8 @@
 													<div class="col-lg-4 col-md-6">
 														<div class="card card-global">
 															<div class="card-body text-center">
-																<img data-src="https://www.easywrite.se/images-new/diploma.png" alt="">
+																<img data-src="https://www.easywrite.se/images-new/diploma.png"
+																src="https://www.easywrite.se/images-new/diploma.png" alt="">
 																<h3 class="font-weight-normal">
 																	{{ $diploma->course->title }}
 																</h3>
@@ -338,7 +340,8 @@
 														<div class="col-lg-4 col-md-6">
 															<div class="card card-global">
 																<div class="card-body text-center">
-																	<img data-src="https://www.easywrite.se/images-new/diploma.png" alt="">
+																	<img data-src="https://www.easywrite.se/images-new/diploma.png"
+																	src="https://www.easywrite.se/images-new/diploma.png" alt="">
 																	<h3 class="font-weight-normal">
 																		{{ $certificate->course_title }}
 																	</h3>
