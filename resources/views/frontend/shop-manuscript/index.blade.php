@@ -279,11 +279,12 @@
             </div>
         </div> <!-- end fourth section -->
 
-        <div class="last-section" data-bg="https://www.easywrite.se/images-new/shop-manuscript/coaching-bg.png">
+        <div class="last-section" data-bg="https://www.easywrite.se/images-new/shop-manuscript/coaching-bg.png"
+        style="background-image: url('https://www.easywrite.se/images-new/shop-manuscript/coaching-bg.png')">
             <div class="container">
                 <div class="text-center">
                     <div class="coaching-details">
-                        <img data-src="https://www.easywrite.se/images-new/other-services/open-book.png" alt="open book">
+                        <img src="https://www.easywrite.se/images-new/other-services/open-book.png" alt="open book">
                         <h2>
                             {{ trans('site.front.coaching-timer.title') }}
                         </h2> 
