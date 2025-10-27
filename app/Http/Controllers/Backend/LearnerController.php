@@ -856,94 +856,92 @@ class LearnerController extends Controller
     public function renewCourse($learner_id, $course_taken_id): RedirectResponse
     {
         $courseTaken = CoursesTaken::where(['user_id' => $learner_id, 'id' => $course_taken_id])->first();
-        if ($courseTaken) {
-            $user = User::find($learner_id);
-            $package = Package::findOrFail($courseTaken->package_id);
-            $payment_mode = 'Bankoverføring';
-            $price = (int) 1490 * 100;
-            $product_ID = 280763803; // $package->full_price_product;
-            $send_to = $user->email;
-            $dueDate = Carbon::today()->addDay(14)->format('Y-m-d');
+        /* if ($courseTaken) {
+            $user           = User::find($learner_id);
+            $package        = Package::findOrFail($courseTaken->package_id);
+            $payment_mode   = 'Bankoverføring';
+            $price          = (int)1290*100;
+            $product_ID     = 280763803;//$package->full_price_product;
+            $send_to        = $user->email;
+            $dueDate        = Carbon::today()->addDay(14)->format('Y-m-d');
 
-            $comment = '(Kurs: '.$package->course->title.' ['.$package->variation.'], ';
-            $comment .= 'Betalingsmodus: '.$payment_mode.')';
+            $comment = '(Kurs: ' . $package->course->title . ' ['.$package->variation.'], ';
+            $comment .= 'Betalingsmodus: ' . $payment_mode . ')';
 
             $invoice_fields = [
-                'user_id' => $user->id,
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
-                'netAmount' => $price,
-                'dueDate' => $dueDate,
-                'description' => 'Kursordrefaktura',
-                'productID' => $product_ID,
-                'email' => $send_to,
-                'telephone' => $user->address->phone,
-                'address' => $user->address->street,
-                'postalPlace' => $user->address->city,
-                'postalCode' => $user->address->zip,
-                'comment' => $comment,
-                'payment_mode' => 'Faktura',
+                'user_id'       => $user->id,
+                'first_name'    => $user->first_name,
+                'last_name'     => $user->last_name,
+                'netAmount'     => $price,
+                'dueDate'       => $dueDate,
+                'description'   => 'Kursordrefaktura',
+                'productID'     => $product_ID,
+                'email'         => $send_to,
+                'telephone'     => $user->address->phone,
+                'address'       => $user->address->street,
+                'postalPlace'   => $user->address->city,
+                'postalCode'    => $user->address->zip,
+                'comment'       => $comment,
+                'payment_mode'  => "Faktura",
             ];
-            $invoice = new FikenInvoice;
+            $invoice = new FikenInvoice();
             $invoice->create_invoice($invoice_fields);
 
             // update all the started at of each courses taken
             foreach ($user->coursesTaken as $coursesTaken) {
                 $notExpiredCourses = $courseTaken->user->coursesTakenNotExpired()->pluck('id')->toArray();
                 // check if there's other course that's not expired yet and update it
-                //if ($coursesTaken->id !== $courseTaken->id) {
+                if (!in_array($coursesTaken->id, $notExpiredCourses) && $coursesTaken->id !== $courseTaken->id) {
                     // check if course taken have set end date and add one year to it
                     if ($coursesTaken->end_date) {
-                        $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($coursesTaken->end_date)).' + 1 year'));
+                        $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($coursesTaken->end_date)) . " + 1 year"));
                         $dateToday = Carbon::today();
 
                         // check if the end date after adding a year is still less than today
                         // add another year on date today
                         if (Carbon::parse($addYear)->lt($dateToday)) {
-                            $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($dateToday)).' + 1 year'));
+                            $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($dateToday)) . " + 1 year"));
                         }
 
                         $coursesTaken->end_date = $addYear;
                     }
 
-                    $coursesTaken->renewed_at = Carbon::now();
                     $coursesTaken->save();
-                //}
+                }
             }
 
             // check if course taken have set end date and add one year to it
-            /* if ($courseTaken->end_date) {
-                $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($courseTaken->end_date)).' + 1 year'));
+            if ($courseTaken->end_date) {
+                $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($courseTaken->end_date)) . " + 1 year"));
                 $courseTaken->end_date = $addYear;
-            } */
+            }
 
-            /* $coursesTaken->renewed_at = Carbon::now();
+            $coursesTaken->renewed_at = Carbon::now();
             $courseTaken->started_at = Carbon::now();
-            $courseTaken->save(); */
+            $courseTaken->save();
 
             // create order record
-            $newOrder['user_id'] = $user->id;
-            $newOrder['item_id'] = $package->course_id;
-            $newOrder['type'] = Order::COURSE_TYPE;
+            $newOrder['user_id']    = $user->id;
+            $newOrder['item_id']    = $package->course_id;
+            $newOrder['type']       = Order::COURSE_TYPE;
             $newOrder['package_id'] = $package->id;
-            $newOrder['plan_id'] = 8; // Full payment
-            $newOrder['price'] = $price / 100;
-            $newOrder['discount'] = 0;
-            $newOrder['payment_mode_id'] = 3; // Faktura
+            $newOrder['plan_id']    = 8; // Full payment
+            $newOrder['price']      = $price / 100;
+            $newOrder['discount']   = 0;
+            $newOrder['payment_mode_id']   = 3; // Faktura
             $newOrder['is_processed'] = 1;
             $order = Order::create($newOrder);
 
             // add to automation
-            $user_email = $user->email;
-            $automation_id = 73;
-            $user_name = $user->first_name;
+            $user_email     = $user->email;
+            $automation_id  = 73;
+            $user_name      = $user->first_name;
 
-            AdminHelpers::addToAutomation($user_email, $automation_id, $user_name);
-
+            AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
             return redirect()->back()->with(['errors' => AdminHelpers::createMessageBag('Webinar-pakke renewed'),
-                'alert_type' => 'success', 'not-former-courses' => true]);
+            'alert_type' => 'success', 'not-former-courses' => true]);
 
-        }
+        } */
 
         return redirect()->back();
     }

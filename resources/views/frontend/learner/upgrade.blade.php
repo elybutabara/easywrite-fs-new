@@ -224,7 +224,7 @@
             <div class="col-lg-4">
                 <div class="right-container">
                     <p class="price">
-                        Kroner 1490,- (ett år)
+                        Kronor 1290,- (ett år)
                     </p>
     
                     @php

@@ -6,11 +6,11 @@
             Min Side
         </a>
     </li>
-    <li>
+    {{-- <li>
         <a href="?tab=self-publishing" @if( Request::input('tab') == 'self-publishing' ) class="active" @endif>
             Selvpubliseringsportal
         </a>
-    </li>
+    </li> --}}
 </ul>
 
 @if( Request::input('tab') == 'main' || Request::input('tab') == '')
@@ -65,9 +65,9 @@
                 Faceboook
             </a>
 
-            <a href="{{ route('auth.login.vipps') }}" class="newLoginBtn newLoginBtn--vipps btn">
+            {{-- <a href="{{ route('auth.login.vipps') }}" class="newLoginBtn newLoginBtn--vipps btn">
                 <img src="{{ asset('images-new/icon/vipps-text.png') }}" alt="">
-            </a>
+            </a> --}}
         </div>
     </form>
 @endif

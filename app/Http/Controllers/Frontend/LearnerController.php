@@ -3467,41 +3467,43 @@ class LearnerController extends Controller
      */
     public function courseRenew(Request $request): \Symfony\Component\HttpFoundation\Response
     {
-        $courseTaken = CoursesTaken::find($request->course_id);
+        /* $courseTaken = CoursesTaken::find($request->course_id);
         if ($courseTaken) {
-            $user = User::find($courseTaken->user_id);
-            $package = Package::findOrFail($courseTaken->package_id);
+            $user       = User::find($courseTaken->user_id);
+            $package    = Package::findOrFail($courseTaken->package_id);
             $paymentMode = PaymentMode::findOrFail($request->payment_mode_id);
-            $price = (int) 1490 * 100;
+            $price      = (int)1290*100;
             $product_ID = $package->full_price_product;
-            $send_to = $user->email;
-            $dueDate = date('Y-m-d');
+            $send_to    = $user->email;
+            $dueDate = date("Y-m-d");
 
             $payment_mode = $paymentMode->mode;
-            if ($payment_mode == 'Faktura') {
+            if( $payment_mode == 'Faktura' ) {
                 $payment_mode = 'Bankoverføring';
             }
 
-            $comment = '(Kurs: '.$package->course->title.' ['.$package->variation.'], ';
-            $comment .= 'Betalingsmodus: '.$payment_mode.')';
+
+            $comment = '(Kurs: ' . $package->course->title . ' ['.$package->variation.'], ';
+            $comment .= 'Betalingsmodus: ' . $payment_mode . ')';
 
             $invoice_fields = [
-                'user_id' => $user->id,
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
-                'netAmount' => $price,
-                'dueDate' => $dueDate,
-                'description' => 'Kursordrefaktura',
-                'productID' => $product_ID,
-                'email' => $send_to,
-                'telephone' => $user->address->phone,
-                'address' => $user->address->street,
-                'postalPlace' => $user->address->city,
-                'postalCode' => $user->address->zip,
-                'comment' => $comment,
+                'user_id'       => $user->id,
+                'first_name'    => $user->first_name,
+                'last_name'     => $user->last_name,
+                'netAmount'     => $price,
+                'dueDate'       => $dueDate,
+                'description'   => 'Kursordrefaktura',
+                'productID'     => $product_ID,
+                'email'         => $send_to,
+                'telephone'     => $user->address->phone,
+                'address'       => $user->address->street,
+                'postalPlace'   => $user->address->city,
+                'postalCode'    => $user->address->zip,
+                'comment'       => $comment,
             ];
 
-            $invoice = new FikenInvoice;
+
+            $invoice = new FikenInvoice();
             $invoice->create_invoice($invoice_fields);
 
             $courseTaken->sent_renew_email = 0;
@@ -3509,60 +3511,53 @@ class LearnerController extends Controller
             $courseTaken->save();
 
             // Email to support
-            // mail('post@easywrite.se', 'Course Renewed', Auth::user()->first_name . ' has renewed the course ' . $package->course->title);
-            /*AdminHelpers::send_email('Course Renewed',
-                'post@easywrite.se', 'post@easywrite.se',
-                Auth::user()->first_name . ' has renewed the course ' . $package->course->title);*/
             $to = 'post@easywrite.se'; //
             $emailData = [
                 'email_subject' => 'Course Renewed',
-                'email_message' => Auth::user()->first_name.' has renewed the course '.$package->course->title,
+                'email_message' => Auth::user()->first_name . ' has renewed the course ' . $package->course->title,
                 'from_name' => '',
                 'from_email' => 'post@easywrite.se',
-                'attach_file' => null,
+                'attach_file' => NULL
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
 
             // Send course email
             $actionText = 'Mine Kurs';
-            $actionUrl = 'http://www.easywrite.se/account/course';
+            $actionUrl = 'http://www.forfatterskolen.no/account/course';
             $headers = "From: Easywrite<post@easywrite.se>\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             $email_content = $package->course->email;
-            // mail($send_to, $package->course->title, view('emails.course_order', compact('actionText', 'actionUrl', 'user', 'email_content')), $headers);
-            /*AdminHelpers::send_email($package->course->title, 'post@easywrite.se', $send_to,
-                view('emails.course_order', compact('actionText', 'actionUrl', 'user', 'email_content')));*/
+
             $to = $send_to; //
             $emailData = [
                 'email_subject' => $package->course->title,
                 'email_message' => view('emails.course_order', compact('actionText', 'actionUrl', 'user', 'email_content'))->render(),
                 'from_name' => '',
                 'from_email' => 'post@easywrite.se',
-                'attach_file' => null,
+                'attach_file' => NULL
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
 
-            if ($paymentMode->mode == 'Paypal') {
-                $paypalForm = '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                    <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="business" value="post.easywrite@gmail.com">
-                    <input type="hidden" name="currency_code" value="NOK">
-                    <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
-                    <input type="hidden" name="item_name" value="Course Order Invoice">
-                    <input type="hidden" name="amount" value="'.($price / 100).'">
-                    <input type="hidden" name="return" value="'.route('front.shop.thankyou').'">
-                    <input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="right" alt="PayPal - The safer, easier way to pay online">
-                </form>
-                <script>document.getElementById("paypal_form").submit();</script>';
+            if( $paymentMode->mode == "Paypal" ) :
+                echo '<form name="_xclick" id="paypal_form" style="display:none" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="post.forfatterskolen@gmail.com">
+                <input type="hidden" name="currency_code" value="NOK">
+                <input type="hidden" name="custom" value="'.$invoice->invoiceID.'">
+                <input type="hidden" name="item_name" value="Course Order Invoice">
+                <input type="hidden" name="amount" value="'.($price/100).'">
+                <input type="hidden" name="return" value="'.route('front.shop.thankyou').'?gateway=Paypal">
+                <input type="image" name="submit" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="right" alt="PayPal - The safer, easier way to pay online">
+            </form>';
+                echo '<script>document.getElementById("paypal_form").submit();</script>';
+                return;
+            endif;
 
-                return new Response($paypalForm);
-            }
 
             return redirect(route('front.shop.thankyou'));
         }
-
-        return redirect()->back();
+        return redirect()->back(); */
     }
 
     public function courseRenewAllDisabled($course_id): RedirectResponse
@@ -3574,7 +3569,7 @@ class LearnerController extends Controller
             $package = Package::findOrFail($courseTaken->package_id);
             $paymentMode = PaymentMode::findOrFail(3); // hardcoded faktura payment
             $payment_mode = 'Bankoverføring';
-            $price = (int) 1490 * 100;
+            $price = (int) 1290 * 100;
             $product_ID = $package->full_price_product;
             $send_to = $user->email;
             $dueDate = date('Y-m-d');
@@ -3646,76 +3641,77 @@ class LearnerController extends Controller
     /**
      * Set value of auto renew courses field
      */
-    public function setAutoRenewCourses(Request $request): RedirectResponse
+    public function setAutoRenewCourses(Request $request)
     {
-        $user = User::find(Auth::user()->id);
-        $user->auto_renew_courses = $request->auto_renew;
+        $user                       = User::find(Auth::user()->id);
+        $user->auto_renew_courses   = $request->auto_renew;
         $user->save();
 
-        if (! $request->auto_renew) {
+        if (!$request->auto_renew) {
             return redirect()->back();
         }
 
         // check if webinar-pakke is already expired and renew it
 
-        $monthDate = \Carbon\Carbon::now()->format('Y-m-d');
+        /* $monthDate = \Carbon\Carbon::now()->format('Y-m-d');
         // get courses taken by end date
-        $coursesTaken = Auth::user()->coursesTaken()->whereHas('package', function ($query) {
+        $coursesTaken = Auth::user()->coursesTaken()->whereHas('package', function($query){
             $query->where('course_id', 7);
         })->whereNotNull('end_date')->where('end_date', '<=', $monthDate)->get();
 
         // get courses taken by started at field
-        $coursesTakenByStartDate = Auth::user()->coursesTaken()->whereHas('package', function ($query) {
+        $coursesTakenByStartDate = Auth::user()->coursesTaken()->whereHas('package', function($query){
             $query->where('course_id', 7);
         })
             ->whereNotNull('started_at')
             ->whereNull('end_date')
-            ->whereDate('started_at', $monthDate)
+            ->whereDate('started_at',$monthDate)
             ->get();
 
         // webinar-pakke is expired
-        $user_name = Auth::user()->first_name;
+        $user_name      = Auth::user()->first_name;
         if (count($coursesTaken)) {
-            $user_email = Auth::user()->email;
-            $automation_id = 73;
+            $user_email     = Auth::user()->email;
+            $automation_id  = 73;
 
-            AdminHelpers::addToAutomation($user_email, $automation_id, $user_name);
+            AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
         }
 
         $coursesTaken = $coursesTaken->merge($coursesTakenByStartDate)->all();
         foreach ($coursesTaken as $courseTaken) {
-            $user = $courseTaken->user;
-            $package = Package::findOrFail($courseTaken->package_id);
-            $payment_mode = 'Bankoverføring';
-            $price = (int) 1490 * 100;
-            $product_ID = $package->full_price_product;
-            $send_to = $user->email;
-            $end_date = $courseTaken->end_date ? $courseTaken->end_date : date('Y-m-d');
+            $user           = $courseTaken->user;
+            $package        = Package::findOrFail($courseTaken->package_id);
+            $payment_mode   = 'Bankoverføring';
+            $price          = (int)1290*100;
+            $product_ID     = $package->full_price_product;
+            $send_to        = $user->email;
+            $end_date       = $courseTaken->end_date ? $courseTaken->end_date : date("Y-m-d");
             // add 10 days from today
-            // $dueDate        = date('Y-m-d', strtotime(date("Y-m-d") . " +10 days"));
-            $dueDate = date('Y-m-d', strtotime($end_date));
+            //$dueDate        = date('Y-m-d', strtotime(date("Y-m-d") . " +10 days"));
+            $dueDate        = date("Y-m-d", strtotime($end_date));
 
-            $comment = '(Kurs: '.$package->course->title.' ['.$package->variation.'], ';
-            $comment .= 'Betalingsmodus: '.$payment_mode.')';
+            $comment = '(Kurs: ' . $package->course->title . ' ['.$package->variation.'], ';
+            $comment .= 'Betalingsmodus: ' . $payment_mode . ')';
 
             $invoice_fields = [
-                'user_id' => $user->id,
-                'first_name' => $user->first_name,
-                'last_name' => $user->last_name,
-                'netAmount' => $price,
-                'dueDate' => $dueDate,
-                'description' => 'Kursordrefaktura',
-                'productID' => $product_ID,
-                'email' => $send_to,
-                'telephone' => $user->address->phone,
-                'address' => $user->address->street,
-                'postalPlace' => $user->address->city,
-                'postalCode' => $user->address->zip,
-                'comment' => $comment,
-                'payment_mode' => 'Faktura',
+                'user_id'       => $user->id,
+                'first_name'    => $user->first_name,
+                'last_name'     => $user->last_name,
+                'netAmount'     => $price,
+                'dueDate'       => $dueDate,
+                'description'   => 'Kursordrefaktura',
+                'productID'     => $product_ID,
+                'email'         => $send_to,
+                'telephone'     => $user->address->phone,
+                'address'       => $user->address->street,
+                'postalPlace'   => $user->address->city,
+                'postalCode'    => $user->address->zip,
+                'comment'       => $comment,
+                'payment_mode'  => "Faktura",
             ];
 
-            $invoice = new FikenInvoice;
+
+            $invoice = new FikenInvoice();
             $invoice->create_invoice($invoice_fields);
 
             // update all the started at of each courses taken
@@ -3724,60 +3720,59 @@ class LearnerController extends Controller
             foreach ($courseTaken->user->coursesTaken as $coursesTaken) {
                 $notExpiredCourses = $courseTaken->user->coursesTakenNotExpired()->pluck('id')->toArray();
                 // check if there's other course that's not expired yet and update it
-                if (! in_array($coursesTaken->id, $notExpiredCourses)) {
+                if (!in_array($coursesTaken->id, $notExpiredCourses)) {
                     // check if course taken have set end date and add one year to it
                     if ($coursesTaken->end_date) {
-                        $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($coursesTaken->end_date)).' + 1 year'));
+                        $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($coursesTaken->end_date)) . " + 1 year"));
                         $dateToday = Carbon::today();
 
                         // check if the end date after adding a year is still less than today
                         // add another year on date today
                         if (Carbon::parse($addYear)->lt($dateToday)) {
-                            $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($dateToday)).' + 1 year'));
+                            $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($dateToday)) . " + 1 year"));
                         }
 
                         $coursesTaken->end_date = $addYear;
                         $coursesTaken->renewed_at = Carbon::now();
                     }
 
-                    // $coursesTaken->started_at = Carbon::now();
+                    //$coursesTaken->started_at = Carbon::now();
                     $coursesTaken->save();
                     $courseCounter++;
                 }
             }
 
             // create order record
-            $newOrder['user_id'] = $courseTaken->user->id;
-            $newOrder['item_id'] = $package->course_id;
-            $newOrder['type'] = Order::COURSE_TYPE;
+            $newOrder['user_id']    = $courseTaken->user->id;
+            $newOrder['item_id']    = $package->course_id;
+            $newOrder['type']       = Order::COURSE_TYPE;
             $newOrder['package_id'] = $package->id;
-            $newOrder['plan_id'] = 8; // Full payment
-            $newOrder['price'] = $price / 100;
-            $newOrder['discount'] = 0;
-            $newOrder['payment_mode_id'] = 3; // Faktura
+            $newOrder['plan_id']    = 8; // Full payment
+            $newOrder['price']      = $price / 100;
+            $newOrder['discount']   = 0;
+            $newOrder['payment_mode_id']   = 3; // Faktura
             $newOrder['is_processed'] = 1;
             $order = Order::create($newOrder);
 
             // Email to support
             $from = 'post@easywrite.se';
             $to = 'post@easywrite.se';
-            $messageText = $user_name.' has renewed webinar-pakke';
+            $messageText = $user_name . ' has renewed webinar-pakke';
             $message = $courseCounter > 1 ? $messageText.$extraText : $messageText;
-            /*AdminHelpers::send_email('Webinar-pakke Course Renewed',
-                $from, $to, $message);*/
+
             $emailData = [
                 'email_subject' => 'Webinar-pakke Course Renewed',
                 'email_message' => $message,
                 'from_name' => '',
                 'from_email' => $from,
-                'attach_file' => null,
+                'attach_file' => NULL
             ];
             \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
         }
 
         if ($request->auto_renew) {
             return redirect()->back()->with('success', 'You successfully renew!');
-        }
+        } */
 
         return redirect()->back();
     }
@@ -3787,9 +3782,10 @@ class LearnerController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function renewLearnerCourses(): RedirectResponse
+    public function renewLearnerCourses()
     {
-        $coursesTaken = Auth::user()->coursesTaken;
+        return redirect()->back();
+        /* $coursesTaken = Auth::user()->coursesTaken;
         foreach ($coursesTaken as $courseTaken) {
             $package = Package::find($courseTaken->package_id);
             if ($package && $package->course_id == 7) { // check if webinar pakke
@@ -3798,7 +3794,7 @@ class LearnerController extends Controller
 
                 if ($webinarPakkeCourse) {
                     $expiredDate = $courseTaken->end_date;
-                    $now = new \DateTime;
+                    $now = new \DateTime();
                     $checkDate = date('m/Y', strtotime($expiredDate));
                     $input = \DateTime::createFromFormat('m/Y', $checkDate);
                     $diff = $input->diff($now); // Returns DateInterval
@@ -3806,19 +3802,19 @@ class LearnerController extends Controller
                     $withinAMonth = $diff->y === 0 && $diff->m <= 1;
 
                     // check if this is really expired
-                    if (! $withinAMonth) {
+                    if (!$withinAMonth) {
                         return redirect()->back();
                     }
 
-                    $user = Auth::user();
-                    $package = Package::findOrFail($webinarPakkeCourse->package_id);
-                    $payment_mode = 'Bankoverføring';
-                    $price = (int) 1490 * 100;
-                    $product_ID = $package->full_price_product;
-                    $send_to = $user->email;
-                    $end_date = $courseTaken->end_date ? $courseTaken->end_date : date('Y-m-d');
-                    // $dueDate        = date("Y-m-d", strtotime(date("Y-m-d", strtotime($end_date)) . " + 1 year"));
-                    // $dueDate        = date("Y-m-d", strtotime($end_date));
+                    $user           = Auth::user();
+                    $package        = Package::findOrFail($webinarPakkeCourse->package_id);
+                    $payment_mode   = 'Bankoverføring';
+                    $price          = (int)1290*100;
+                    $product_ID     = $package->full_price_product;
+                    $send_to        = $user->email;
+                    $end_date       = $courseTaken->end_date ? $courseTaken->end_date : date("Y-m-d");
+                    //$dueDate        = date("Y-m-d", strtotime(date("Y-m-d", strtotime($end_date)) . " + 1 year"));
+                    //$dueDate        = date("Y-m-d", strtotime($end_date));
                     $today = Carbon::today();
                     $parseEndDate = Carbon::parse($end_date);
                     $dueDate = $parseEndDate->addDays(14)->format('Y-m-d');
@@ -3827,93 +3823,91 @@ class LearnerController extends Controller
                         $dueDate = $today->addDays(14)->format('Y-m-d');
                     }
 
-                    $comment = '(Kurs: '.$package->course->title.' ['.$package->variation.'], ';
-                    $comment .= 'Betalingsmodus: '.$payment_mode.')';
+                    $comment = '(Kurs: ' . $package->course->title . ' ['.$package->variation.'], ';
+                    $comment .= 'Betalingsmodus: ' . $payment_mode . ')';
 
                     $invoice_fields = [
-                        'user_id' => $user->id,
-                        'first_name' => $user->first_name,
-                        'last_name' => $user->last_name,
-                        'netAmount' => $price,
-                        'dueDate' => $dueDate,
-                        'description' => 'Kursordrefaktura',
-                        'productID' => $product_ID,
-                        'email' => $send_to,
-                        'telephone' => $user->address->phone,
-                        'address' => $user->address->street,
-                        'postalPlace' => $user->address->city,
-                        'postalCode' => $user->address->zip,
-                        'comment' => $comment,
-                        'payment_mode' => 'Faktura',
+                        'user_id'       => $user->id,
+                        'first_name'    => $user->first_name,
+                        'last_name'     => $user->last_name,
+                        'netAmount'     => $price,
+                        'dueDate'       => $dueDate,
+                        'description'   => 'Kursordrefaktura',
+                        'productID'     => $product_ID,
+                        'email'         => $send_to,
+                        'telephone'     => $user->address->phone,
+                        'address'       => $user->address->street,
+                        'postalPlace'   => $user->address->city,
+                        'postalCode'    => $user->address->zip,
+                        'comment'       => $comment,
+                        'payment_mode'  => "Faktura",
                     ];
 
-                    $invoice = new FikenInvoice;
+
+                    $invoice = new FikenInvoice();
                     $invoice->create_invoice($invoice_fields);
 
                     // update all the started at of each courses taken
                     foreach (Auth::user()->coursesTaken as $coursesTaken) {
                         $formerCourse = Auth::user()->coursesTakenOld()->pluck('id')->toArray();
                         // check if course is not former course
-                        if (! in_array($coursesTaken->id, $formerCourse)) {
+                        if (!in_array($coursesTaken->id, $formerCourse)){
                             // check if course taken have set end date and add one year to it
                             if ($coursesTaken->end_date) {
-                                $addYear = date('Y-m-d', strtotime(date('Y-m-d', strtotime($coursesTaken->end_date)).' + 1 year'));
+                                $addYear = date("Y-m-d", strtotime(date("Y-m-d", strtotime($coursesTaken->end_date)) . " + 1 year"));
                                 $coursesTaken->end_date = $addYear;
                             }
 
                             $coursesTaken->renewed_at = Carbon::now();
-                            // $coursesTaken->started_at = Carbon::now();
+                            //$coursesTaken->started_at = Carbon::now();
                             $coursesTaken->save();
                         }
                     }
 
                     // create order record
-                    $newOrder['user_id'] = $courseTaken->user->id;
-                    $newOrder['item_id'] = $package->course_id;
-                    $newOrder['type'] = Order::COURSE_TYPE;
+                    $newOrder['user_id']    = $courseTaken->user->id;
+                    $newOrder['item_id']    = $package->course_id;
+                    $newOrder['type']       = Order::COURSE_TYPE;
                     $newOrder['package_id'] = $package->id;
-                    $newOrder['plan_id'] = 8; // Full payment
-                    $newOrder['price'] = $price / 100;
-                    $newOrder['discount'] = 0;
-                    $newOrder['payment_mode_id'] = 3; // Faktura
+                    $newOrder['plan_id']    = 8; // Full payment
+                    $newOrder['price']      = $price / 100;
+                    $newOrder['discount']   = 0;
+                    $newOrder['payment_mode_id']   = 3; // Faktura
                     $newOrder['is_processed'] = 1;
                     $order = Order::create($newOrder);
 
                     // add to automation
-                    $user_email = Auth::user()->email;
-                    $automation_id = 73;
-                    $user_name = Auth::user()->first_name;
+                    $user_email     = Auth::user()->email;
+                    $automation_id  = 73;
+                    $user_name      = Auth::user()->first_name;
 
                     // disable the adding to automation, instead save to db
-                    // AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
+                    //AdminHelpers::addToAutomation($user_email,$automation_id,$user_name);
 
                     // add user that renew the course
                     UserRenewedCourse::firstOrCreate([
                         'user_id' => Auth::user()->id,
-                        'course_id' => $package->course_id,
+                        'course_id' => $package->course_id
                     ]);
 
+
                     // Email to support
-                    // mail('post@easywrite.se', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
-                    /*AdminHelpers::send_email('All Courses Renewed',
-                        'post@easywrite.se', 'post@easywrite.se',
-                        Auth::user()->first_name . ' has renewed all the courses');*/
+                    //mail('post@easywrite.se', 'All Courses Renewed', Auth::user()->first_name . ' has renewed all the courses');
                     $to = 'post@easywrite.se'; //
                     $emailData = [
                         'email_subject' => 'All Courses Renewed',
-                        'email_message' => Auth::user()->first_name.' has renewed all the courses',
+                        'email_message' => Auth::user()->first_name . ' has renewed all the courses',
                         'from_name' => '',
                         'from_email' => 'post@easywrite.se',
-                        'attach_file' => null,
+                        'attach_file' => NULL
                     ];
                     \Mail::to($to)->queue(new SubjectBodyEmail($emailData));
-
                     return redirect(route('front.shop.thankyou'));
                 }
             }
         }
 
-        return redirect()->route('learner.upgrade');
+        return redirect()->route('learner.upgrade'); */
     }
 
     /**

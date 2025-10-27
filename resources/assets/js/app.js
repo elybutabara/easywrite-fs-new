@@ -68,6 +68,7 @@ Vue.component('gift-course-checkout', require('./frontend/gift/course-checkout.v
 Vue.component('gift-shop-manuscript-checkout', require('./frontend/gift/shop-manuscript-checkout.vue').default);
 Vue.component('shop-manuscript-checkout', require('./frontend/shop-manuscript/checkout.vue').default);
 Vue.component('course-upgrade', require('./frontend/upgrade/course.vue').default);
+Vue.component('course-renew', require('./frontend/upgrade/renew.vue'));
 Vue.component('manuscript-upgrade', require('./frontend/upgrade/manuscript.vue').default);
 Vue.component('assignment-upgrade', require('./frontend/upgrade/assignment.vue').default);
 Vue.component('coaching-time-checkout', require('./frontend/coaching-time/checkout.vue').default);

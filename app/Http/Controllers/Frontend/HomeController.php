@@ -1644,7 +1644,7 @@ class HomeController extends Controller
                 if (Carbon::now()->gt(Carbon::parse($checkDate)) && Auth::user()->auto_renew_courses) {
                     $user = Auth::user();
                     $payment_mode = 'Bankoverføring';
-                    $price = (int) 1490 * 100;
+                    $price = (int) 1290 * 100;
                     $product_ID = $package->full_price_product;
                     $send_to = $user->email;
                     $dueDate = date('Y-m-d');
