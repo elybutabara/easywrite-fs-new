@@ -56,7 +56,8 @@ class HeadEditorController extends Controller
             $query->where('is_approved', 0);
         })->get();
 
-        $assignmentFeedbackEmailTemplates = EmailTemplate::where('is_assignment_manu_feedback', 1)->get();
+        $assignmentFeedbackEmailTemplates = EmailTemplate::where('is_assignment_manu_feedback', 1)
+            ->orWhere('page_name', 'Assignment Manuscript Feedback')->get();
 
         return view('backend.head-editor.index', compact('assignedAssignmentManuscripts',
             'assigned_shop_manuscripts', 'assignedAssignments', 'coachingTimes', 'corrections', 'copyEditings', 
