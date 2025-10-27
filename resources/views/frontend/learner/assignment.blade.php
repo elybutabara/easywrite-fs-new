@@ -52,7 +52,7 @@
 						$tabWithLabel = [
 							[
 								'name' => 'waiting-for-feedback',
-								'label' => 'Venter på tilbakemelding'
+								'label' => trans('site.waiting-for-feedback')
 							],
 							[
 								'name' => 'feedback-from-editor',
