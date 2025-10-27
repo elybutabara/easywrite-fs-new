@@ -46,7 +46,8 @@
 								@endphp
 								<div class="course-item">
 									<div class="col-md-5">
-										<img data-src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}" 
+										<img data-src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}"
+										src="https://www.easywrite.se/{{$courseTaken->package->course->course_image}}" 
                                             alt="{{ $courseTaken->package->course->title }}">
 									</div>
 									<div class="col-md-7">
