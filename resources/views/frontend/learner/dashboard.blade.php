@@ -32,7 +32,7 @@
                             @foreach ($coursesTaken as $courseTaken)
                                 <div class="course-item">
                                     <div class="col-md-7">
-                                        <img src="{{$courseTaken->package->course->course_image}}" 
+                                        <img data-src="{{$courseTaken->package->course->course_image}}" 
                                             alt="{{ $courseTaken->package->course->title }}">
                                     </div>
                                     <div class="col-md-5">
