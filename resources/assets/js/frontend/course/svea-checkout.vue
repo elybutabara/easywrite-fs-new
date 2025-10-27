@@ -75,22 +75,22 @@
                         <wizard-button v-if="wizardProps.activeTabIndex === 0 && coursePackage.is_pay_later_allowed"
                         @click.native="payLaterClicked()"
                             class="wizard-footer-right w-100" :style="wizardProps.fillButtonStyle" style="margin-right: 10px">
-                            Bestill kurs, betal senere
+                            {{ trans('site.buy-course-pay-later') }}
                         </wizard-button>
 
-                        <wizard-button v-if="wizardProps.activeTabIndex === 0" @click="vippsCheckout()"
+                        <!-- <wizard-button v-if="wizardProps.activeTabIndex === 0" @click="vippsCheckout()"
                             class="wizard-footer-right w-100 vipps-btn" :style="wizardProps.fillButtonStyle"
                             :disabled="isLoading">
                             <i class="fa fa-spinner fa-pulse" v-if="isLoading"></i>
                             <span>Hurtigutsjekk med</span>
                             <img src="/images-new/vipps.png" class="inline" alt="vipps-buy-button"
                                 :style="isLoading ? 'opacity: .8;' : ''">
-                        </wizard-button>
+                        </wizard-button> -->
 
                         <wizard-button v-if="!wizardProps.isLastStep" @click.native="nextTab()"
                             class="wizard-footer-right w-100" :style="wizardProps.fillButtonStyle">
                             {{ orderForm.is_pay_later && wizardProps.activeTabIndex != 0 
-                            ? 'Bestill kurs, betal senere' :'Til betaling' }}
+                            ? trans('site.buy-course-pay-later') : trans('site.for-payment') }}
                         </wizard-button>
 
                     </div>
@@ -243,7 +243,7 @@
                         <wizard-button v-if="!wizardProps.isLastStep" @click.native="nextTab()"
                             class="wizard-footer-right w-100" :style="wizardProps.fillButtonStyle">
                             {{ orderForm.is_pay_later && wizardProps.activeTabIndex != 0 
-                            ? 'Bestill kurs, betal senere' :'Til betaling' }}
+                            ? trans('site.buy-course-pay-later') : trans('site.for-payment') }}
                         </wizard-button>
                     </div> <!-- end package-details -->
                 </div> <!-- end row -->
