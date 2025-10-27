@@ -6,7 +6,8 @@
 
 @section('content')
 <div class="contact-page-new">
-    <div class="header" data-bg="https://www.easywrite.se/images-new/contact-header.png">
+    <div class="header" data-bg="https://www.easywrite.se/images-new/contact-header.png"
+    style="background-image: url('https://www.easywrite.se/images-new/contact-header.png')">
         <div class="container text-center position-relative">
             <h1>
                 {{ trans('site.front.nav.contact-us') }}
@@ -24,7 +25,8 @@
         <div class="sub-header">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-2 left-container">
-                    <img data-src="https://www.easywrite.se/images-new/kristine1.png" alt="" class="rounded-circle">
+                    <img data-src="https://www.easywrite.se/images-new/kristine1.png" 
+                    src="https://www.easywrite.se/images-new/kristine1.png"alt="" class="rounded-circle">
                 </div>
                 <div class="col-md-7">
                     <h1>
@@ -69,6 +71,8 @@
                                 <div class="row">
                                     <div class="col-md-3 stab-image">
                                         <img data-src="https://www.easywrite.se/{{ ($staff->image 
+                                            ? $staff->image : 'images/user.png')  }}"
+                                            src="https://www.easywrite.se/{{ ($staff->image 
                                             ? $staff->image : 'images/user.png')  }}" class="rounded-circle">
                                     </div>
                                     <div class="col-md-9">
@@ -104,6 +108,8 @@
                                 <div class="row">
                                     <div class="col-md-3 stab-image">
                                         <img data-src="https://www.easywrite.se/{{ ($staff->image 
+                                            ? $staff->image : 'images/user.png')  }}"
+                                            src="https://www.easywrite.se/{{ ($staff->image 
                                             ? $staff->image : 'images/user.png')  }}" class="rounded-circle">
                                     </div>
                                     <div class="col-md-9">
