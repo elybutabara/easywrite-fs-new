@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-6 text-right">
         @if (Route::currentRouteName() === 'learner.dashboard')
-            <div class="auto-renew-wrapper">
+            <div class="auto-renew-wrapper" style="margin-right: 0">
                 <label>
                     {!! trans('site.automatic-register-to-webinar') !!}
                 </label>
