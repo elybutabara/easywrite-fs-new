@@ -36,7 +36,7 @@
 
                                 @if ($isCurrentUser)
                                     <a href="{{ $manuscript->file_link_url }}" class="btn blue-outline-btn">
-                                        Forhåndsvisning
+                                        {{ trans('site.learner.preview-text') }}
                                     </a>
                                 @else
                                     <a href="{{route('learner.assignment.manuscript.download', $manuscript->id)}}" 
