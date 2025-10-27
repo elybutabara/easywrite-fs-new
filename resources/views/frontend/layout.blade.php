@@ -104,7 +104,7 @@
         <script type="text/javascript">
             window.GUMLET_CONFIG = {
                 hosts: [{
-                    current: "https://www.forfatterskolen.no/",
+                    current: "https://www.easywrite.se/",
                     gumlet: "forfatterskolen.gumlet.com"
                 }]
             };
