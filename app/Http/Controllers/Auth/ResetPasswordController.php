@@ -80,12 +80,12 @@ class ResetPasswordController extends Controller
 
             if ($request->has('redirect')) {
                 return redirect()->to($request->redirect)
-                    ->with(['passwordreset_success' => 'Vi har sendt en passord tilbakestillingslink til din epost.']);
+                    ->with(['passwordreset_success' => trans('site.password-reset-success')]);
             }
 
-            return redirect()->back()->with(['passwordreset_success' => 'Vi har sendt en passord tilbakestillingslink til din epost.']);
+            return redirect()->back()->with(['passwordreset_success' => trans('site.password-reset-success')]);
         } else {
-            return redirect()->route('auth.login.show', 't=passwordreset')->withErrors("We can't find the email in our records.");
+            return redirect()->route('auth.login.show', 't=passwordreset')->withErrors(trans('site.password-reset-error'));
         }
     }
 
