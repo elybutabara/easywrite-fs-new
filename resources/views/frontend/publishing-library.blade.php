@@ -7,7 +7,8 @@
 
 @section('content')
     <div class="publishing-page-new" id="app-container">
-        <div class="header" data-bg="https://www.easywrite.se/images-new/publishing-bg.png">
+        <div class="header" data-bg="https://www.easywrite.se/images-new/publishing-bg.png"
+        style="background-image: url('https://www.easywrite.se/images-new/publishing-bg.png')">
             <div class="container">
                 <h1 class="text-center">
                     {{ trans('site.front.publishing.title') }}
