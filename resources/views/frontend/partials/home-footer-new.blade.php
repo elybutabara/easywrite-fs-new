@@ -94,7 +94,8 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-6">
-                <img data-src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}" class="logo" alt="Easywrite-logo">
+                <img data-src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}"
+                src="https://www.easywrite.se/{{'images-new/home/logo_2.png'}}" class="logo" alt="Easywrite-logo">
             </div>
             <div class="col-md-6">
                 <div class="col-sm-4">
