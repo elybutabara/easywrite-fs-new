@@ -1,14 +1,14 @@
 <div id="topbar">
     <div class="col-md-6">
         <h3>
-            Velkommen til Easywrites portal
+            {!! trans('site.welcome-to-portal') !!}
         </h3>
     </div>
     <div class="col-md-6 text-right">
         @if (Route::currentRouteName() === 'learner.dashboard')
             <div class="auto-renew-wrapper">
                 <label>
-                    Automatisk registert for felleswebinarer
+                    {!! trans('site.automatic-register-to-webinar') !!}
                 </label>
                 <input type="checkbox" data-toggle="toggle" data-on="{{ trans('site.front.yes') }}"
                         class="webinar-auto-register-toggle" data-off="{{ trans('site.front.no') }}"

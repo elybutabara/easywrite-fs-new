@@ -1,12 +1,15 @@
 <div id="sidebar">
-    <a class="navbar-brand" href="{{ route('front.home') }}" style="position: relative">
+    {{-- <a class="navbar-brand" href="{{ route('front.home') }}" style="position: relative">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 41" fill="none">
             <path d="M0 0L21.5 2.90538V41L0 36.6077V0Z" fill="#E73946"/>
             <path d="M43 0L21.5 2.90612V40.9983L43 36.3185V0Z" fill="#852636"/>
         </svg>
         <span>
-            EASYWRITE
+            FORFATTERSKOLEN
         </span>
+    </a> --}}
+    <a class="navbar-brand" href="{{ route('front.home') }}" style="position: relative; width: 100%;">
+        <img src="{{asset('images/EasyWrite Logo.png')}}" alt="Easywrite" style="height: 62px; margin: 0 auto">
     </a>
     <!-- Sidebar content goes here -->
     <ul class="nav nav-sidebar">
