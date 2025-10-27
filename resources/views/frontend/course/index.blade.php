@@ -82,3 +82,15 @@
 		</div> <!-- end courses-list-container -->
 	</div>
 @stop
+
+@section('scripts')
+<script type="text/javascript">
+	window.GUMLET_CONFIG = {
+		hosts: [{
+			current: "https://www.easywrite.se/",
+			gumlet: "forfatterskolen.gumlet.com"
+		}]
+	};
+</script>
+<script async src="https://cdn.gumlet.com/gumlet.js/2.0/gumlet.min.js"></script>
+@stop
