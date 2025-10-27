@@ -197,13 +197,17 @@
                                                                     @if($webinar->link)
                                                                         <a href="{{ $img_web_link }}">
                                                                             <div data-bg="https://www.easywrite.se/{{ 
-                                                                                $webinar->image }}">
+                                                                                $webinar->image }}"
+                                                                                style="background-image: url('https://www.easywrite.se/{{ 
+                                                                                $webinar->image }}')">
                                                                                 <i class="play-button"></i>
                                                                             </div>
                                                                         </a>
                                                                     @else
                                                                         <div data-bg="https://www.easywrite.se/{{ 
-                                                                        $webinar->image }}">
+                                                                        $webinar->image }}"
+                                                                        style="background-image: url('https://www.easywrite.se/{{ 
+                                                                        $webinar->image }}')">
                                                                             <i class="play-button"></i>
                                                                         </div>
                                                                     @endif
