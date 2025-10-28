@@ -4865,6 +4865,7 @@ class LearnerController extends Controller
         $feedback = AssignmentFeedback::find($feedback_id);
         if ($feedback) {
             $files = explode(',', $feedback->filename);
+
             if (count($files) > 1) {
                 $zipFileName = $feedback->assignment_group_learner->group->title.' Feedbacks.zip';
                 $public_dir = public_path('storage');
@@ -4876,31 +4877,39 @@ class LearnerController extends Controller
                 }
 
                 foreach ($files as $feedFile) {
-                    if (file_exists(public_path().'/'.trim($feedFile))) {
+                    $feedFile = trim($feedFile);
+                    $fullPath = public_path($feedFile);
 
-                        // get the correct filename
-                        $expFileName = explode('/', $feedFile);
-                        $file = str_replace('\\', '/', public_path());
-
-                        // physical file location and name of the file
-                        $zip->addFile(trim($file.trim($feedFile)), end($expFileName));
+                    if (file_exists($fullPath)) {
+                        $zip->addFile($fullPath, basename($feedFile));
                     }
                 }
 
-                $zip->close(); // close zip connection
+                $zip->close();
 
                 $headers = [
                     'Content-Type' => 'application/octet-stream',
+                    'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                    'Pragma' => 'no-cache',
+                    'Expires' => '0',
                 ];
 
                 $fileToPath = $public_dir.'/'.$zipFileName;
 
                 if (file_exists($fileToPath)) {
-                    return response()->download($fileToPath, $zipFileName, $headers)->deleteFileAfterSend(true);
+                    return response()->download($fileToPath, $zipFileName, $headers)
+                        ->deleteFileAfterSend(true);
                 }
-
             } else {
-                return response()->download(public_path($files[0]));
+                $filePath = public_path(trim($files[0]));
+
+                if (file_exists($filePath)) {
+                    return response()->download($filePath, basename($filePath), [
+                        'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+                        'Pragma' => 'no-cache',
+                        'Expires' => '0',
+                    ]);
+                }
             }
         }
 
