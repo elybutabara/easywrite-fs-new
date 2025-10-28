@@ -68,7 +68,7 @@
                     <ul>
                         @foreach(\App\Http\FrontendHelpers::getStaffs() as $staff)
                             <li>
-                                <div class="row">
+                                <div class="row mb-4">
                                     <div class="col-md-3 stab-image">
                                         <img data-src="https://www.easywrite.se/{{ ($staff->image 
                                             ? $staff->image : 'images/user.png')  }}"
