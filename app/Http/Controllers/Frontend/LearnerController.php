@@ -4863,6 +4863,97 @@ class LearnerController extends Controller
     public function downloadAssignmentGroupFeedback($feedback_id)
     {
         $feedback = AssignmentFeedback::find($feedback_id);
+        if (!$feedback) return redirect()->back();
+
+        $files = array_filter(array_map('trim', explode(',', (string) $feedback->filename)));
+        if (empty($files)) return redirect()->back();
+
+        // Common headers to defeat caches everywhere (browser/CDN/proxy)
+        $nocache = [
+            'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0, private',
+            'Pragma'        => 'no-cache',
+            'Expires'       => '0',
+        ];
+
+        if (count($files) > 1) {
+            // Build a version string from file mtimes + names to force a new ZIP each time sources change
+            $hashCtx = hash_init('sha256');
+            $maxMTime = 0;
+
+            $absoluteFiles = [];
+            foreach ($files as $feedFile) {
+                $full = public_path($feedFile); // e.g. /public/storage/assignment-feedbacks/abc.docx
+                if (is_file($full)) {
+                    $absoluteFiles[] = ['abs' => $full, 'name' => basename($feedFile)];
+                    $mt = filemtime($full) ?: time();
+                    $maxMTime = max($maxMTime, $mt);
+                    hash_update($hashCtx, $feedFile.'|'.$mt.'|'.filesize($full));
+                }
+            }
+
+            if (empty($absoluteFiles)) return redirect()->back();
+
+            $version = hash_final($hashCtx);
+            $safeTitle = preg_replace('/[^\w\s.-]+/u', '_', (string) $feedback->assignment_group_learner->group->title);
+            $zipBase  = trim($safeTitle).' Feedbacks';
+            $zipName  = "{$zipBase}-{$version}.zip"; // versioned name so no cache can reuse the old one
+
+            $tmpDir   = storage_path('app/tmp');
+            if (!is_dir($tmpDir)) @mkdir($tmpDir, 0775, true);
+            $zipPath  = $tmpDir.'/'.$zipName;
+
+            // (Re)create the ZIP only if it doesn't exist yet for this version
+            if (!is_file($zipPath)) {
+                $zip = new \ZipArchive;
+                if ($zip->open($zipPath, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) !== true) {
+                    abort(500, 'Unable to create ZIP.');
+                }
+                foreach ($absoluteFiles as $af) {
+                    $zip->addFile($af['abs'], $af['name']);
+                }
+                $zip->close();
+                @chmod($zipPath, 0644);
+            }
+
+            // Add ETag / Last-Modified for correctness (still using no-store)
+            $etag = '"'.md5_file($zipPath).'"';
+            $lastModified = gmdate('D, d M Y H:i:s', filemtime($zipPath) ?: time()).' GMT';
+
+            return response()->download($zipPath, "{$zipBase}.zip", $nocache + [
+                'Content-Type'  => 'application/zip',
+                'ETag'          => $etag,
+                'Last-Modified' => $lastModified,
+                'Content-Length'=> (string) filesize($zipPath),
+            ])->deleteFileAfterSend(true); // delete the temp zip after sending
+
+        } else {
+            // Single file: stream it with strong headers
+            $fileRel = $files[0];
+            $fileAbs = public_path($fileRel);
+            abort_unless(is_file($fileAbs), 404);
+
+            $name  = basename($fileAbs);
+            $mtime = filemtime($fileAbs) ?: time();
+            $etag  = '"'.md5_file($fileAbs).'"';
+            $lastModified = gmdate('D, d M Y H:i:s', $mtime).' GMT';
+            $size  = (string) filesize($fileAbs);
+
+            return response()->streamDownload(function () use ($fileAbs) {
+                $fh = fopen($fileAbs, 'rb');
+                fpassthru($fh);
+                fclose($fh);
+            }, $name, $nocache + [
+                'Content-Type'   => 'application/octet-stream',
+                'Content-Length' => $size,
+                'ETag'           => $etag,
+                'Last-Modified'  => $lastModified,
+            ]);
+        }
+    }
+
+    public function downloadAssignmentGroupFeedbackOrig($feedback_id)
+    {
+        $feedback = AssignmentFeedback::find($feedback_id);
         if ($feedback) {
             $files = explode(',', $feedback->filename);
 
