@@ -468,7 +468,7 @@ class CourseService
 
         if ($package->included_courses->count() > 0) {
             foreach ($package->included_courses as $included_course) {
-                if ($included_course->included_package_id == 29) { // check if webinar-pakke is included
+                if ($included_course->included_package_id == 13) { // check if webinar-pakke is included
                     $add_to_automation++;
                 }
 
@@ -563,7 +563,7 @@ class CourseService
 
         if ($package->included_courses->count() > 0) {
             foreach ($package->included_courses as $included_course) {
-                if ($included_course->included_package_id == 29) { // check if webinar-pakke is included
+                if ($included_course->included_package_id == config('services.course_subscription_package_id')) { // check if webinar-pakke is included
                     $add_to_automation++;
                 }
             }

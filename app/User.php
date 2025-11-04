@@ -126,7 +126,7 @@ class User extends Authenticatable
      */
     public function getIsWebinarPakkeActiveAttribute(): bool
     {
-        $courseTaken = $this->coursesTaken->where('package_id', 29)->first();
+        $courseTaken = $this->coursesTaken->where('package_id', config('services.course_subscription_package_id'))->first();
         if ($courseTaken) {
             $end_date = $courseTaken->end_date ?: Carbon::parse($courseTaken->started_at)->addYear(1);
 

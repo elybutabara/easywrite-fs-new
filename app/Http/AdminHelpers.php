@@ -507,7 +507,7 @@ class AdminHelpers
     public static function isWebinarPakkeActive($user_id)
     {
         $user = User::find($user_id);
-        $courseTaken = $user->coursesTaken->where('package_id', 29)->first();
+        $courseTaken = $user->coursesTaken->where('package_id', config('services.course_subscription_package_id'))->first();
         if ($courseTaken) {
             $end_date = $courseTaken->end_date ?: Carbon::parse($courseTaken->started_at)->addYear(1);
 
@@ -522,8 +522,7 @@ class AdminHelpers
     public static function getWebinarPakkeDetails($user_id)
     {
         $user = User::find($user_id);
-        $courseTaken = $user->coursesTaken->where('package_id', 29)->first();
-
+        $courseTaken = $user->coursesTaken->where('package_id', config('services.course_subscription_package_id'))->first();
         return $courseTaken;
     }
 
