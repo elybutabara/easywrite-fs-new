@@ -33,7 +33,7 @@
                         {!! trans('site.front.home.description') !!}
                     </p>
 
-                    <a href="{{ route('front.course.show', 31) }}" class="btn btn-red" style="margin-right: 20px">
+                    <a href="{{ route('front.course.show', 32) }}" class="btn btn-red" style="margin-right: 20px">
                         {{ trans('site.front.home.all-course') }} 
                     </a>
                     {{-- <button class="btn btn-outline-red" data-toggle="modal"
