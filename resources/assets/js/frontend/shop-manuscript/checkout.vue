@@ -726,7 +726,8 @@ import FileUpload from '../../components/FileUpload.vue';
 
                 const excessAmount = parseFloat(this.orderForm.excess_words_amount) || 0;
                 const genreId = parseInt(this.orderForm.genre, 10);
-
+console.log("base" + basePrice);
+console.log("excess" + excessAmount);
                 let price = basePrice + excessAmount;
                 const hasPaidCourse = this.hasPaidCourse === true;
                 const appliesVat = this.hasPaidCourse === false;
@@ -738,7 +739,7 @@ import FileUpload from '../../components/FileUpload.vue';
                 } else if (genreId === 17) {
                     price += (price - totalDiscount) * 0.30;
                 }
-
+console.log(price);
                 //this.orderForm.totalDiscount = totalDiscount;
                 this.orderForm.price = price;
                 this.orderForm.has_vat = appliesVat;
@@ -824,11 +825,12 @@ import FileUpload from '../../components/FileUpload.vue';
 
                 try {
                     const response = await axios.post(this.requestUrl+'/checkout/validate-order', formData);
-                    console.log("inside compute manuscript price");
-                    console.log(response);
-                    this.orderForm.excess_words_amount = response.data.excess_words_amount;
-                    this.orderForm.price = response.data.price;
-                    this.orderForm.price = parseFloat(this.orderForm.price) + response.data.excess_words_amount;
+                    this.orderForm.excess_words_amount = parseFloat(response.data.excess_words_amount) || 0;
+                    const computedPrice = parseFloat(response.data.price);
+                    if (Number.isFinite(computedPrice)) {
+                        this.originalPrice = computedPrice;
+                    }
+                    this.updatePriceTotals();
                 } catch (error) {
                     this.processError(error);
                     throw error;
