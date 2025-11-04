@@ -47,7 +47,7 @@
                     </button> --}}
                 </div>
                 <div class="col-md-6">
-                    <img class="w-100" src="{{ asset('/images/imgpsh_fullsize_anim.jpg')}}">
+                    <img class="w-100" src="{{ asset('/images/cecilie.jpg')}}">
                 </div>
             </div>
         </div> <!-- end container -->
