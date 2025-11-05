@@ -224,7 +224,7 @@
                     <div class="global-card">
                         <div class="card-header">
                             <h2>
-                                Logg inn til:
+                                {!! trans('site.login-to') !!}
                             </h2>
                         </div>
                         <div class="card-body pb-0">
