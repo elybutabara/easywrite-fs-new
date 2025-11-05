@@ -11,16 +11,16 @@
     <div style="overflow: auto;">
         <table class="table">
             <thead>
-                <tr>
+<tr>
                     <th>
                         {{ trans_choice('site.assignments', 1) }}
                     </th>
                     <th width="400">
-                        Kurs/oppgavetekst
+                        {{ trans('site.course-assignment-text') }}
                     </th>
-                    <th>Av</th>
+                    <th>{{ trans('site.of-text') }}</th>
                     <th>
-                        Original manus
+                        {{ trans('site.original-manuscript') }}
                     </th>
                     <th>
                         {{ trans('site.date-out') }}
@@ -55,7 +55,7 @@
                                 </td>
                                 <td style="color: #B3B3B3">
                                     @if( $feedback->is_admin ) 
-                                        Easywrites redaktør
+                                        {{ trans('site.writer-school-editor') }}
                                     @endif
                                 </td>
                                 <td>
