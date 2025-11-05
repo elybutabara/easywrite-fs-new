@@ -34,13 +34,13 @@
                        title="View publishing">{{ trans('site.front.nav.publishing') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://arskurs.easywrite.se/" class="nav-link"
+                    <a href="{{ route('front.course.show', 24) }}" class="nav-link"
                        title="Årskurs" target="_blank">Årskurs</a>
                 </li>
-                <li class="nav-item">
-                    <a href="https://blog.easywrite.se" class="nav-link">
+                {{-- <li class="nav-item">
+                    <a href="https://blog.forfatterskolen.no" class="nav-link">
                         Blogg</a>
-                </li>
+                </li> --}}
                 <li class="nav-item @if(Route::currentRouteName() == 'front.contact-us') active @endif">
                     <a href="{{route('front.contact-us')}}" class="nav-link"
                        title="View contact page">{{ trans('site.front.nav.contact-us') }}</a>
@@ -73,26 +73,42 @@
                             </div>
                             <div class="link-container">
                                 <a href="{{route('learner.course')}}" class="dropdown-item"
-                                   title="View learner course">Mine Kurs</a>
+                                   title="View learner course">
+                                   {{ trans('site.learner.nav.course') }}
+                                </a>
                                 <a href="{{route('learner.shop-manuscript')}}" class="dropdown-item"
-                                   title="View learner manuscripts">Manuskripter</a>
-                                <a href="{{route('learner.workshop')}}" class="dropdown-item"
-                                   title="View learner workshops">Workshops</a>
+                                   title="View learner manuscripts">
+                                    {{ trans('site.learner.nav.manuscript') }}
+                                </a>
+                                {{-- <a href="{{route('learner.workshop')}}" class="dropdown-item"
+                                   title="View learner workshops">Workshops</a> --}}
                                 <a href="{{route('learner.webinar')}}" class="dropdown-item"
-                                   title="View learner webinars">Webinars</a>
+                                   title="View learner webinars">
+                                    {{ trans('site.learner.nav.webinars') }}
+                                </a>
                                 <a href="{{route('learner.assignment')}}" class="dropdown-item"
-                                   title="View learner assignments">Oppgaver</a>
+                                   title="View learner assignments">
+                                    {{ trans('site.learner.nav.assignment') }}
+                                </a>
                                 <a href="{{route('learner.calendar')}}" class="dropdown-item"
-                                   title="View learner calendar">Kalender</a>
+                                   title="View learner calendar">
+                                    {{ trans('site.learner.nav.calendar') }}
+                                </a>
                                 <a href="{{route('learner.profile')}}" class="dropdown-item"
-                                   title="View learner profile">Profil</a>
+                                   title="View learner profile">
+                                    {{ trans('site.learner.nav.profile') }}
+                                </a>
                                 <a href="{{route('learner.invoice')}}" class="dropdown-item"
-                                   title="View learner invoices">Fakturaer</a>
+                                   title="View learner invoices">
+                                    {{ trans('site.learner.nav.invoice') }}
+                                </a>
     
                                 <a href="{{ route('auth.logout-get') }}" class="dropdown-item d-inline-block w-auto mb-2" title="Logout">
                                     <form method="POST" action="{{route('auth.logout')}}" class="form-logout">
                                         {{csrf_field()}}
-                                        <button type="submit" class="btn btn-circle">Logg av</button>
+                                        <button type="submit" class="btn btn-circle">
+                                            {{ trans('site.logout') }}
+                                        </button>
                                     </form>
                                 </a>
                             </div>
