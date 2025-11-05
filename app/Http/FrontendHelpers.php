@@ -62,7 +62,7 @@ class FrontendHelpers
 
     public static function currencyFormat($value)
     {
-        return 'Kr '.number_format($value, 2, ',', '.');
+        return number_format($value, 2, ',', '.');
     }
 
     public static function formatCurrency($value)
