@@ -5549,7 +5549,7 @@ class LearnerController extends Controller
                 if (Carbon::parse($newAvailability)->gte($today)) {
                     $events[] = [
                         'id' => $lesson->course->id,
-                        'title' => 'Leksjon: '.$lesson->title.' from '.$lesson->course->title,
+                        'title' => trans('site.learner.lesson') .': ' . $lesson->title.' from '.$lesson->course->title,
                         'class' => 'event-important',
                         'start' => $newAvailability, // $availability,
                         'end' => $newAvailability, // $availability,
@@ -5566,7 +5566,7 @@ class LearnerController extends Controller
                 if (Carbon::parse($start)->gte($today)) {
                     $events[] = [
                         'id' => $webinar->course->id,
-                        'title' => 'Webinar: '.$webinar->title.' from '.$webinar->course->title,
+                        'title' => trans('site.learner.webinar') . ': ' . $webinar->title.' from '.$webinar->course->title,
                         'class' => 'event-warning',
                         'start' => $start, // strtotime($webinar->start_date) * 1000,
                         'end' => $end, // strtotime($webinar->start_date) * 1000,
@@ -5583,7 +5583,7 @@ class LearnerController extends Controller
                 if (Carbon::parse($start)->gte($today)) {
                     $events[] = [
                         'id' => $courseTaken->package->course->id,
-                        'title' => 'Manus: '.basename($manuscript->filename).' from '.$courseTaken->package->course->title,
+                        'title' => trans('site.learner.manuscript-text') . ': ' .basename($manuscript->filename).' from '.$courseTaken->package->course->title,
                         'class' => 'event-info',
                         'start' => $start, // strtotime($manuscript->expected_finish) * 1000,
                         'end' => $end, // strtotime($manuscript->expected_finish) * 1000,
@@ -5600,7 +5600,7 @@ class LearnerController extends Controller
                 if (Carbon::parse($start)->gte($today)) {
                     $events[] = [
                         'id' => $assignment->course->id,
-                        'title' => 'Oppgaver: '.$assignment->title.' from '.$assignment->course->title,
+                        'title' => trans('site.learner.assignment') . ': ' . $assignment->title.' from '.$assignment->course->title,
                         'class' => 'event-success-new',
                         'start' => $start, // strtotime($assignment->submission_date) * 1000,
                         'end' => $end, // strtotime($assignment->submission_date) * 1000,
