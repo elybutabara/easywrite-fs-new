@@ -2,7 +2,7 @@
     <div class="row publishing-list">
         <div class="col-md-3">
             <h3 class="text-center">
-                Liste over forfattere
+                {{ trans('site.publishing-list.list-authors') }}
             </h3>
 
             <div class="authors-list-container">
@@ -30,7 +30,7 @@
 
         <div class="col-md-3 text-center author-book-list-container">
             <h3>
-                Bøker fra forfatter
+                {{ trans('site.publishing-list.books-from-author') }}
             </h3>
             <div class="author-book-list">
                 <template v-for="library in currentBook.libraries">
