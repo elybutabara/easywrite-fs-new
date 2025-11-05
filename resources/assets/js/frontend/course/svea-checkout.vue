@@ -234,7 +234,7 @@
                                 <div class="col-sm-12 margin-top custom-checkbox" style="padding-left:32px">
                                     <input type="checkbox" name="agree_terms" id="agree_terms" v-model="orderForm.terms">
                                     <label for="agree_terms"> Jeg aksepterer </label>
-                                    <a href="/terms/course-terms" target="_new"> kjøpsvilkårene </a> <br>
+                                    <a href="/terms/course-terms" target="_new"> villkoren </a> <br>
                                     <input type="hidden" name="terms">
                                 </div>
                             </div>
