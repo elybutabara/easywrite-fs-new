@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
     <head>
         @yield('title')
         @include('backend.partials.backend-css')

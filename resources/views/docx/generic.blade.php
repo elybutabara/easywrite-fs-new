@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="sv">
 <body>
 
 {!! $wholeBook->book_content !!}

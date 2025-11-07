@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <title>Easywrite | Sign In</title>
     @include('backend.partials.backend-css')
