@@ -185,8 +185,9 @@
                                                                 Drag and drop files or <a href="javascript:void(0)" class="file-upload-btn">Klikk her</a>
                                                         </div>
                                                         <input type="file" class="form-control hidden input-file-upload" name="filename"
-                                                        id="file-upload" accept="application/msword,
-                                                application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                                        id="file-upload" accept=".doc,.docx,.pdf,.odt,.pages,application/msword,
+                                                application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,
+                                                application/vnd.oasis.opendocument.text,application/vnd.apple.pages,application/x-iwork-pages-sffpages">
                                                   </div>
                                                 <div class="alert alert-info manuscript-conversion-message d-none mt-3">
                                                         Konverterer dokumentet… Vennligst vent.
