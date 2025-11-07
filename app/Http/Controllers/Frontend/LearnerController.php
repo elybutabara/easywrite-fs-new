@@ -4790,6 +4790,8 @@ class LearnerController extends Controller
     public function deleteAssignmentManuscript($id): RedirectResponse
     {
         $manuscript = AssignmentManuscript::findOrFail($id);
+        $user = $manuscript->user;
+        $user_email = $user->email;
 
         // delete the file from the server
         $oldManuscript = $manuscript->filename;
@@ -4798,6 +4800,21 @@ class LearnerController extends Controller
         }
 
         $manuscript->forceDelete();
+
+        $emailTemplate = AdminHelpers::emailTemplate('Assignment Manuscript Removed');
+        $emailContent = str_replace([
+            ':firstname',
+            ':assignment',
+            ':button',
+            ':end_button',
+        ], [
+            $manuscript->user->first_name,
+            '<em>'.$manuscript->assignment->title.'</em>'
+
+        ], $emailTemplate->email_content);
+
+        dispatch(new AddMailToQueueJob($user_email, $emailTemplate->subject, $emailContent,
+            $emailTemplate->from_email, null, null, 'learner', $user->id));
 
         return redirect()->back();
     }
