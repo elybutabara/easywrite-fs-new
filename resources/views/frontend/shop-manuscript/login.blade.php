@@ -87,13 +87,13 @@
 
                                     <div class="clearfix"></div>
 
-                                    {{-- <div class="login-text mt-4">Logg inn med:</div>
+                                    <div class="login-text mt-4">Logg inn med:</div>
 
                                     <div class="social-btn-container">
                                         <a href="{{ route('auth.login.google') }}" class="newLoginBtn newLoginBtn--google btn">
                                             Google
                                         </a>
-                                    </div> --}}
+                                    </div>
                                 </form>
                             </div> <!-- end login-->
 
