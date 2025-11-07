@@ -42,9 +42,11 @@
                                     {{ trans('site.front.checkout.login-or-register-note') }}
                                 </h3>
 
-                                <form id="checkoutLogin" action="{{ route('frontend.login.checkout.store') }}" method="POST">
+                                <form id="checkoutLogin" action="{{ route('frontend.login.checkout.store') }}" method="POST"
+                                onsubmit="disableSubmit(this)">
                                     {{csrf_field()}}
-                            
+                                    <input type="hidden" name="shop_manuscript_login" value="1">
+
                                     <div class="form-group">
                                         <label>
                                             {{ trans('site.front.form.email') }}
@@ -71,9 +73,27 @@
                                         </div>
                                     </div>
                             
-                                    <button type="submit" class="btn site-btn-global pull-right">
-                                        {{ trans('site.front.form.login') }}
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {!! \Anhskohbo\NoCaptcha\Facades\NoCaptcha::renderJS() !!}
+                                            {!! \Anhskohbo\NoCaptcha\Facades\NoCaptcha::display(['data-callback' => 'captchaCB']) !!}
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <button type="submit" class="btn site-btn-global">
+                                                {{ trans('site.front.form.login') }}
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="login-text mt-4">Logg inn med:</div>
+
+                                    <div class="social-btn-container">
+                                        <a href="{{ route('auth.login.google') }}" class="newLoginBtn newLoginBtn--google btn">
+                                            Google
+                                        </a>
+                                    </div>
                                 </form>
                             </div> <!-- end login-->
 
