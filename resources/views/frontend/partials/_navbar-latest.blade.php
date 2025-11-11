@@ -34,7 +34,7 @@
                        title="View publishing">{{ trans('site.front.nav.publishing') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('front.course.show', 24) }}" class="nav-link"
+                    <a href="{{ route('front.course.show', 32) }}" class="nav-link"
                        title="Årskurs" target="_blank">Årskurs</a>
                 </li>
                 {{-- <li class="nav-item">
